@@ -1,6 +1,7 @@
 import Hero from "@/components/Hero";
 import InputForm from "@/components/InputForm";
 import LiveTicker from "@/components/LiveTicker";
+import MapWrapper from "@/components/MapWrapper";
 
 export default function Home() {
   return (
@@ -23,6 +24,9 @@ export default function Home() {
             <LiveTicker />
           </div>
         </div>
+
+        {/* Global Threat Map Section */}
+        <MapWrapper />
       </div>
     </main>
   );

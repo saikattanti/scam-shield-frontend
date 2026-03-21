@@ -23,29 +23,54 @@ type AnalysisResult = {
 export default function InputForm() {
     const [activeTab, setActiveTab] = useState<InputType>('text');
     const [inputText, setInputText] = useState('');
+    const [selectedFile, setSelectedFile] = useState<File | null>(null);
+    const [previewUrl, setPreviewUrl] = useState<string | null>(null);
     const [analysisResult, setAnalysisResult] = useState<AnalysisResult>(null);
     const [isAnalyzing, setIsAnalyzing] = useState(false);
     const [feedbackSubmitted, setFeedbackSubmitted] = useState(false);
     const [feedbackLoading, setFeedbackLoading] = useState(false);
 
+    const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const file = e.target.files?.[0];
+        if (file) {
+            setSelectedFile(file);
+            const reader = new FileReader();
+            reader.onloadend = () => {
+                setPreviewUrl(reader.result as string);
+            };
+            reader.readAsDataURL(file);
+        }
+    };
+
     const handleAnalyze = async () => {
-        if (!inputText) return;
+        if (activeTab !== 'image' && !inputText) return;
+        if (activeTab === 'image' && !selectedFile) return;
+
         setIsAnalyzing(true);
         setAnalysisResult(null);
 
         try {
-            const response = await fetch('http://localhost:5000/api/analyze', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ type: activeTab, content: inputText }),
-            });
+            let response;
+            if (activeTab === 'image' && selectedFile) {
+                const formData = new FormData();
+                formData.append('image', selectedFile);
+                response = await fetch('http://localhost:5000/api/analyze/image', {
+                    method: 'POST',
+                    body: formData,
+                });
+            } else {
+                response = await fetch('http://localhost:5000/api/analyze', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ type: activeTab, content: inputText }),
+                });
+            }
 
             const data = await response.json();
             setAnalysisResult(data);
             setFeedbackSubmitted(false); // Reset feedback for new analysis
         } catch (error) {
             console.error('Analysis failed:', error);
-            // Fallback/Error state could be added here
         } finally {
             setIsAnalyzing(false);
         }
@@ -128,12 +153,54 @@ export default function InputForm() {
                                 />
                             )}
                             {activeTab === 'image' && (
-                                <div className="w-full h-48 border-2 border-dashed border-slate-300 rounded-xl flex flex-col items-center justify-center text-slate-500 hover:border-blue-500 hover:bg-blue-50 transition-all cursor-pointer">
-                                    <ImageIcon className="w-12 h-12 mb-3 text-slate-400" />
-                                    <p className="text-sm font-medium text-slate-700">Click to upload or drag & drop</p>
-                                    <p className="text-xs text-slate-500 mt-1">PNG, JPG up to 5MB</p>
+                                <div className="space-y-4">
+                                    <div 
+                                        onClick={() => document.getElementById('file-upload')?.click()}
+                                        className={`w-full h-48 border-2 border-dashed rounded-xl flex flex-col items-center justify-center transition-all cursor-pointer overflow-hidden ${
+                                            previewUrl ? 'border-blue-500 bg-blue-50' : 'border-slate-300 text-slate-500 hover:border-blue-500 hover:bg-blue-50'
+                                        }`}
+                                    >
+                                        {previewUrl ? (
+                                            <div className="relative w-full h-full">
+                                                <img src={previewUrl} alt="Preview" className="w-full h-full object-contain" />
+                                                <div className="absolute inset-0 bg-black/40 opacity-0 hover:opacity-100 transition-opacity flex items-center justify-center">
+                                                    <p className="text-white font-bold">Change Image</p>
+                                                </div>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <ImageIcon className="w-12 h-12 mb-3 text-slate-400" />
+                                                <p className="text-sm font-medium text-slate-700">Click to upload screenshot</p>
+                                                <p className="text-xs text-slate-500 mt-1">PNG, JPG up to 5MB</p>
+                                            </>
+                                        )}
+                                        <input 
+                                            id="file-upload"
+                                            type="file" 
+                                            className="hidden" 
+                                            accept="image/*"
+                                            onChange={handleFileChange}
+                                        />
+                                    </div>
+                                    {selectedFile && (
+                                        <div className="flex items-center justify-between bg-blue-50 px-4 py-2 rounded-lg border border-blue-200">
+                                            <span className="text-xs font-medium text-blue-700 truncate max-w-[200px]">
+                                                📎 {selectedFile.name}
+                                            </span>
+                                            <button 
+                                                onClick={(e) => {
+                                                    e.stopPropagation();
+                                                    setSelectedFile(null);
+                                                    setPreviewUrl(null);
+                                                }}
+                                                className="text-xs text-red-600 hover:text-red-800 font-bold"
+                                            >
+                                                Remove
+                                            </button>
+                                        </div>
+                                    )}
                                 </div>
-                                )}
+                            )}
                             </motion.div>
                     </AnimatePresence>
     
