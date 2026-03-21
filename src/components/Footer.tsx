@@ -1,37 +1,39 @@
 "use client";
 
-import React from 'react';
-import Link from 'next/link';
-import { Shield } from 'lucide-react';
-import { useLanguage } from '@/context/LanguageContext';
+import React from "react";
+import Link from "next/link";
+import { Shield } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Footer() {
   const { t } = useLanguage();
 
   const footerLinks = [
     {
-      title: t('footer_product'),
+      title: t("footer_product"),
       links: [
-        { label: t('footer_home'), href: '/' },
-        { label: t('footer_about'), href: '/about' },
-        { label: t('footer_contact'), href: '/contact' },
+        { label: t("footer_home"), href: "/" },
+        { label: t("footer_about"), href: "/about" },
+        { label: t("footer_contact"), href: "/contact" },
       ],
     },
     {
-      title: t('footer_legal'),
+      title: t("footer_legal"),
       links: [
-        { label: t('footer_privacy'), href: '/privacy' },
-        { label: t('footer_terms'), href: '/terms' },
+        { label: t("footer_privacy"), href: "/privacy" },
+        { label: t("footer_terms"), href: "/terms" },
       ],
     },
   ];
 
   return (
-    <footer className="relative bg-white border-t border-slate-100 overflow-hidden" id="contact">
+    <footer
+      className="relative bg-white border-t border-slate-100 overflow-hidden"
+      id="contact"
+    >
       {/* Main content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 pt-14 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-
           {/* Brand column */}
           <div className="lg:col-span-1 flex flex-col gap-5">
             <Link href="/" className="flex items-center gap-2.5 group w-fit">
@@ -45,7 +47,7 @@ export default function Footer() {
 
             <div className="text-[13px] text-slate-400 leading-relaxed">
               <p>Copyright © {new Date().getFullYear()} Sentinel Labs</p>
-              <p className="mt-0.5">{t('footer_rights')}</p>
+              <p className="mt-0.5">{t("footer_rights")}</p>
             </div>
           </div>
 
@@ -71,18 +73,17 @@ export default function Footer() {
               </div>
             ))}
           </div>
-
         </div>
       </div>
 
       {/* Giant watermark — sits at the very bottom */}
       <div
         className="absolute bottom-0 left-0 right-0 overflow-hidden pointer-events-none select-none flex items-end justify-center"
-        style={{ height: '130px' }}
+        style={{ height: "130px" }}
       >
         <span
           className="block font-black leading-none tracking-tighter text-slate-100 whitespace-nowrap"
-          style={{ fontSize: 'clamp(60px, 13vw, 180px)', lineHeight: 0.82 }}
+          style={{ fontSize: "clamp(60px, 13vw, 180px)", lineHeight: 0.82 }}
         >
           SCAMSHIELD
         </span>

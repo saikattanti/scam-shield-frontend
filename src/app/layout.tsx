@@ -17,7 +17,8 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "ScamShield - AI Fraud Detection",
-  description: "Check if it's a scam in seconds. AI-powered fraud detection for text, URLs, and images.",
+  description:
+    "Check if it's a scam in seconds. AI-powered fraud detection for text, URLs, and images.",
 };
 
 export default function RootLayout({
@@ -33,9 +34,7 @@ export default function RootLayout({
       >
         <LanguageProvider>
           <NavBar />
-          <div className="flex-grow">
-            {children}
-          </div>
+          <div className="flex-grow">{children}</div>
           <Footer />
         </LanguageProvider>
       </body>

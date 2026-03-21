@@ -5,7 +5,18 @@ import LiveTicker from "@/components/LiveTicker";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
 import SlideArrowButton from "@/components/ui/slide-arrow-button";
-import { ShieldCheck, AlertOctagon, Globe, Zap, Lock, Users, Mic, BarChart2, Clock, Search } from "lucide-react";
+import {
+  ShieldCheck,
+  AlertOctagon,
+  Globe,
+  Zap,
+  Lock,
+  Users,
+  Mic,
+  BarChart2,
+  Clock,
+  Search,
+} from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
@@ -83,12 +94,17 @@ export default function Home() {
 
   const featureStyles: Record<string, string> = {
     blue: "border-blue-200/70 bg-linear-to-br from-blue-50/70 via-white to-blue-100/40",
-    slate: "border-slate-200/80 bg-linear-to-br from-slate-50/80 via-white to-slate-100/60",
+    slate:
+      "border-slate-200/80 bg-linear-to-br from-slate-50/80 via-white to-slate-100/60",
     cyan: "border-cyan-200/70 bg-linear-to-br from-cyan-50/70 via-white to-cyan-100/40",
-    violet: "border-violet-200/70 bg-linear-to-br from-violet-50/70 via-white to-violet-100/40",
-    indigo: "border-indigo-200/70 bg-linear-to-br from-indigo-50/70 via-white to-indigo-100/40",
-    amber: "border-amber-200/70 bg-linear-to-br from-amber-50/70 via-white to-amber-100/40",
-    emerald: "border-emerald-200/70 bg-linear-to-br from-emerald-50/70 via-white to-emerald-100/40",
+    violet:
+      "border-violet-200/70 bg-linear-to-br from-violet-50/70 via-white to-violet-100/40",
+    indigo:
+      "border-indigo-200/70 bg-linear-to-br from-indigo-50/70 via-white to-indigo-100/40",
+    amber:
+      "border-amber-200/70 bg-linear-to-br from-amber-50/70 via-white to-amber-100/40",
+    emerald:
+      "border-emerald-200/70 bg-linear-to-br from-emerald-50/70 via-white to-emerald-100/40",
     rose: "border-rose-200/70 bg-linear-to-br from-rose-50/70 via-white to-rose-100/40",
   };
 
@@ -155,8 +171,12 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
-              <p className="text-3xl md:text-4xl font-bold text-slate-900">{s.value}</p>
-              <p className="text-sm text-slate-500 font-medium mt-1">{s.label}</p>
+              <p className="text-3xl md:text-4xl font-bold text-slate-900">
+                {s.value}
+              </p>
+              <p className="text-sm text-slate-500 font-medium mt-1">
+                {s.label}
+              </p>
             </div>
           ))}
         </div>
@@ -172,7 +192,9 @@ export default function Home() {
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-14 md:mb-16 md:flex md:items-end md:justify-between">
             <div>
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-blue-700">How it works</p>
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.22em] text-blue-700">
+                How it works
+              </p>
               <h2 className="max-w-2xl text-3xl font-black tracking-tight text-slate-900 md:text-5xl">
                 {t("home_how_title")}
               </h2>
@@ -187,8 +209,12 @@ export default function Home() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-blue-100 bg-linear-to-br from-white to-blue-50">
                 <ShieldCheck className="h-6 w-6 text-blue-600" />
               </div>
-              <h3 className="mb-3 text-2xl font-extrabold tracking-tight text-slate-900">{t("home_checker_title")}</h3>
-              <p className="mb-7 max-w-md text-[15px] leading-7 text-slate-600">{t("home_checker_desc")}</p>
+              <h3 className="mb-3 text-2xl font-extrabold tracking-tight text-slate-900">
+                {t("home_checker_title")}
+              </h3>
+              <p className="mb-7 max-w-md text-[15px] leading-7 text-slate-600">
+                {t("home_checker_desc")}
+              </p>
               <Link
                 href="/check"
                 className="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700 transition-colors hover:border-blue-300 hover:bg-blue-100"
@@ -205,8 +231,12 @@ export default function Home() {
               <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl border border-red-100 bg-linear-to-br from-white to-red-50">
                 <AlertOctagon className="h-6 w-6 text-red-600" />
               </div>
-              <h3 className="mb-3 text-2xl font-extrabold tracking-tight text-slate-900">{t("home_recovery_title")}</h3>
-              <p className="mb-7 max-w-md text-[15px] leading-7 text-slate-600">{t("home_recovery_desc")}</p>
+              <h3 className="mb-3 text-2xl font-extrabold tracking-tight text-slate-900">
+                {t("home_recovery_title")}
+              </h3>
+              <p className="mb-7 max-w-md text-[15px] leading-7 text-slate-600">
+                {t("home_recovery_desc")}
+              </p>
               <Link
                 href="/help"
                 className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-4 py-2 text-sm font-bold text-red-700 transition-colors hover:border-red-300 hover:bg-red-100"
@@ -228,8 +258,12 @@ export default function Home() {
 
         <div className="relative mx-auto max-w-6xl">
           <div className="mb-12 text-center md:mb-14">
-            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-blue-700">Why ScamShield</p>
-            <h2 className="text-3xl font-black tracking-tight text-slate-900 md:text-5xl">{t("home_why_title")}</h2>
+            <p className="mb-3 text-xs font-black uppercase tracking-[0.2em] text-blue-700">
+              Why ScamShield
+            </p>
+            <h2 className="text-3xl font-black tracking-tight text-slate-900 md:text-5xl">
+              {t("home_why_title")}
+            </h2>
           </div>
 
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-6">
@@ -248,8 +282,12 @@ export default function Home() {
                   </span>
                 </div>
 
-                <h4 className="mb-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-xl lg:text-2xl">{f.title}</h4>
-                <p className="max-w-[36ch] text-sm leading-7 text-slate-600">{f.desc}</p>
+                <h4 className="mb-2 text-2xl font-extrabold tracking-tight text-slate-900 sm:text-xl lg:text-2xl">
+                  {f.title}
+                </h4>
+                <p className="max-w-[36ch] text-sm leading-7 text-slate-600">
+                  {f.desc}
+                </p>
               </article>
             ))}
           </div>
@@ -262,8 +300,12 @@ export default function Home() {
 
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <p className="mb-1 text-xs font-black uppercase tracking-[0.2em] text-slate-400">Community</p>
-            <h2 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">{t("home_live_title")}</h2>
+            <p className="mb-1 text-xs font-black uppercase tracking-[0.2em] text-slate-400">
+              Community
+            </p>
+            <h2 className="text-2xl font-black tracking-tight text-slate-900 md:text-3xl">
+              {t("home_live_title")}
+            </h2>
           </div>
           <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-4 py-2 text-xs font-bold uppercase tracking-wider text-emerald-700">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />

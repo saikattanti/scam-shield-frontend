@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import React, { useState } from 'react';
-import Link from 'next/link';
-import { Shield, Menu, X, Globe } from 'lucide-react';
-import { Language, useLanguage } from '@/context/LanguageContext';
-import SlideArrowButton from '@/components/ui/slide-arrow-button';
+import React, { useState } from "react";
+import Link from "next/link";
+import { Shield, Menu, X, Globe } from "lucide-react";
+import { Language, useLanguage } from "@/context/LanguageContext";
+import SlideArrowButton from "@/components/ui/slide-arrow-button";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,18 +24,30 @@ export default function NavBar() {
               <div className="bg-slate-900 p-2 rounded-lg group-hover:bg-slate-800 transition-colors">
                 <Shield className="w-5 h-5 text-white" />
               </div>
-              <span className="text-xl font-semibold tracking-tight text-slate-900">ScamShield<span className="text-blue-600">.</span></span>
+              <span className="text-xl font-semibold tracking-tight text-slate-900">
+                ScamShield<span className="text-blue-600">.</span>
+              </span>
             </Link>
           </div>
 
           {/* Desktop Right Actions (language at far right) */}
           <div className="hidden md:flex items-center justify-end gap-2">
-            <SlideArrowButton href="/check" text={t('nav_check')} primaryColor="#0f172a" className="scale-90" />
-            <SlideArrowButton href="/help" text={t('nav_scammed')} primaryColor="#dc2626" className="scale-90" />
+            <SlideArrowButton
+              href="/check"
+              text={t("nav_check")}
+              primaryColor="#0f172a"
+              className="scale-90"
+            />
+            <SlideArrowButton
+              href="/help"
+              text={t("nav_scammed")}
+              primaryColor="#dc2626"
+              className="scale-90"
+            />
 
             <div className="ml-2 pl-3 border-l border-slate-200 flex items-center relative">
               <Globe className="w-4 h-4 text-slate-400 absolute left-6 pointer-events-none" />
-              <select 
+              <select
                 value={language}
                 onChange={handleLanguageChange}
                 className="w-[170px] pl-10 pr-8 py-1.5 bg-white border border-slate-200 text-slate-700 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent appearance-none cursor-pointer hover:bg-slate-50 text-sm transition-all shadow-sm"
@@ -63,7 +75,11 @@ export default function NavBar() {
               className="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-slate-500 hover:bg-slate-100 focus:outline-none"
             >
               <span className="sr-only">Open main menu</span>
-              {isOpen ? <X className="block h-6 w-6" /> : <Menu className="block h-6 w-6" />}
+              {isOpen ? (
+                <X className="block h-6 w-6" />
+              ) : (
+                <Menu className="block h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -74,14 +90,29 @@ export default function NavBar() {
         <div className="md:hidden border-t border-slate-100 bg-white">
           <div className="px-4 pt-2 pb-4 space-y-1 shadow-lg">
             <div className="flex gap-2 mt-3 pt-3 border-t border-slate-100">
-              <SlideArrowButton href="/check" text={t('nav_check')} primaryColor="#0f172a" className="flex-1 scale-90" onClick={() => setIsOpen(false)} />
-              <SlideArrowButton href="/help" text={t('nav_scammed')} primaryColor="#dc2626" className="flex-1 scale-90" onClick={() => setIsOpen(false)} />
+              <SlideArrowButton
+                href="/check"
+                text={t("nav_check")}
+                primaryColor="#0f172a"
+                className="flex-1 scale-90"
+                onClick={() => setIsOpen(false)}
+              />
+              <SlideArrowButton
+                href="/help"
+                text={t("nav_scammed")}
+                primaryColor="#dc2626"
+                className="flex-1 scale-90"
+                onClick={() => setIsOpen(false)}
+              />
             </div>
             <div className="mt-3 flex justify-center w-full relative">
               <Globe className="w-4 h-4 text-slate-400 absolute left-4 top-2.5 pointer-events-none" />
-              <select 
+              <select
                 value={language}
-                onChange={(e) => { handleLanguageChange(e); setIsOpen(false); }}
+                onChange={(e) => {
+                  handleLanguageChange(e);
+                  setIsOpen(false);
+                }}
                 className="w-full pl-10 pr-6 py-2 bg-white border border-slate-200 text-slate-700 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-slate-900 appearance-none cursor-pointer text-sm shadow-sm"
               >
                 <option value="en">English (EN)</option>
