@@ -9,3 +9,57 @@ body {
   background-color: #f8fafc; /* slate-50 */
   color: #0f172a; /* slate-900 */
 }
+
+/* Hide annoying top banner from Google Translate */
+body {
+  top: 0px !important; /* Prevent body shift */
+}
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+  display: none !important;
+}
+.goog-te-banner-frame.skiptranslate {
+  display: none !important;
+}
+
+/* Style the text dropdown natively */
+.goog-te-combo {
+  font-family: inherit !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #1e293b !important;
+  padding: 8px 16px !important;
+  border-radius: 9999px !important;
+  border: 2px solid #bfdbfe !important; /* blue-200 */
+  background-color: #eff6ff !important; /* blue-50 */
+  cursor: pointer !important;
+  outline: none !important;
+  margin: 0 !important;
+  transition: all 0.2s ease;
+}
+
+.goog-te-combo:hover {
+  border-color: #3b82f6 !important; /* blue-500 */
+  background-color: white !important;
+}
+
+/* Hide wrapper gadget text and logos */
+.goog-te-gadget {
+  font-family: inherit !important;
+  color: transparent !important;
+  font-size: 0px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+}
+
+.goog-te-gadget > div {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.goog-te-gadget > span,
+.goog-te-gadget span,
+.goog-logo-link {
+  display: none !important;
+}

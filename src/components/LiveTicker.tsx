@@ -93,53 +93,53 @@ export default function LiveTicker() {
     };
 
     return (
-        <div className="bg-white border-2 border-slate-200 rounded-2xl shadow-xl p-6 max-h-[85vh] overflow-hidden flex flex-col">
+        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 overflow-hidden flex flex-col h-[500px]">
             {/* Header */}
-            <div className="flex items-center justify-between mb-4 pb-4 border-b border-slate-200">
+            <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
                 <div className="flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-blue-600" />
-                    <h3 className="font-bold text-lg text-slate-900">Live Activity</h3>
+                    <Activity className="w-5 h-5 text-slate-800" />
+                    <h3 className="font-semibold text-lg text-slate-900 tracking-tight">Live Activity</h3>
                 </div>
-                <div className="flex items-center gap-2">
-                    <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`}></div>
-                    <span className="text-xs font-medium text-slate-600">{isConnected ? 'Live' : 'Offline'}</span>
+                <div className="flex items-center gap-2 bg-slate-50 px-3 py-1 rounded-full border border-slate-200">
+                    <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-emerald-500 animate-pulse' : 'bg-red-500'}`}></div>
+                    <span className="text-xs font-semibold text-slate-600 uppercase tracking-wider">{isConnected ? 'Live' : 'Offline'}</span>
                 </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mb-4">
-                <div className="bg-gradient-to-br from-blue-50 to-blue-100 rounded-xl p-3 border border-blue-200">
-                    <TrendingUp className="w-4 h-4 text-blue-600 mb-1" />
-                    <p className="text-2xl font-bold text-blue-700">{items.length}</p>
-                    <p className="text-xs text-blue-600 font-medium">Analyses</p>
+            <div className="grid grid-cols-2 gap-3 mb-6">
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <TrendingUp className="w-4 h-4 text-slate-400 mb-2" />
+                    <p className="text-2xl font-bold text-slate-800">{items.length}</p>
+                    <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Analyses</p>
                 </div>
-                <div className="bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl p-3 border border-purple-200">
-                    <Clock className="w-4 h-4 text-purple-600 mb-1" />
-                    <p className="text-2xl font-bold text-purple-700">Live</p>
-                    <p className="text-xs text-purple-600 font-medium">Real-time</p>
+                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
+                    <Clock className="w-4 h-4 text-slate-400 mb-2" />
+                    <p className="text-2xl font-bold text-slate-800">Real-time</p>
+                    <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Status</p>
                 </div>
             </div>
 
             {/* Feed */}
-            <div className="flex-1 overflow-y-auto space-y-2 scrollbar-thin scrollbar-thumb-slate-300 scrollbar-track-slate-100">
+            <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
                 <AnimatePresence mode="popLayout">
                     {items.map((item) => (
                         <motion.div
                             key={item.id}
-                            initial={{ opacity: 0, x: -20 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            exit={{ opacity: 0, x: 20 }}
-                            className="bg-slate-50 border border-slate-200 rounded-lg p-3 hover:shadow-md transition-shadow"
+                            initial={{ opacity: 0, scale: 0.98 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.98 }}
+                            className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
                         >
-                            <div className="flex items-start gap-2">
+                            <div className="flex items-start gap-3">
                                 <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${getRiskDot(item.risk)} animate-pulse`}></div>
                                 <div className="flex-1 min-w-0">
-                                    <p className="text-sm text-slate-700 font-medium leading-snug mb-2">{item.message}</p>
+                                    <p className="text-sm text-slate-800 font-medium leading-relaxed mb-3">{item.message}</p>
                                     <div className="flex items-center gap-2 flex-wrap">
-                                        <span className={`text-xs font-semibold px-2 py-1 rounded-md border ${getRiskColor(item.risk)}`}>
+                                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border ${getRiskColor(item.risk)}`}>
                                             {item.risk}
                                         </span>
-                                        <span className="text-xs text-slate-500">
+                                        <span className="text-xs font-medium text-slate-400">
                                             {formatTime(item.timestamp)}
                                         </span>
                                     </div>

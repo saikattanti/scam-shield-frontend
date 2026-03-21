@@ -27,7 +27,7 @@ export default function ThreatMap() {
     // Fetch live threats
     const loadThreats = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/map/threats');
+        const response = await fetch('http://127.0.0.1:5000/api/map/threats');
         const result = await response.json();
         if (result.success) {
             setThreats(result.data);
@@ -44,7 +44,7 @@ export default function ThreatMap() {
   }, []);
 
   return (
-    <div className="w-full relative bg-slate-900 rounded-3xl overflow-hidden shadow-2xl border border-slate-800 my-8">
+    <div className="w-full relative bg-slate-900 rounded-2xl overflow-hidden shadow-sm border border-slate-200 mt-2 mb-8">
       {/* Map Container */}
       <div className="h-[400px] w-full">
         <Map
