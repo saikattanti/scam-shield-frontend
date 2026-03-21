@@ -2,28 +2,43 @@ import AuroraBackground from "@/components/AuroraBackground";
 import LiveTicker from "@/components/LiveTicker";
 import MapWrapper from "@/components/MapWrapper";
 import Link from "next/link";
-import { ShieldCheck, AlertOctagon, Globe, Zap, Lock, Users, Mic } from "lucide-react";
+import { ShieldCheck, AlertOctagon, Globe, Zap, Lock, Users, Mic, BarChart2, Clock, Search } from "lucide-react";
 
 const features = [
   {
     icon: Zap,
     title: "Instant AI Analysis",
-    desc: "Our hybrid engine (ML + rule-based) detects scams in under 2 seconds across 12 Indian languages.",
+    desc: "Hybrid ML + rule-based engine detects scams in under 2 seconds across 12 Indian languages with 98.7% accuracy.",
   },
   {
     icon: Lock,
     title: "Privacy by Design",
-    desc: "Your messages are never stored. We use one-way SHA-256 hashes — even we can't read your data.",
+    desc: "OCR runs in-browser. Only scam category & signals reach AI — never your raw message. SHA-256 hashed, no storage.",
   },
   {
     icon: Globe,
-    title: "12 Indian Languages",
-    desc: "Detects scams in English, Hindi, Bengali, Tamil, Telugu, Marathi, Gujarati, Kannada, Malayalam & more.",
+    title: "URL Deep Scanner",
+    desc: "Checks DNS resolution, WHOIS domain age, SSL status, shortlink unshortening, IP detection, and phishing patterns.",
   },
   {
     icon: Mic,
     title: "AI Call Scanning",
     desc: "Upload call recordings or WhatsApp voice notes. Our AI transcribes and detects deepfake verbal scams.",
+  },
+  {
+    icon: BarChart2,
+    title: "Explainable AI",
+    desc: "Visual risk score breakdown across 5 dimensions: urgency, spoofing, financial threat, link safety, and social engineering.",
+  },
+  {
+    icon: Clock,
+    title: "Fraud Timeline Builder",
+    desc: "3 questions → legal-ready incident summary you can paste directly into the cybercrime.gov.in complaint form.",
+  },
+  {
+    icon: Search,
+    title: "Evidence Analyzer",
+    desc: "Signal-by-signal breakdown table with risk weights — shows exactly why the AI flagged your message.",
   },
   {
     icon: Users,
@@ -36,7 +51,7 @@ const stats = [
   { value: "98.7%", label: "Detection Accuracy" },
   { value: "12", label: "Indian Languages" },
   { value: "<2s", label: "Analysis Speed" },
-  { value: "0", label: "Messages Stored" },
+  { value: "5", label: "Risk Dimensions" },
 ];
 
 export default function Home() {

@@ -48,7 +48,7 @@ export default function Footer() {
             </Link>
 
             <div className="text-[13px] text-slate-400 leading-relaxed">
-              <p>Copyright © {new Date().getFullYear()} ScamShield Labs</p>
+              <p>Copyright © {new Date().getFullYear()} Sentinel Labs</p>
               <p className="mt-0.5">All rights reserved</p>
             </div>
           </div>
