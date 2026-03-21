@@ -147,10 +147,12 @@ export default function InputForm() {
     setShowPrivacyPreview(false);
   };
 
+  const cleanTabLabel = (label: string) => label.replace(/^[^\p{L}\p{N}]+/u, '').trim();
+
   const tabs = [
-    { id: 'text', label: t('tab_text'), icon: MessageSquare },
-    { id: 'url', label: t('tab_url'), icon: LinkIcon },
-    { id: 'image', label: t('tab_image'), icon: ImageIcon },
+    { id: 'text', label: cleanTabLabel(t('tab_text')), icon: MessageSquare },
+    { id: 'url', label: cleanTabLabel(t('tab_url')), icon: LinkIcon },
+    { id: 'image', label: cleanTabLabel(t('tab_image')), icon: ImageIcon },
     { id: 'audio', label: t('input_tab_call'), icon: Mic },
   ];
 
