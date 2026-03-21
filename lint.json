@@ -1,0 +1,846 @@
+[
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\eslint.config.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\next.config.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\postcss.config.mjs",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\about\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\check\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\contact\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\help\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\layout.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\privacy\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\app\\terms\\page.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\Aurora.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\AuroraBackground.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\CategoryBadge.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 20,
+        "column": 11,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 20,
+        "endColumn": 14,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                310,
+                313
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                310,
+                313
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "\"use client\";\r\n\r\nimport { \r\n    CreditCard, \r\n    ShieldAlert, \r\n    Briefcase, \r\n    Gift, \r\n    FishIcon, \r\n    UserX, \r\n    Heart, \r\n    AlertTriangle,\r\n    CheckCircle \r\n} from 'lucide-react';\r\n\r\ninterface CategoryBadgeProps {\r\n    category: string;\r\n}\r\n\r\nconst categoryConfig: Record<string, {\r\n    icon: any;\r\n    color: string;\r\n    bgColor: string;\r\n    borderColor: string;\r\n    label: string;\r\n    description: string;\r\n}> = {\r\n    'UPI_Banking_Fraud': {\r\n        icon: CreditCard,\r\n        color: 'text-red-700',\r\n        bgColor: 'bg-red-50',\r\n        borderColor: 'border-red-300',\r\n        label: 'UPI/Banking Fraud',\r\n        description: 'Fraudulent banking or payment requests'\r\n    },\r\n    'KYC_Scam': {\r\n        icon: ShieldAlert,\r\n        color: 'text-orange-700',\r\n        bgColor: 'bg-orange-50',\r\n        borderColor: 'border-orange-300',\r\n        label: 'KYC Verification Scam',\r\n        description: 'Fake KYC update requests'\r\n    },\r\n    'Job_Scam': {\r\n        icon: Briefcase,\r\n        color: 'text-yellow-700',\r\n        bgColor: 'bg-yellow-50',\r\n        borderColor: 'border-yellow-300',\r\n        label: 'Job Scam',\r\n        description: 'Fraudulent job offers or work-from-home schemes'\r\n    },\r\n    'Lottery_Prize_Scam': {\r\n        icon: Gift,\r\n        color: 'text-pink-700',\r\n        bgColor: 'bg-pink-50',\r\n        borderColor: 'border-pink-300',\r\n        label: 'Lottery/Prize Scam',\r\n        description: 'Fake lottery wins or prize notifications'\r\n    },\r\n    'Phishing_Identity_Theft': {\r\n        icon: FishIcon,\r\n        color: 'text-purple-700',\r\n        bgColor: 'bg-purple-50',\r\n        borderColor: 'border-purple-300',\r\n        label: 'Phishing Attack',\r\n        description: 'Identity theft or credential harvesting attempt'\r\n    },\r\n    'Impersonation_Scam': {\r\n        icon: UserX,\r\n        color: 'text-rose-700',\r\n        bgColor: 'bg-rose-50',\r\n        borderColor: 'border-rose-300',\r\n        label: 'Impersonation Scam',\r\n        description: 'Fake authority or organization impersonation'\r\n    },\r\n    'Romance_Relationship_Scam': {\r\n        icon: Heart,\r\n        color: 'text-fuchsia-700',\r\n        bgColor: 'bg-fuchsia-50',\r\n        borderColor: 'border-fuchsia-300',\r\n        label: 'Romance Scam',\r\n        description: 'Relationship-based financial fraud'\r\n    },\r\n    'General_Suspicious_Activity': {\r\n        icon: AlertTriangle,\r\n        color: 'text-amber-700',\r\n        bgColor: 'bg-amber-50',\r\n        borderColor: 'border-amber-300',\r\n        label: 'Suspicious Activity',\r\n        description: 'General suspicious behavior detected'\r\n    },\r\n    'Legitimate': {\r\n        icon: CheckCircle,\r\n        color: 'text-green-700',\r\n        bgColor: 'bg-green-50',\r\n        borderColor: 'border-green-300',\r\n        label: 'Legitimate Message',\r\n        description: 'No threats detected'\r\n    }\r\n};\r\n\r\nexport default function CategoryBadge({ category }: CategoryBadgeProps) {\r\n    const config = categoryConfig[category] || categoryConfig['General_Suspicious_Activity'];\r\n    const Icon = config.icon;\r\n\r\n    return (\r\n        <div className={`${config.bgColor} ${config.borderColor} border-2 rounded-xl p-4 shadow-sm`}>\r\n            <div className=\"flex items-start gap-3\">\r\n                <div className={`${config.color} flex-shrink-0`}>\r\n                    <Icon className=\"w-7 h-7\" />\r\n                </div>\r\n                <div className=\"flex-1 min-w-0\">\r\n                    <h4 className={`${config.color} font-bold text-base mb-1`}>\r\n                        {config.label}\r\n                    </h4>\r\n                    <p className=\"text-sm text-slate-600 leading-relaxed font-medium\">\r\n                        {config.description}\r\n                    </p>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    );\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\EvidenceTable.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'category' is defined but never used.",
+        "line": 105,
+        "column": 50,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 105,
+        "endColumn": 58
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 1,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { AlertTriangle, ShieldAlert, Info } from 'lucide-react';\n\ninterface EvidenceRow {\n  signal: string;\n  type: string;\n  weight: 'Critical' | 'High' | 'Medium' | 'Low';\n  example?: string;\n}\n\ninterface Props {\n  signals: string[];\n  category: string;\n}\n\nfunction classifySignal(signal: string): EvidenceRow {\n  const s = signal.toLowerCase();\n\n  // Critical signals\n  if (s.includes('ip address') || s.includes('raw ip')) {\n    return { signal, type: 'Raw IP URL', weight: 'Critical', example: 'http://192.168.1.55/login' };\n  }\n  if (s.includes('typosquat') || s.includes('phishing domain')) {\n    return { signal, type: 'Fake Bank Domain', weight: 'Critical', example: 'sbi-kyc.xyz' };\n  }\n  if (s.includes('password form') || s.includes('credential')) {\n    return { signal, type: 'Credential Harvesting', weight: 'Critical', example: 'Login form on HTTP page' };\n  }\n  if (s.includes('otp') || s.includes('one time')) {\n    return { signal, type: 'OTP Request', weight: 'Critical', example: 'Asking for OTP = never legitimate' };\n  }\n  if (s.includes('aadhaar') || s.includes('aadhar') || s.includes('pan card')) {\n    return { signal, type: 'PII Request', weight: 'Critical', example: 'Aadhaar / PAN harvesting' };\n  }\n  if (s.includes('resolves to') && s.includes('phishing')) {\n    return { signal, type: 'Shortlink → Phishing', weight: 'Critical', example: 'bit.ly → fake-sbi.tk' };\n  }\n  if (s.includes('domain is only') || s.includes('days old') && s.includes('critical')) {\n    return { signal, type: 'Brand New Domain', weight: 'Critical', example: '< 15 days old' };\n  }\n  if (s.includes('insecure (http)')) {\n    return { signal, type: 'No SSL Encryption', weight: 'Critical', example: 'HTTP (not HTTPS)' };\n  }\n\n  // High signals\n  if (s.includes('urgency') || s.includes('urgent') || s.includes('pressure') || s.includes('immediately')) {\n    return { signal, type: 'Urgency Manipulation', weight: 'High', example: '\"Act now\", \"Expire tonight\"' };\n  }\n  if (s.includes('shortener') || s.includes('bit.ly') || s.includes('url shortener')) {\n    return { signal, type: 'Suspicious Shortlink', weight: 'High', example: 'bit.ly/xyz hides real URL' };\n  }\n  if (s.includes('banking context') || s.includes('upi') || s.includes('suspicious intent')) {\n    return { signal, type: 'Banking + Scam Intent', weight: 'High', example: 'UPI + urgency combination' };\n  }\n  if (s.includes('keyword')) {\n    return { signal, type: 'Scam Keywords', weight: 'High', example: '\"Free\", \"Win\", \"Claim now\"' };\n  }\n  if (s.includes('confidence') && (s.includes('high') || s.includes('%'))) {\n    return { signal, type: 'ML Detection', weight: 'High', example: 'AI model flagged' };\n  }\n  if (s.includes('ai model') || s.includes('distilbert')) {\n    return { signal, type: 'ML Detection', weight: 'High', example: 'AI model flagged' };\n  }\n  if (s.includes('password form') || s.includes('login form')) {\n    return { signal, type: 'Login Form', weight: 'High', example: 'Credential collection page' };\n  }\n  if (s.includes('title') && s.includes('bank')) {\n    return { signal, type: 'Title Mismatch', weight: 'High', example: 'Claims \"SBI\" but fake domain' };\n  }\n\n  // Medium signals\n  if (s.includes('new') || s.includes('recently registered') || s.includes('days ago')) {\n    return { signal, type: 'New Domain', weight: 'Medium', example: 'Registered < 90 days ago' };\n  }\n  if (s.includes('uppercase') || s.includes('caps')) {\n    return { signal, type: 'Abnormal Formatting', weight: 'Medium', example: 'ALL CAPS used for pressure' };\n  }\n  if (s.includes('suspicious tld') || s.includes('.tk') || s.includes('.xyz')) {\n    return { signal, type: 'Suspicious TLD', weight: 'Medium', example: '.tk .xyz .top domains' };\n  }\n  if (s.includes('whois') || s.includes('privacy-protected') || s.includes('hidden')) {\n    return { signal, type: 'Hidden Domain Owner', weight: 'Medium', example: 'WHOIS privacy protection' };\n  }\n\n  // Default / Low\n  return { signal, type: 'General Warning', weight: 'Low', example: 'Verify independently' };\n}\n\nconst weightIcon = (weight: string) => {\n  if (weight === 'Critical') return <ShieldAlert className=\"w-3.5 h-3.5 text-red-500\" />;\n  if (weight === 'High') return <AlertTriangle className=\"w-3.5 h-3.5 text-orange-500\" />;\n  return <Info className=\"w-3.5 h-3.5 text-amber-500\" />;\n};\n\nconst weightBadge = (weight: string) => {\n  switch (weight) {\n    case 'Critical': return 'bg-red-50 text-red-700 border-red-200 font-bold';\n    case 'High':     return 'bg-orange-50 text-orange-700 border-orange-200 font-semibold';\n    case 'Medium':   return 'bg-amber-50 text-amber-700 border-amber-200';\n    default:         return 'bg-slate-50 text-slate-500 border-slate-200';\n  }\n};\n\nexport default function EvidenceTable({ signals, category }: Props) {\n  if (!signals || signals.length === 0) return null;\n\n  const rows = signals.map(classifySignal);\n\n  // Sort: Critical first\n  const sortOrder = { Critical: 0, High: 1, Medium: 2, Low: 3 };\n  rows.sort((a, b) => sortOrder[a.weight] - sortOrder[b.weight]);\n\n  return (\n    <div className=\"w-full\">\n      <div className=\"flex items-center gap-2 mb-3\">\n        <p className=\"text-xs font-bold uppercase tracking-wider text-slate-500\">Explainable AI — Signal Breakdown</p>\n        <span className=\"text-[10px] bg-violet-50 text-violet-600 border border-violet-200 px-1.5 py-0.5 rounded font-bold\">\n          {rows.filter(r => r.weight === 'Critical' || r.weight === 'High').length} high-risk signals\n        </span>\n      </div>\n\n      <div className=\"overflow-x-auto rounded-xl border border-slate-200 shadow-sm\">\n        <table className=\"w-full text-xs\">\n          <thead>\n            <tr className=\"bg-slate-50 border-b border-slate-200\">\n              <th className=\"text-left px-3 py-2 text-slate-500 font-semibold uppercase tracking-wider\">Signal Type</th>\n              <th className=\"text-left px-3 py-2 text-slate-500 font-semibold uppercase tracking-wider hidden sm:table-cell\">Example</th>\n              <th className=\"text-center px-3 py-2 text-slate-500 font-semibold uppercase tracking-wider\">Risk</th>\n            </tr>\n          </thead>\n          <tbody className=\"divide-y divide-slate-100\">\n            {rows.map((row, i) => (\n              <tr key={i} className={`${row.weight === 'Critical' ? 'bg-red-50/40' : row.weight === 'High' ? 'bg-orange-50/30' : ''} hover:bg-slate-50 transition-colors`}>\n                <td className=\"px-3 py-2.5\">\n                  <div className=\"flex items-center gap-1.5\">\n                    {weightIcon(row.weight)}\n                    <span className=\"font-medium text-slate-700\">{row.type}</span>\n                  </div>\n                </td>\n                <td className=\"px-3 py-2.5 text-slate-500 hidden sm:table-cell\">\n                  {row.example && <span className=\"font-mono text-[10px] bg-slate-100 px-1.5 py-0.5 rounded\">{row.example}</span>}\n                </td>\n                <td className=\"px-3 py-2.5 text-center\">\n                  <span className={`inline-flex items-center px-2 py-0.5 rounded border text-[10px] ${weightBadge(row.weight)}`}>\n                    {row.weight}\n                  </span>\n                </td>\n              </tr>\n            ))}\n          </tbody>\n        </table>\n      </div>\n    </div>\n  );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\Footer.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\FraudTimeline.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Copy' is defined but never used.",
+        "line": 5,
+        "column": 27,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 31
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'CheckCheck' is defined but never used.",
+        "line": 5,
+        "column": 33,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 43
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Loader2' is defined but never used.",
+        "line": 5,
+        "column": 45,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 52
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'canProceed1' is assigned a value but never used.",
+        "line": 90,
+        "column": 9,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 90,
+        "endColumn": 20
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'canProceed2' is assigned a value but never used.",
+        "line": 91,
+        "column": 9,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 91,
+        "endColumn": 20
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 5,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\r\n\r\nimport { useState } from 'react';\r\nimport { motion, AnimatePresence } from 'framer-motion';\r\nimport { Clock, FileText, Copy, CheckCheck, Loader2, AlertOctagon, ChevronDown } from 'lucide-react';\r\nimport SlideArrowButton from '@/components/ui/slide-arrow-button';\r\n\r\nconst ACTION_OPTIONS = [\r\n  { id: 'otp', label: 'Shared OTP', icon: '🔑' },\r\n  { id: 'money', label: 'Transferred Money', icon: '💸' },\r\n  { id: 'link', label: 'Clicked a Link', icon: '🔗' },\r\n  { id: 'app', label: 'Installed an App', icon: '📱' },\r\n  { id: 'aadhar', label: 'Shared Aadhaar/PAN', icon: '🪪' },\r\n  { id: 'password', label: 'Gave Password', icon: '🔒' },\r\n  { id: 'call', label: 'Was on a Call', icon: '📞' },\r\n  { id: 'none', label: 'None — Just Received', icon: '📩' },\r\n];\r\n\r\nconst PLATFORM_OPTIONS = [\r\n  'UPI / PhonePe / Google Pay',\r\n  'WhatsApp',\r\n  'Email',\r\n  'SMS / Text Message',\r\n  'Phone Call',\r\n  'Job Portal (Naukri / LinkedIn)',\r\n  'Facebook / Instagram',\r\n  'OLX / Quikr',\r\n  'Telegram',\r\n  'Other',\r\n];\r\n\r\nexport default function FraudTimeline() {\r\n  const [isOpen, setIsOpen] = useState(false);\r\n  const [step, setStep] = useState(1);\r\n  const [when, setWhen] = useState('');\r\n  const [selectedActions, setSelectedActions] = useState<string[]>([]);\r\n  const [platform, setPlatform] = useState('');\r\n  const [situation, setSituation] = useState('');\r\n  const [amountLost, setAmountLost] = useState('');\r\n  const [loading, setLoading] = useState(false);\r\n  const [result, setResult] = useState<{ summary: string; urgency: string; hoursSince: number } | null>(null);\r\n  const [copied, setCopied] = useState(false);\r\n\r\n  const toggleAction = (id: string) => {\r\n    setSelectedActions(prev =>\r\n      prev.includes(id) ? prev.filter(a => a !== id) : [...prev, id]\r\n    );\r\n  };\r\n\r\n  const handleGenerate = async () => {\r\n    if (!when && !situation) return;\r\n    setLoading(true);\r\n    setResult(null);\r\n\r\n    try {\r\n      const response = await fetch('http://localhost:5000/api/timeline', {\r\n        method: 'POST',\r\n        headers: { 'Content-Type': 'application/json' },\r\n        body: JSON.stringify({\r\n          when,\r\n          actions: selectedActions,\r\n          platform,\r\n          situation,\r\n          amountLost,\r\n        }),\r\n      });\r\n      const data = await response.json();\r\n      if (data.error) throw new Error(data.error);\r\n      setResult(data);\r\n    } catch (err) {\r\n      console.error('Timeline generation failed:', err);\r\n    } finally {\r\n      setLoading(false);\r\n    }\r\n  };\r\n\r\n  const handleCopy = () => {\r\n    if (!result?.summary) return;\r\n    navigator.clipboard.writeText(result.summary);\r\n    setCopied(true);\r\n    setTimeout(() => setCopied(false), 2000);\r\n  };\r\n\r\n  const urgencyColor = (urgency: string) =>\r\n    urgency.includes('CRITICAL') ? 'bg-red-50 border-red-200 text-red-700' :\r\n    urgency.includes('URGENT') ? 'bg-orange-50 border-orange-200 text-orange-700' :\r\n    urgency.includes('IMPORTANT') ? 'bg-amber-50 border-amber-200 text-amber-700' :\r\n    'bg-slate-50 border-slate-200 text-slate-600';\r\n\r\n  const canProceed1 = !!when || !!situation;\r\n  const canProceed2 = selectedActions.length > 0;\r\n  const canGenerate = (!!when || !!situation);\r\n\r\n  return (\r\n    <div className=\"mt-8\">\r\n      {/* Trigger */}\r\n      {!isOpen && !result && (\r\n        <SlideArrowButton\r\n          onClick={() => setIsOpen(true)}\r\n          text=\"Build Timeline\"\r\n          primaryColor=\"#7c3aed\"\r\n          className=\"w-full border-violet-200\"\r\n        />\r\n      )}\r\n\r\n      <AnimatePresence>\r\n        {isOpen && !result && (\r\n          <motion.div\r\n            initial={{ opacity: 0, y: 8 }}\r\n            animate={{ opacity: 1, y: 0 }}\r\n            exit={{ opacity: 0, y: 8 }}\r\n            className=\"bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden\"\r\n          >\r\n            {/* Header */}\r\n            <div className=\"bg-gradient-to-r from-violet-600 to-indigo-600 p-5\">\r\n              <div className=\"flex items-center justify-between\">\r\n                <div className=\"flex items-center gap-3\">\r\n                  <div className=\"bg-white/20 rounded-xl p-2\">\r\n                    <Clock className=\"w-5 h-5 text-white\" />\r\n                  </div>\r\n                  <div>\r\n                    <h3 className=\"text-white font-bold text-base\">Fraud Incident Timeline Builder</h3>\r\n                    <p className=\"text-violet-200 text-xs\">Generates a legal-ready cybercrime complaint summary</p>\r\n                  </div>\r\n                </div>\r\n                <button onClick={() => setIsOpen(false)} className=\"text-white/60 hover:text-white text-sm\">✕</button>\r\n              </div>\r\n\r\n              {/* Progress */}\r\n              <div className=\"flex gap-2 mt-4\">\r\n                {[1, 2, 3].map((s) => (\r\n                  <div key={s} className={`h-1.5 flex-1 rounded-full transition-all ${step >= s ? 'bg-white' : 'bg-white/30'}`} />\r\n                ))}\r\n              </div>\r\n              <div className=\"flex justify-between mt-1\">\r\n                {['When?', 'What happened?', 'Details'].map((label, i) => (\r\n                  <span key={label} className={`text-[10px] font-semibold ${step >= i + 1 ? 'text-white' : 'text-white/40'}`}>\r\n                    {label}\r\n                  </span>\r\n                ))}\r\n              </div>\r\n            </div>\r\n\r\n            {/* Steps */}\r\n            <div className=\"p-6 space-y-5\">\r\n              {/* Step 1: When */}\r\n              <AnimatePresence mode=\"wait\">\r\n                {step === 1 && (\r\n                  <motion.div key=\"step1\" initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }}>\r\n                    <h4 className=\"text-sm font-bold text-slate-900 mb-3\">📅 When did this happen?</h4>\r\n                    <input\r\n                      type=\"datetime-local\"\r\n                      value={when}\r\n                      onChange={e => setWhen(e.target.value)}\r\n                      max={new Date().toISOString().slice(0, 16)}\r\n                      className=\"w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-400 transition-all bg-slate-50 hover:bg-white\"\r\n                    />\r\n                    <p className=\"text-xs text-slate-400 mt-2\">If unsure, enter an approximate time or skip to Step 3 and describe it</p>\r\n\r\n                    <div className=\"flex gap-3 mt-4\">\r\n                      <SlideArrowButton onClick={() => setIsOpen(false)} text=\"Cancel\" primaryColor=\"#64748b\" className=\"flex-1 border-slate-200 scale-90\" />\r\n                      <SlideArrowButton onClick={() => setStep(2)} text=\"Next\" primaryColor=\"#7c3aed\" className=\"flex-1 border-violet-200 scale-90\" />\r\n                    </div>\r\n                  </motion.div>\r\n                )}\r\n\r\n                {/* Step 2: What actions */}\r\n                {step === 2 && (\r\n                  <motion.div key=\"step2\" initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }}>\r\n                    <h4 className=\"text-sm font-bold text-slate-900 mb-3\">🎯 What did you do? <span className=\"text-slate-400 font-normal\">(select all that apply)</span></h4>\r\n                    <div className=\"grid grid-cols-2 gap-2\">\r\n                      {ACTION_OPTIONS.map((action) => (\r\n                        <button\r\n                          key={action.id}\r\n                          onClick={() => toggleAction(action.id)}\r\n                          className={`flex items-center gap-2 p-2.5 rounded-xl border text-sm text-left transition-all ${\r\n                            selectedActions.includes(action.id)\r\n                              ? 'bg-violet-50 border-violet-300 text-violet-800 font-semibold'\r\n                              : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50'\r\n                          }`}\r\n                        >\r\n                          <span className=\"text-base\">{action.icon}</span>\r\n                          <span className=\"text-xs\">{action.label}</span>\r\n                        </button>\r\n                      ))}\r\n                    </div>\r\n\r\n                    <div className=\"flex gap-3 mt-4\">\r\n                      <SlideArrowButton onClick={() => setStep(1)} text=\"Back\" primaryColor=\"#64748b\" className=\"flex-1 border-slate-200 scale-90\" />\r\n                      <SlideArrowButton onClick={() => setStep(3)} text=\"Next\" primaryColor=\"#7c3aed\" className=\"flex-1 border-violet-200 scale-90\" />\r\n                    </div>\r\n                  </motion.div>\r\n                )}\r\n\r\n                {/* Step 3: Platform & Details */}\r\n                {step === 3 && (\r\n                  <motion.div key=\"step3\" initial={{ opacity: 0, x: 15 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -15 }} className=\"space-y-4\">\r\n                    <h4 className=\"text-sm font-bold text-slate-900\">📱 Final details</h4>\r\n\r\n                    <div>\r\n                      <label className=\"block text-xs font-semibold text-slate-600 mb-1.5\">Which platform / channel?</label>\r\n                      <div className=\"relative\">\r\n                        <select\r\n                          value={platform}\r\n                          onChange={e => setPlatform(e.target.value)}\r\n                          className=\"w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-400 transition-all appearance-none bg-slate-50 hover:bg-white pr-10\"\r\n                        >\r\n                          <option value=\"\">Select platform…</option>\r\n                          {PLATFORM_OPTIONS.map(p => <option key={p} value={p}>{p}</option>)}\r\n                        </select>\r\n                        <ChevronDown className=\"absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400 pointer-events-none\" />\r\n                      </div>\r\n                    </div>\r\n\r\n                    <div>\r\n                      <label className=\"block text-xs font-semibold text-slate-600 mb-1.5\">Brief description <span className=\"text-slate-400 font-normal\">(optional but helps)</span></label>\r\n                      <textarea\r\n                        value={situation}\r\n                        onChange={e => setSituation(e.target.value)}\r\n                        rows={3}\r\n                        placeholder=\"e.g. Someone called from SBI, said my account is blocked, asked for OTP...\"\r\n                        className=\"w-full border border-slate-200 rounded-xl p-3 text-slate-900 text-sm resize-none focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-400 transition-all bg-slate-50 hover:bg-white\"\r\n                      />\r\n                    </div>\r\n\r\n                    <div>\r\n                      <label className=\"block text-xs font-semibold text-slate-600 mb-1.5\">Amount Lost ₹ <span className=\"text-slate-400 font-normal\">(optional)</span></label>\r\n                      <input\r\n                        type=\"number\"\r\n                        value={amountLost}\r\n                        onChange={e => setAmountLost(e.target.value)}\r\n                        placeholder=\"e.g. 12000\"\r\n                        className=\"w-full border border-slate-200 rounded-xl px-4 py-3 text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-violet-500/20 focus:border-violet-400 transition-all bg-slate-50 hover:bg-white\"\r\n                      />\r\n                    </div>\r\n\r\n                    <div className=\"flex gap-3 pt-1\">\r\n                      <SlideArrowButton onClick={() => setStep(2)} text=\"Back\" primaryColor=\"#64748b\" className=\"flex-1 border-slate-200 scale-90\" />\r\n                      <SlideArrowButton\r\n                        onClick={handleGenerate}\r\n                        disabled={!canGenerate || loading}\r\n                        text={loading ? 'Generating' : 'Generate Legal Summary'}\r\n                        primaryColor=\"#7c3aed\"\r\n                        className=\"flex-1 border-violet-200 scale-90 disabled:opacity-60 disabled:cursor-not-allowed\"\r\n                      />\r\n                    </div>\r\n                  </motion.div>\r\n                )}\r\n              </AnimatePresence>\r\n            </div>\r\n          </motion.div>\r\n        )}\r\n\r\n        {/* Result */}\r\n        {result && (\r\n          <motion.div\r\n            key=\"result\"\r\n            initial={{ opacity: 0, y: 8 }}\r\n            animate={{ opacity: 1, y: 0 }}\r\n            className=\"bg-white border border-slate-200 rounded-2xl shadow-sm overflow-hidden\"\r\n          >\r\n            {/* Header */}\r\n            <div className=\"bg-gradient-to-r from-violet-600 to-indigo-600 p-5 flex items-center justify-between\">\r\n              <div className=\"flex items-center gap-3\">\r\n                <div className=\"bg-white/20 rounded-xl p-2\">\r\n                  <FileText className=\"w-5 h-5 text-white\" />\r\n                </div>\r\n                <div>\r\n                  <h3 className=\"text-white font-bold text-base\">Legal Incident Summary</h3>\r\n                  <p className=\"text-violet-200 text-xs\">Ready to paste into cybercrime.gov.in</p>\r\n                </div>\r\n              </div>\r\n              <div className={`text-xs font-bold px-2 py-1 rounded border ${urgencyColor(result.urgency)}`}>\r\n                {result.urgency.split('—')[0].trim()}\r\n              </div>\r\n            </div>\r\n\r\n            <div className=\"p-6 space-y-4\">\r\n              {/* Urgency notice */}\r\n              <div className={`flex items-center gap-2 p-3 rounded-xl border ${urgencyColor(result.urgency)}`}>\r\n                <AlertOctagon className=\"w-4 h-4 flex-shrink-0\" />\r\n                <p className=\"text-xs font-semibold\">{result.urgency}</p>\r\n              </div>\r\n\r\n              {/* Summary text */}\r\n              <div className=\"bg-slate-50 border border-slate-200 rounded-xl p-4\">\r\n                <pre className=\"text-xs text-slate-700 whitespace-pre-wrap font-mono leading-relaxed\">\r\n                  {result.summary}\r\n                </pre>\r\n              </div>\r\n\r\n              {/* Actions */}\r\n              <div className=\"flex flex-col sm:flex-row gap-3\">\r\n                <SlideArrowButton onClick={handleCopy} text={copied ? 'Copied!' : 'Copy to Clipboard'} primaryColor=\"#7c3aed\" className=\"flex-1 border-violet-200\" />\r\n                <SlideArrowButton href=\"https://cybercrime.gov.in\" target=\"_blank\" rel=\"noopener noreferrer\" text=\"File at cybercrime.gov.in\" primaryColor=\"#dc2626\" className=\"flex-1 border-red-200\" />\r\n              </div>\r\n\r\n              <SlideArrowButton\r\n                onClick={() => { setResult(null); setIsOpen(false); setStep(1); setWhen(''); setSelectedActions([]); setPlatform(''); setSituation(''); setAmountLost(''); }}\r\n                text=\"Start Over\"\r\n                primaryColor=\"#64748b\"\r\n                className=\"w-full border-slate-200\"\r\n              />\r\n            </div>\r\n          </motion.div>\r\n        )}\r\n      </AnimatePresence>\r\n    </div>\r\n  );\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\GotScammedAssistant.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Loader2' is defined but never used.",
+        "line": 5,
+        "column": 24,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 31
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'CheckCircle2' is defined but never used.",
+        "line": 5,
+        "column": 41,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 53
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Phone' is defined but never used.",
+        "line": 5,
+        "column": 58,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 5,
+        "endColumn": 63
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'defaultOpen' is assigned a value but never used.",
+        "line": 24,
+        "column": 47,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 24,
+        "endColumn": 58
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'reset' is assigned a value but never used.",
+        "line": 70,
+        "column": 9,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 70,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "react/no-unescaped-entities",
+        "severity": 2,
+        "message": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.",
+        "line": 366,
+        "column": 106,
+        "nodeType": "JSXText",
+        "messageId": "unescapedEntityAlts",
+        "suggestions": [
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&quot;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the &quot;Golden Hour\" maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&quot;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&ldquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the &ldquo;Golden Hour\" maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&ldquo;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&#34;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the &#34;Golden Hour\" maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&#34;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&rdquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the &rdquo;Golden Hour\" maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&rdquo;`."
+          }
+        ]
+      },
+      {
+        "ruleId": "react/no-unescaped-entities",
+        "severity": 2,
+        "message": "`\"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.",
+        "line": 366,
+        "column": 118,
+        "nodeType": "JSXText",
+        "messageId": "unescapedEntityAlts",
+        "suggestions": [
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&quot;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour&quot; maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&quot;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&ldquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour&ldquo; maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&ldquo;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&#34;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour&#34; maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&#34;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&rdquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour&rdquo; maximizes fund recovery chances by freezing the fraudster's intermediate accounts."
+            },
+            "desc": "Replace with `&rdquo;`."
+          }
+        ]
+      },
+      {
+        "ruleId": "react/no-unescaped-entities",
+        "severity": 2,
+        "message": "`'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.",
+        "line": 366,
+        "column": 177,
+        "nodeType": "JSXText",
+        "messageId": "unescapedEntityAlts",
+        "suggestions": [
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&apos;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour\" maximizes fund recovery chances by freezing the fraudster&apos;s intermediate accounts."
+            },
+            "desc": "Replace with `&apos;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&lsquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour\" maximizes fund recovery chances by freezing the fraudster&lsquo;s intermediate accounts."
+            },
+            "desc": "Replace with `&lsquo;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&#39;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour\" maximizes fund recovery chances by freezing the fraudster&#39;s intermediate accounts."
+            },
+            "desc": "Replace with `&#39;`."
+          },
+          {
+            "messageId": "replaceWithAlt",
+            "data": {
+              "alt": "&rsquo;"
+            },
+            "fix": {
+              "range": [
+                19103,
+                19235
+              ],
+              "text": "Reporting to Cyber Crime within the \"Golden Hour\" maximizes fund recovery chances by freezing the fraudster&rsquo;s intermediate accounts."
+            },
+            "desc": "Replace with `&rsquo;`."
+          }
+        ]
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 3,
+    "fatalErrorCount": 0,
+    "warningCount": 5,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\r\n\r\nimport { useState } from 'react';\r\nimport { motion, AnimatePresence } from 'framer-motion';\r\nimport { AlertOctagon, Loader2, Upload, CheckCircle2, X, Phone, Search, ShieldCheck } from 'lucide-react';\r\nimport { useLanguage } from '@/context/LanguageContext';\r\nimport SlideArrowButton from '@/components/ui/slide-arrow-button';\r\nimport SmartActionPanel, { SmartActions } from './SmartActionPanel';\r\n\r\ninterface RecoveryResult {\r\n  scamType: string;\r\n  riskLevel: string;\r\n  detectedSignals: string[];\r\n  recoverySteps: string;\r\n  smartActions?: SmartActions | null;\r\n  firDraft?: string;\r\n  platform: string | null;\r\n}\r\n\r\ninterface Props {\r\n  defaultOpen?: boolean;\r\n}\r\n\r\nexport default function GotScammedAssistant({ defaultOpen = true }: Props) {\r\n  const { t } = useLanguage();\r\n  const [situation, setSituation] = useState('');\r\n  const [platform, setPlatform] = useState('');\r\n  const [amountLost, setAmountLost] = useState('');\r\n  const [file, setFile] = useState<File | null>(null);\r\n  const [loading, setLoading] = useState(false);\r\n  const [result, setResult] = useState<RecoveryResult | null>(null);\r\n  const [userCity, setUserCity] = useState<string | null>(null);\r\n\r\n  // Detect user city from IP on mount (client-side only, never stored)\r\n  useState(() => {\r\n    fetch('https://ipapi.co/json/')\r\n      .then(r => r.json())\r\n      .then(data => { if (data?.city) setUserCity(data.city); })\r\n      .catch(() => {});\r\n  });\r\n\r\n  const handleSubmit = async () => {\r\n    if (!situation && !file) return;\r\n    setLoading(true);\r\n    setResult(null);\r\n\r\n    try {\r\n      const formData = new FormData();\r\n      if (situation) formData.append('situation', situation);\r\n      if (platform) formData.append('platform', platform);\r\n      if (amountLost) formData.append('amountLost', amountLost);\r\n      if (file) formData.append('image', file);\r\n\r\n      const cityHeader: Record<string, string> = userCity ? { 'X-User-City': userCity } : {};\r\n\r\n      const response = await fetch('http://localhost:5000/api/analyze/assist', {\r\n        method: 'POST',\r\n        headers: cityHeader,\r\n        body: formData,\r\n      });\r\n      const data = await response.json();\r\n      setResult(data);\r\n    } catch (err) {\r\n      console.error('Assist request failed:', err);\r\n    } finally {\r\n      setLoading(false);\r\n    }\r\n  };\r\n\r\n  const reset = () => {\r\n    setResult(null);\r\n  };\r\n\r\n  const isIdle = !loading && !result;\r\n\r\n  return (\r\n    <div className={`flex flex-col lg:flex-row gap-6 w-full ${result ? 'items-start' : 'items-stretch'}`}>\r\n      \r\n      {/* ════ LEFT PANEL: THE INPUT WORKSPACE ════ */}\r\n      <div className={`w-full lg:w-[420px] shrink-0 ${result ? 'sticky top-24' : ''}`}>\r\n        \r\n        {/* Soft UI Input Card */}\r\n        <div className={`bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden p-6 pb-8 ${result ? '' : 'h-full'}`}>\r\n          \r\n          <div className=\"space-y-7 relative z-10\">\r\n            {/* Situation Description */}\r\n            <div>\r\n              <label className=\"block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5\">\r\n                {t('form_label_what_happened')}\r\n              </label>\r\n              \r\n              {/* Test Data Chips */}\r\n              <div className=\"flex flex-wrap gap-2 mb-4\">\r\n                <span className=\"text-[10px] font-bold text-slate-400 uppercase tracking-widest self-center mr-1\">{t('form_demo_case')}:</span>\r\n                {[\r\n                  { label: 'UPI/OLX Fraud', text: 'I sent ₹5,000 via GPay for a camera on OLX but the seller blocked me immediately.', platform: 'Google Pay', amount: '5000' },\r\n                  { label: 'Bank OTP', text: 'Someone called from SBI and asked for my OTP to update KYC. I gave it and ₹12,000 was debited.', platform: 'SBI', amount: '12000' },\r\n                  { label: 'Remote Access', text: 'I installed AnyDesk thinking it was for tech support, then my phone screen went black and I lost ₹2,000.', platform: 'PhonePe', amount: '2000' }\r\n                ].map((chip, i) => (\r\n                  <button\r\n                    key={i}\r\n                    onClick={() => {\r\n                      setSituation(chip.text);\r\n                      setPlatform(chip.platform);\r\n                      setAmountLost(chip.amount);\r\n                      setResult(null);\r\n                    }}\r\n                    className=\"text-[11px] font-bold bg-white hover:bg-slate-50 text-slate-700 py-1.5 px-3 rounded-md border border-slate-200 transition-colors\"\r\n                  >\r\n                    {chip.label}\r\n                  </button>\r\n                ))}\r\n              </div>\r\n\r\n              <textarea\r\n                value={situation}\r\n                onChange={e => setSituation(e.target.value)}\r\n                rows={5}\r\n                placeholder=\"e.g. I received a call saying my SBI account is blocked and they asked for my OTP. I gave it and ₹25,000 was transferred...\"\r\n                className=\"w-full bg-slate-50 border border-slate-100 rounded-[1.5rem] p-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-sm leading-relaxed\"\r\n              />\r\n            </div>\r\n\r\n            {/* Platform + Amount Row */}\r\n            <div className=\"grid grid-cols-1 md:grid-cols-2 gap-5\">\r\n              <div>\r\n                <label className=\"block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5\">\r\n                  {t('form_label_platform')}\r\n                </label>\r\n                <select\r\n                  value={platform}\r\n                  onChange={e => setPlatform(e.target.value)}\r\n                  className=\"w-full bg-slate-50 border border-slate-100 rounded-[1.25rem] px-4 py-3.5 text-slate-600 text-sm focus:outline-none focus:border-slate-200 focus:bg-white transition-all appearance-none cursor-pointer\"\r\n                >\r\n                  <option value=\"\">Unknown</option>\r\n                  <option value=\"PhonePe\">PhonePe</option>\r\n                  <option value=\"Google Pay\">Google Pay</option>\r\n                  <option value=\"Paytm\">Paytm</option>\r\n                  <option value=\"BHIM\">BHIM UPI</option>\r\n                  <option value=\"SBI\">SBI / Net Banking</option>\r\n                  <option value=\"WhatsApp\">WhatsApp</option>\r\n                  <option value=\"Facebook\">Facebook</option>\r\n                  <option value=\"Other\">Other</option>\r\n                </select>\r\n              </div>\r\n              <div>\r\n                <label className=\"block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5\">\r\n                  {t('form_label_amount')} (₹)\r\n                </label>\r\n                <input\r\n                  type=\"number\"\r\n                  value={amountLost}\r\n                  onChange={e => setAmountLost(e.target.value)}\r\n                  placeholder=\"e.g. 25000\"\r\n                  className=\"w-full bg-slate-50 border border-slate-100 rounded-[1.25rem] px-4 py-3.5 text-sm text-slate-600 focus:outline-none focus:border-slate-200 focus:bg-white transition-all\"\r\n                />\r\n              </div>\r\n            </div>\r\n\r\n            {/* Screenshot Upload */}\r\n            <div>\r\n              <label className=\"block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5\">\r\n                {t('form_label_evidence')}\r\n              </label>\r\n              <div\r\n                onClick={() => document.getElementById('assist-file')?.click()}\r\n                className={`w-full h-[140px] border-2 border-dashed rounded-[1.5rem] p-6 flex flex-col items-center justify-center cursor-pointer transition-all ${\r\n                  file ? 'border-slate-200 bg-white' : 'border-slate-200/50 hover:bg-slate-100/50 bg-slate-50'\r\n                }`}\r\n              >\r\n                {!file ? (\r\n                  <>\r\n                    <div className=\"w-10 h-10 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-2\">\r\n                       <Upload className=\"w-5 h-5 text-slate-400\" />\r\n                    </div>\r\n                    <span className=\"text-sm font-bold text-slate-500\">\r\n                      {t('form_upload_screenshot')}\r\n                    </span>\r\n                  </>\r\n                ) : (\r\n                  <div className=\"flex flex-col items-center gap-2 w-full\">\r\n                    <div className=\"w-10 h-10 bg-slate-900 rounded-xl shadow-sm flex items-center justify-center\">\r\n                       <Upload className=\"w-5 h-5 text-white\" />\r\n                    </div>\r\n                    <span className=\"text-sm font-bold text-slate-600 truncate max-w-[200px]\">\r\n                      {file.name}\r\n                    </span>\r\n                    <button\r\n                      onClick={e => { e.stopPropagation(); setFile(null); }}\r\n                      className=\"text-xs font-bold text-red-500 bg-red-50 px-3 py-1 rounded-full flex gap-1 items-center\"\r\n                    >\r\n                      <X className=\"w-3 h-3\" /> {t('form_remove_selection')}\r\n                    </button>\r\n                  </div>\r\n                )}\r\n                \r\n                <input\r\n                  id=\"assist-file\"\r\n                  type=\"file\"\r\n                  className=\"hidden\"\r\n                  accept=\"image/*\"\r\n                  onChange={e => setFile(e.target.files?.[0] || null)}\r\n                />\r\n              </div>\r\n            </div>\r\n\r\n            {/* Submit */}\r\n            <div className=\"flex justify-center pt-2\">\r\n              <SlideArrowButton\r\n                onClick={handleSubmit}\r\n                disabled={loading || (!situation && !file)}\r\n                text={loading ? t('form_generating_recovery') : t('form_generate_recovery')}\r\n                primaryColor=\"#dc2626\"\r\n                className=\"w-full max-w-85 border-red-200 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto sm:max-w-none\"\r\n              />\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      {/* ════ RIGHT PANEL: THE RESULTS WORKSPACE ════ */}\r\n      <div className=\"flex-1 min-w-0\">\r\n        <AnimatePresence mode=\"wait\">\r\n          \r\n          {/* STATE: IDLE */}\r\n          {isIdle && (\r\n            <motion.div\r\n              key=\"idle\"\r\n              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, position: 'absolute' }}\r\n              className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-10 flex flex-col items-center justify-center text-center w-full h-full\"\r\n            >\r\n              <div className=\"w-24 h-24 bg-red-50 rounded-[2rem] flex items-center justify-center mb-8\">\r\n                <Search className=\"w-10 h-10 text-red-300\" />\r\n              </div>\r\n              <h3 className=\"text-3xl font-black text-slate-800 mb-3 tracking-tight\">{t('form_need_help_now')}</h3>\r\n              <p className=\"text-sm text-slate-500 max-w-[400px] mb-10 leading-relaxed\">\r\n                Provide the details of your incident on the left. The Gemini AI engine will analyze exactly what type of scam it was, and instantly generate a 1-2-3 recovery protocol including official helpline numbers, app-specific blocking instructions, and legal reporting links.\r\n              </p>\r\n            </motion.div>\r\n          )}\r\n\r\n          {/* STATE: ANALYZING */}\r\n          {loading && (\r\n            <motion.div\r\n              key=\"analyzing\"\r\n              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}\r\n              className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-12 h-full flex flex-col items-center justify-center text-center w-full relative\"\r\n            >\r\n              <div className=\"relative z-10\">\r\n                <div className=\"relative w-24 h-24 mb-10 mx-auto\">\r\n                  <div className=\"absolute inset-0 rounded-full border-[6px] border-slate-100\" />\r\n                  <div className=\"absolute inset-0 rounded-full border-[6px] border-t-red-500 animate-spin\" />\r\n                  <div className=\"absolute inset-0 flex items-center justify-center\">\r\n                    <AlertOctagon className=\"w-8 h-8 text-red-500 animate-pulse\" />\r\n                  </div>\r\n                </div>\r\n\r\n                <h3 className=\"text-2xl font-black text-slate-800 mb-3\">{t('form_analyzing_recovery')}</h3>\r\n                <p className=\"text-sm text-slate-500 mb-10 max-w-sm mx-auto\">Gemini is pulling the exact reporting pipelines for your specific scam vector...</p>\r\n              </div>\r\n            </motion.div>\r\n          )}\r\n\r\n          {/* STATE: RESULTS */}\r\n          {result && !loading && (\r\n             <motion.div\r\n             key=\"results\"\r\n             initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}\r\n             className=\"w-full space-y-6\"\r\n           >\r\n             {/* HERO RESULT CARD */}\r\n             <div className={`bg-slate-50 rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden`}>\r\n               <div className={`bg-red-500 px-10 py-8 text-white relative flex flex-col md:flex-row md:items-center justify-between gap-6 overflow-hidden`}>\r\n                 <div className=\"absolute -left-10 top-0 opacity-10 blur-xl\">\r\n                   <AlertOctagon className=\"w-[300px] h-[300px] translate-y-10\" />\r\n                 </div>\r\n\r\n                 <div className=\"flex items-center gap-6 z-10 w-full\">\r\n                   <div className=\"w-20 h-20 bg-white/20 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center shadow-inner border border-white/30 shrink-0\">\r\n                     <ShieldCheck className=\"w-8 h-8 text-white\" />\r\n                   </div>\r\n                   <div className=\"flex-1\">\r\n                     <div className=\"flex items-center justify-between w-full\">\r\n                        <h2 className=\"text-4xl font-black uppercase tracking-tighter shadow-sm mb-1 leading-none\">\r\n                          {t('form_recovery_plan')}\r\n                        </h2>\r\n                        <span className=\"bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-sm self-start mt-2\">\r\n                          Extracted by Gemini\r\n                        </span>\r\n                     </div>\r\n                     <div className=\"flex items-center gap-2 text-white font-medium text-sm pt-2 tracking-wide\">\r\n                        <span className=\"opacity-80\">{t('form_scam_classification')}:</span> <span className=\"font-bold\">{result.scamType?.replace(/_/g, ' ')}</span>\r\n                        {result.platform && <span className=\"opacity-80 ml-2\">via</span>} \r\n                        {result.platform && <span className=\"font-bold\">{result.platform}</span>}\r\n                     </div>\r\n                   </div>\r\n                 </div>\r\n               </div>\r\n\r\n               <div className=\"p-8 pb-10 bg-white\">\r\n                 <div className=\"flex items-center justify-between mb-4 mt-2\">\r\n                    <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400\">{t('form_step_guidance')}</p>\r\n                 </div>\r\n                 \r\n                 <div className=\"space-y-4\">\r\n                   {result.recoverySteps.split(/\\|\\|\\|/).filter((s: string) => s.trim()).slice(0, 5).map((step: string, idx: number) => {\r\n                     const parts = step.trim().split('\\n').filter((p: string) => p.trim());\r\n                     const title = parts[0].replace(/^(\\d+\\.\\s*|🚨\\s*|📞\\s*|🧾\\s*|🛑\\s*|🧑‍⚖️\\s*|⚠️\\s*|\\*\\*)+|(\\*\\*)+$/g, '').trim();\r\n                     const subItems = parts.slice(1);\r\n                     return (\r\n                       <div key={idx} className=\"flex gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 items-start\">\r\n                         <span className=\"flex-shrink-0 w-8 h-8 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm mt-0.5\">\r\n                           {idx + 1}\r\n                         </span>\r\n                         <div className=\"flex-1\">\r\n                           <p className=\"text-[15px] text-slate-900 font-bold\">\r\n                             {title}\r\n                           </p>\r\n                           {subItems.length > 0 && (\r\n                             <ul className=\"space-y-1.5 mt-2 flex flex-col\">\r\n                               {subItems.map((item, i) => {\r\n                                 const cleanItem = item.replace(/^[-*•]\\s*/, '').trim();\r\n                                 if (!cleanItem) return null;\r\n                                 return (\r\n                                   <li key={i} className=\"text-[14px] text-slate-600 font-medium leading-relaxed flex items-start gap-2\">\r\n                                     <span className=\"text-slate-300 mt-[2px] text-lg leading-none\">•</span> \r\n                                     <span>{cleanItem}</span>\r\n                                   </li>\r\n                                 );\r\n                               })}\r\n                             </ul>\r\n                           )}\r\n                         </div>\r\n                       </div>\r\n                     );\r\n                   })}\r\n                 </div>\r\n\r\n                 {result.smartActions && (\r\n                   <div className=\"mt-8 mb-2\">\r\n                     <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1\">Emergency Action Centre</p>\r\n                     <SmartActionPanel actions={result.smartActions} />\r\n                   </div>\r\n                 )}\r\n\r\n                 {result.firDraft && (\r\n                   <div className=\"mt-8 mb-2\">\r\n                     <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1\">Pre-filled Police Complaint (Copy Code)</p>\r\n                     <div className=\"bg-slate-50 border border-slate-200 rounded-2xl p-6 relative group\">\r\n                       <button\r\n                         onClick={() => navigator.clipboard.writeText(result.firDraft || '')}\r\n                         className=\"absolute top-4 right-4 bg-white border border-slate-200 text-slate-500 hover:text-slate-800 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity\"\r\n                       >\r\n                         Copy to Clipboard\r\n                       </button>\r\n                       <pre className=\"text-[13px] text-slate-700 font-mono whitespace-pre-wrap leading-relaxed\">\r\n                         {result.firDraft}\r\n                       </pre>\r\n                     </div>\r\n                   </div>\r\n                 )}\r\n\r\n                 <div className=\"mt-8 p-6 bg-red-50 border border-red-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm\">\r\n                   <div>\r\n                     <p className=\"text-red-900 font-bold text-lg mb-1\">{t('form_official_timeline')}</p>\r\n                     <p className=\"text-sm text-red-700 font-medium\">Reporting to Cyber Crime within the \"Golden Hour\" maximizes fund recovery chances by freezing the fraudster's intermediate accounts.</p>\r\n                   </div>\r\n                   <SlideArrowButton href=\"tel:1930\" text=\"Call 1930\" primaryColor=\"#dc2626\" className=\"border-red-200\" />\r\n                 </div>\r\n\r\n               </div>\r\n             </div>\r\n           </motion.div>\r\n          )}\r\n\r\n        </AnimatePresence>\r\n      </div>\r\n\r\n    </div>\r\n  );\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\Hero.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\InputForm.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Loader2' is defined but never used.",
+        "line": 7,
+        "column": 3,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 7,
+        "endColumn": 10
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'AlertTriangle' is defined but never used.",
+        "line": 7,
+        "column": 47,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 7,
+        "endColumn": 60
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Calendar' is defined but never used.",
+        "line": 8,
+        "column": 34,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 8,
+        "endColumn": 42
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'Shield' is defined but never used.",
+        "line": 8,
+        "column": 44,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 8,
+        "endColumn": 50
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'ExternalLink' is defined but never used.",
+        "line": 8,
+        "column": 52,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 8,
+        "endColumn": 64
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'ArrowRight' is defined but never used.",
+        "line": 9,
+        "column": 40,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 9,
+        "endColumn": 50
+      },
+      {
+        "ruleId": "@typescript-eslint/no-explicit-any",
+        "severity": 2,
+        "message": "Unexpected any. Specify a different type.",
+        "line": 134,
+        "column": 21,
+        "nodeType": "TSAnyKeyword",
+        "messageId": "unexpectedAny",
+        "endLine": 134,
+        "endColumn": 24,
+        "suggestions": [
+          {
+            "messageId": "suggestUnknown",
+            "fix": {
+              "range": [
+                5882,
+                5885
+              ],
+              "text": "unknown"
+            },
+            "desc": "Use `unknown` instead, this will force you to explicitly, and safely assert the type is correct."
+          },
+          {
+            "messageId": "suggestNever",
+            "fix": {
+              "range": [
+                5882,
+                5885
+              ],
+              "text": "never"
+            },
+            "desc": "Use `never` instead, this is useful when instantiating generic type parameters that you don't need to know the type of."
+          }
+        ]
+      },
+      {
+        "ruleId": "@typescript-eslint/no-unused-vars",
+        "severity": 1,
+        "message": "'reset' is assigned a value but never used.",
+        "line": 141,
+        "column": 9,
+        "nodeType": null,
+        "messageId": "unusedVar",
+        "endLine": 141,
+        "endColumn": 14
+      },
+      {
+        "ruleId": "@next/next/no-img-element",
+        "severity": 1,
+        "message": "Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element",
+        "line": 231,
+        "column": 27,
+        "nodeType": "JSXOpeningElement",
+        "endLine": 231,
+        "endColumn": 146
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 8,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\r\n\r\nimport { useState } from 'react';\r\nimport { motion, AnimatePresence } from 'framer-motion';\r\nimport {\r\n  MessageSquare, Link as LinkIcon, Image as ImageIcon,\r\n  Loader2, Volume2, ShieldAlert, ShieldCheck, AlertTriangle,\r\n  Mic, Lock, Eye, EyeOff, Globe, Calendar, Shield, ExternalLink,\r\n  Zap, Sparkles, Search, CheckCircle2, ArrowRight, BarChart2, Clock\r\n} from 'lucide-react';\r\nimport RiskBreakdown from './RiskBreakdown';\r\nimport EvidenceTable from './EvidenceTable';\r\nimport FraudTimeline from './FraudTimeline';\r\nimport SmartActionPanel, { SmartActions } from './SmartActionPanel';\r\nimport { useLanguage } from '@/context/LanguageContext';\r\nimport SlideArrowButton from '@/components/ui/slide-arrow-button';\r\n\r\ntype InputType = 'text' | 'url' | 'image' | 'audio';\r\n\r\ntype UrlMetadata = {\r\n  title?: string | null;\r\n  creationDate?: string | null;\r\n  ageInDays?: number | null;\r\n  hasPasswordForm?: boolean;\r\n  isShortlink?: boolean;\r\n  resolvedUrl?: string | null;\r\n  dnsResolved?: boolean;\r\n  suspiciousTLD?: boolean;\r\n  matchesPhishingPattern?: boolean;\r\n  isIPUrl?: boolean;\r\n  protocol?: string;\r\n};\r\n\r\ntype AnalysisResult = {\r\n  score: number;\r\n  risk: string;\r\n  category: string;\r\n  recommendation: string;\r\n  signals: string[];\r\n  language?: string;\r\n  mlPowered?: boolean;\r\n  aiConfidence?: number;\r\n  analysisId?: string;\r\n  aiSteps?: string | null;\r\n  transcribedText?: string;\r\n  urlMetadata?: UrlMetadata;\r\n  smartActions?: SmartActions | null;\r\n} | null;\r\n\r\nconst TEST_CHIPS = [\r\n  { label: 'SMS Phish', tab: 'text', text: 'URGENT! Your SBI account is blocked due to KYC. Click here immediately: http://bit.ly/sbi-verify-now to avoid suspension.' },\r\n  { label: 'Lottery', tab: 'text', text: 'Congratulations! You have won Rs. 50,000. Pay Rs. 500 registration fee to claim now.' },\r\n  { label: 'Malware Link', tab: 'url', text: 'http://192.168.1.55/login/bank' },\r\n];\r\n\r\nconst RISK_COLORS = {\r\n  Critical: { bg: 'bg-red-500', text: 'text-red-600', light: 'bg-red-50', border: 'border-red-200', badge: 'bg-red-100 text-red-700' },\r\n  High:     { bg: 'bg-orange-500', text: 'text-orange-600', light: 'bg-orange-50', border: 'border-orange-200', badge: 'bg-orange-100 text-orange-700' },\r\n  Medium:   { bg: 'bg-amber-400', text: 'text-amber-600', light: 'bg-amber-50', border: 'border-amber-200', badge: 'bg-amber-100 text-amber-700' },\r\n  Low:      { bg: 'bg-emerald-500', text: 'text-emerald-600', light: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100 text-emerald-700' },\r\n};\r\n\r\nexport default function InputForm() {\r\n  const { t } = useLanguage();\r\n  const [activeTab, setActiveTab] = useState<InputType>('text');\r\n  const [inputText, setInputText] = useState('');\r\n  const [selectedFile, setSelectedFile] = useState<File | null>(null);\r\n  const [previewUrl, setPreviewUrl] = useState<string | null>(null);\r\n  const [analysisResult, setAnalysisResult] = useState<AnalysisResult>(null);\r\n  const [isAnalyzing, setIsAnalyzing] = useState(false);\r\n  const [showPrivacyPreview, setShowPrivacyPreview] = useState(false);\r\n  const [userCity, setUserCity] = useState<string | null>(null);\r\n\r\n  // Detect user city from IP on mount (client-side only, never stored)\r\n  useState(() => {\r\n    fetch('https://ipapi.co/json/')\r\n      .then(r => r.json())\r\n      .then(data => { if (data?.city) setUserCity(data.city); })\r\n      .catch(() => {});\r\n  });\r\n\r\n  const speakResult = () => {\r\n    if (!analysisResult) return;\r\n    const synth = window.speechSynthesis;\r\n    const utterance = new SpeechSynthesisUtterance(analysisResult.recommendation);\r\n    utterance.lang = analysisResult.language === 'hindi' ? 'hi-IN' : 'en-US';\r\n    synth.speak(utterance);\r\n  };\r\n\r\n  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {\r\n    const file = e.target.files?.[0];\r\n    if (file) {\r\n      setSelectedFile(file);\r\n      const reader = new FileReader();\r\n      reader.onloadend = () => setPreviewUrl(reader.result as string);\r\n      reader.readAsDataURL(file);\r\n    }\r\n  };\r\n\r\n  const getPrivacyPreview = () => {\r\n    if (activeTab === 'image') return `{\\n  \"payload\": \"[IMAGE]\"\\n  \"note\": \"OCR processed locally\"\\n}`;\r\n    if (activeTab === 'audio') return `{\\n  \"payload\": \"[AUDIO]\"\\n  \"note\": \"Transcribed & purged\"\\n}`;\r\n    const sanitized = inputText\r\n      .replace(/\\d{10,12}/g, '[PHONE REDACTED]')\r\n      .replace(/\\b\\d{12}\\b/g, '[AADHAAR REDACTED]')\r\n      .replace(/otp[:\\s]+\\d+/gi, 'OTP: [REDACTED]');\r\n    return `{\\n  \"type\": \"${activeTab}\",\\n  \"content\": \"${sanitized.substring(0, 50)}...\"\\n}`;\r\n  };\r\n\r\n  const handleAnalyze = async () => {\r\n    if (['text', 'url'].includes(activeTab) && !inputText.trim()) return;\r\n    if (['image', 'audio'].includes(activeTab) && !selectedFile) return;\r\n    setIsAnalyzing(true);\r\n    setAnalysisResult(null);\r\n    const cityHeader: Record<string, string> = userCity ? { 'X-User-City': userCity } : {};\r\n    try {\r\n      let response;\r\n      if (activeTab === 'image' && selectedFile) {\r\n        const fd = new FormData(); fd.append('image', selectedFile);\r\n        response = await fetch('http://127.0.0.1:5000/api/analyze/image', { method: 'POST', body: fd, headers: cityHeader });\r\n      } else if (activeTab === 'audio' && selectedFile) {\r\n        const fd = new FormData(); fd.append('audio', selectedFile);\r\n        response = await fetch('http://127.0.0.1:5000/api/analyze/audio', { method: 'POST', body: fd, headers: cityHeader });\r\n      } else {\r\n        response = await fetch('http://127.0.0.1:5000/api/analyze', {\r\n          method: 'POST',\r\n          headers: { 'Content-Type': 'application/json', ...cityHeader },\r\n          body: JSON.stringify({ type: activeTab, content: inputText }),\r\n        });\r\n      }\r\n      const data = await response.json();\r\n      if (data.error) throw new Error(data.error);\r\n      setAnalysisResult(data);\r\n    } catch (error: any) {\r\n      alert(error.message || 'Analysis failed. Ensure all services are running.');\r\n    } finally {\r\n      setIsAnalyzing(false);\r\n    }\r\n  };\r\n\r\n  const reset = () => {\r\n    setAnalysisResult(null);\r\n    setInputText('');\r\n    setSelectedFile(null);\r\n    setPreviewUrl(null);\r\n    setShowPrivacyPreview(false);\r\n  };\r\n\r\n  const tabs = [\r\n    { id: 'text', label: t('tab_text'), icon: MessageSquare },\r\n    { id: 'url', label: t('tab_url'), icon: LinkIcon },\r\n    { id: 'image', label: t('tab_image'), icon: ImageIcon },\r\n    { id: 'audio', label: t('input_tab_call'), icon: Mic },\r\n  ];\r\n\r\n  const risk = analysisResult?.risk as keyof typeof RISK_COLORS | undefined;\r\n  const colors = risk ? RISK_COLORS[risk] ?? RISK_COLORS.Low : null;\r\n  const isHighRisk = risk === 'Critical' || risk === 'High';\r\n\r\n  return (\r\n    <div className=\"flex flex-col lg:flex-row gap-6 items-start w-full\">\r\n      \r\n      {/* ════ LEFT PANEL: THE INPUT WORKSPACE ════ */}\r\n      <div className=\"w-full lg:w-[420px] shrink-0 sticky top-24\">\r\n        \r\n        {/* Soft UI Input Card */}\r\n        <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden p-6 pb-8\">\r\n          \r\n          {/* Tile-based Tab Navigation */}\r\n          <div className=\"flex gap-2 mb-6\">\r\n            {tabs.map((tab) => (\r\n              <button\r\n                key={tab.id}\r\n                onClick={() => { setActiveTab(tab.id as InputType); setAnalysisResult(null); }}\r\n                className={`flex-1 flex flex-col items-center gap-1.5 py-4 rounded-2xl text-xs font-bold transition-all border ${\r\n                  activeTab === tab.id\r\n                    ? 'border-slate-200 bg-white shadow-sm text-slate-900'\r\n                    : 'border-transparent text-slate-400 bg-transparent hover:text-slate-600 hover:bg-slate-50'\r\n                }`}\r\n              >\r\n                <tab.icon className={`w-5 h-5 ${activeTab === tab.id ? 'text-blue-600' : 'text-slate-300'}`} />\r\n                {tab.label}\r\n              </button>\r\n            ))}\r\n          </div>\r\n\r\n          <div className=\"space-y-6\">\r\n            {/* Dynamic Input Areas */}\r\n            <AnimatePresence mode=\"popLayout\">\r\n              <motion.div\r\n                key={activeTab}\r\n                initial={{ opacity: 0 }}\r\n                animate={{ opacity: 1 }}\r\n                exit={{ opacity: 0 }}\r\n                transition={{ duration: 0.15 }}\r\n              >\r\n                {activeTab === 'text' && (\r\n                  <textarea\r\n                    className=\"w-full h-[180px] bg-slate-50 border border-slate-100 rounded-[1.5rem] p-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-sm leading-relaxed\"\r\n                    placeholder={t('input_text_placeholder')}\r\n                    value={inputText}\r\n                    onChange={(e) => setInputText(e.target.value)}\r\n                  />\r\n                )}\r\n\r\n                {activeTab === 'url' && (\r\n                  <div className=\"space-y-3\">\r\n                    <div className=\"relative\">\r\n                      <Globe className=\"absolute left-5 top-1/2 -translate-y-1/2 w-5 h-5 text-slate-300\" />\r\n                      <input\r\n                        type=\"text\"\r\n                        className=\"w-full h-16 bg-slate-50 border border-slate-100 rounded-[1.5rem] pl-14 pr-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all text-sm\"\r\n                        placeholder={t('input_url_placeholder')}\r\n                        value={inputText}\r\n                        onChange={(e) => setInputText(e.target.value)}\r\n                      />\r\n                    </div>\r\n                  </div>\r\n                )}\r\n\r\n                {activeTab === 'image' && (\r\n                  <div className=\"relative group\">\r\n                    <div\r\n                      onClick={() => document.getElementById('file-upload')?.click()}\r\n                      className={`w-full h-[180px] border-2 border-dashed rounded-[1.5rem] flex flex-col items-center justify-center cursor-pointer transition-all ${\r\n                        previewUrl ? 'border-slate-200 bg-white' : 'border-slate-200/50 bg-slate-50 hover:bg-slate-100/50'\r\n                      }`}\r\n                    >\r\n                      {previewUrl ? (\r\n                        <>\r\n                          <img src={previewUrl} alt=\"Preview\" className=\"w-full h-full object-cover p-1 opacity-50 absolute rounded-[1.25rem]\" />\r\n                          <div className=\"bg-white/90 px-4 py-2 rounded-xl text-slate-800 font-bold z-10 shadow-sm border border-slate-200 text-sm\">\r\n                            Image attached. Change?\r\n                          </div>\r\n                        </>\r\n                      ) : (\r\n                        <>\r\n                          <div className=\"w-10 h-10 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-2\">\r\n                            <ImageIcon className=\"w-5 h-5 text-slate-400\" />\r\n                          </div>\r\n                          <p className=\"text-sm font-bold text-slate-500\">{t('upload_instruction')}</p>\r\n                        </>\r\n                      )}\r\n                      <input id=\"file-upload\" type=\"file\" className=\"hidden\" accept=\"image/*\" onChange={handleFileChange} />\r\n                    </div>\r\n                  </div>\r\n                )}\r\n\r\n                {activeTab === 'audio' && (\r\n                  <div className=\"relative group\">\r\n                    <div\r\n                      onClick={() => document.getElementById('audio-upload')?.click()}\r\n                      className={`w-full h-[180px] border-2 border-dashed rounded-[1.5rem] flex flex-col items-center justify-center cursor-pointer transition-all ${\r\n                        selectedFile ? 'border-slate-200 bg-white' : 'border-slate-200/50 bg-slate-50 hover:bg-slate-100/50'\r\n                      }`}\r\n                    >\r\n                      {selectedFile ? (\r\n                        <div className=\"text-center z-10\">\r\n                          <p className=\"text-sm font-bold text-slate-600 truncate max-w-[200px] mb-1\">{selectedFile.name}</p>\r\n                          <p className=\"text-xs text-slate-400 font-medium\">Ready for transcription</p>\r\n                        </div>\r\n                      ) : (\r\n                        <>\r\n                          <div className=\"w-10 h-10 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-2\">\r\n                            <Mic className=\"w-5 h-5 text-slate-400\" />\r\n                          </div>\r\n                          <p className=\"text-sm font-bold text-slate-500\">{t('input_tab_call')}</p>\r\n                        </>\r\n                      )}\r\n                      <input id=\"audio-upload\" type=\"file\" className=\"hidden\" accept=\"audio/*\" onChange={(e) => { const f = e.target.files?.[0]; if (f) setSelectedFile(f); }} />\r\n                    </div>\r\n                  </div>\r\n                )}\r\n              </motion.div>\r\n            </AnimatePresence>\r\n\r\n            {/* Test Chips (aligned to the image mockup style) */}\r\n            <div className=\"flex flex-wrap items-center gap-2 pt-1 border-b border-slate-100 pb-5\">\r\n              <span className=\"text-[9px] font-black text-slate-400 uppercase tracking-widest mr-1\">TESTS:</span>\r\n              {TEST_CHIPS.map((chip) => (\r\n                <button\r\n                  key={chip.label}\r\n                  onClick={() => { setActiveTab(chip.tab as InputType); setInputText(chip.text); setAnalysisResult(null); }}\r\n                  className=\"text-[10px] font-bold bg-white hover:bg-slate-50 text-slate-700 py-1.5 px-3 rounded-md border border-slate-200 transition-colors\"\r\n                >\r\n                  {chip.label}\r\n                </button>\r\n              ))}\r\n            </div>\r\n\r\n            {/* Ghost Light-Grey Action Button */}\r\n            <div className=\"flex justify-center pt-1\">\r\n              <SlideArrowButton\r\n                onClick={handleAnalyze}\r\n                disabled={isAnalyzing || (['text', 'url'].includes(activeTab) ? !inputText.trim() : !selectedFile)}\r\n                text={isAnalyzing ? t('input_analyzing') : t('input_run_check')}\r\n                primaryColor=\"#334155\"\r\n                className=\"w-full max-w-80 border-slate-200 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto sm:max-w-none\"\r\n              />\r\n            </div>\r\n\r\n            {/* Privacy Section */}\r\n            <div className=\"flex flex-col items-center gap-2 pt-2\">\r\n              <div className=\"flex items-center gap-2 text-[11px] text-slate-500 font-medium\">\r\n                <Lock className=\"w-3.5 h-3.5\" />\r\n                <span>Zero-knowledge processing.</span>\r\n                <button onClick={() => setShowPrivacyPreview(!showPrivacyPreview)} className=\"text-blue-600 hover:underline font-bold ml-1\">\r\n                  Preview payload \r\n                </button>\r\n                {showPrivacyPreview ? <EyeOff className=\"w-3.5 h-3.5 text-blue-600\"/> : <Eye className=\"w-3.5 h-3.5 text-blue-600\"/>}\r\n              </div>\r\n\r\n              <AnimatePresence>\r\n                {showPrivacyPreview && (\r\n                  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className=\"w-full overflow-hidden mt-2\">\r\n                    <pre className=\"text-[10px] font-mono bg-slate-900 text-emerald-400 p-4 rounded-xl whitespace-pre-wrap leading-relaxed w-full\">\r\n                      {getPrivacyPreview()}\r\n                    </pre>\r\n                  </motion.div>\r\n                )}\r\n              </AnimatePresence>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n      {/* ════ RIGHT PANEL: THE RESULTS WORKSPACE ════ */}\r\n      <div className=\"flex-1 min-w-0\">\r\n        <AnimatePresence mode=\"wait\">\r\n          \r\n          {/* STATE: IDLE */}\r\n          {!isAnalyzing && !analysisResult && (\r\n            <motion.div\r\n              key=\"idle\"\r\n              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0, position: 'absolute' }}\r\n              className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-10 flex flex-col items-center justify-center text-center w-full min-h-[600px]\"\r\n            >\r\n              <div className=\"w-24 h-24 bg-slate-50 rounded-[2rem] flex items-center justify-center mb-8\">\r\n                <Search className=\"w-10 h-10 text-slate-300\" />\r\n              </div>\r\n              <h3 className=\"text-3xl font-black text-slate-800 mb-3 tracking-tight\">{t('input_payload_waiting')}</h3>\r\n              <p className=\"text-sm text-slate-500 max-w-[400px] mb-12 leading-relaxed\">\r\n                {t('input_payload_hint')}\r\n              </p>\r\n              \r\n              {/* Very minimal cards as specified in the mockup */}\r\n              <div className=\"grid grid-cols-2 gap-4 w-full max-w-xl text-left\">\r\n                {[\r\n                  { icon: Zap, title: \"Hybrid ML Engine\", desc: \"Sub-second NLP detection\" },\r\n                  { icon: BarChart2, title: \"Risk Score Matrix\", desc: \"Detailed 5-factor breakdown\" },\r\n                  { icon: Sparkles, title: \"Gemini Recovery\", desc: \"Context-aware action steps\" },\r\n                  { icon: Clock, title: \"Legal Timeline\", desc: \"1-click cybercrime reports\" },\r\n                ].map(feature => (\r\n                  <div key={feature.title} className=\"p-5 rounded-[1.25rem] bg-slate-50 border border-slate-100 flex items-center gap-4\">\r\n                    <feature.icon className=\"w-5 h-5 text-blue-500 shrink-0\" />\r\n                    <div>\r\n                      <p className=\"text-xs font-bold text-slate-800\">{feature.title}</p>\r\n                      <p className=\"text-[10px] text-slate-500 mt-1\">{feature.desc}</p>\r\n                    </div>\r\n                  </div>\r\n                ))}\r\n              </div>\r\n            </motion.div>\r\n          )}\r\n\r\n          {/* STATE: ANALYZING */}\r\n          {isAnalyzing && (\r\n            <motion.div\r\n              key=\"analyzing\"\r\n              initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}\r\n              className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-12 min-h-[600px] flex flex-col items-center justify-center text-center w-full relative\"\r\n            >\r\n              <div className=\"relative z-10\">\r\n                <div className=\"relative w-24 h-24 mb-10 mx-auto\">\r\n                  <div className=\"absolute inset-0 rounded-full border-[6px] border-slate-100\" />\r\n                  <div className=\"absolute inset-0 rounded-full border-[6px] border-t-blue-500 animate-spin\" />\r\n                  <div className=\"absolute inset-0 flex items-center justify-center\">\r\n                    <ShieldCheck className=\"w-8 h-8 text-blue-500 animate-pulse\" />\r\n                  </div>\r\n                </div>\r\n\r\n                <h3 className=\"text-2xl font-black text-slate-800 mb-3\">Analyzing Threat Vectors</h3>\r\n                <p className=\"text-sm text-slate-500 mb-10 max-w-sm mx-auto\">Deep checking against multi-modal models and live threat intelligence feeds...</p>\r\n              </div>\r\n            </motion.div>\r\n          )}\r\n\r\n          {/* STATE: RESULTS */}\r\n          {analysisResult && colors && !isAnalyzing && (\r\n            <motion.div\r\n              key=\"results\"\r\n              initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }}\r\n              className=\"w-full space-y-6\"\r\n            >\r\n              {/* HERO RESULT CARD */}\r\n              <div className={`bg-slate-50 rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden`}>\r\n                <div className={`${colors.bg} px-10 py-8 text-white relative flex flex-col md:flex-row md:items-center justify-between gap-6 overflow-hidden`}>\r\n                  <div className=\"absolute -left-10 top-0 opacity-10 blur-xl\">\r\n                    <ShieldAlert className=\"w-[300px] h-[300px] translate-y-10\" />\r\n                  </div>\r\n\r\n                  <div className=\"flex items-center gap-6 z-10 w-full\">\r\n                    <div className=\"w-20 h-20 bg-white/20 backdrop-blur-md rounded-[1.5rem] flex items-center justify-center shadow-inner border border-white/30 shrink-0\">\r\n                      {isHighRisk ? <ShieldAlert className=\"w-8 h-8 text-white\" /> : <CheckCircle2 className=\"w-8 h-8 text-white\" />}\r\n                    </div>\r\n                    <div className=\"flex-1\">\r\n                      <div className=\"flex items-center justify-between w-full\">\r\n                         <h2 className=\"text-4xl font-black uppercase tracking-tighter shadow-sm mb-1 leading-none\">\r\n                           {isHighRisk ? 'DANGER — SCAM' : analysisResult.risk === 'Low' ? 'SAFE' : 'CAUTION'}\r\n                         </h2>\r\n                         {isHighRisk && (\r\n                           <span className=\"bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-sm self-start mt-2\">\r\n                             Critical Risk\r\n                           </span>\r\n                         )}\r\n                      </div>\r\n                      <p className=\"text-white font-medium text-sm pt-2 tracking-wide\">\r\n                        {analysisResult.category?.replace(/_/g, ' ')} · AI Confidence Score: <strong>{analysisResult.score}/100</strong>\r\n                      </p>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n\r\n                <div className=\"p-8 pb-10 bg-white\">\r\n                  <div className=\"flex items-center justify-between mb-4 mt-2\">\r\n                     <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400\">Primary Directive</p>\r\n                     <button onClick={speakResult} className=\"text-[11px] font-bold text-white bg-red-500 hover:bg-red-600 px-4 py-1.5 rounded-full flex gap-1.5 items-center transition-colors shadow-sm\">\r\n                      <Volume2 className=\"w-3.5 h-3.5\" /> {t('input_listen_ai')}\r\n                     </button>\r\n                  </div>\r\n                  <div className={`p-6 rounded-[1.25rem] border ${colors.border} ${colors.light}`}>\r\n                    <p className=\"text-base md:text-lg text-slate-800 leading-relaxed font-semibold\">{analysisResult.recommendation}</p>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n\r\n              {/* GRID RESULTS */}\r\n              <div className=\"grid grid-cols-1 md:grid-cols-2 gap-6\">\r\n                \r\n                {/* Visual Risk Breakdown */}\r\n                <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-8 col-span-1 md:col-span-2\">\r\n                   <RiskBreakdown signals={analysisResult.signals} score={analysisResult.score} risk={analysisResult.risk} category={analysisResult.category} />\r\n                </div>\r\n\r\n                 {/* AI Guidance Recovery */}\r\n                 {analysisResult.aiSteps && (\r\n                  <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-8 col-span-1 md:col-span-2\">\r\n                    <h3 className=\"text-lg font-bold text-slate-900 mb-6 flex items-center gap-3\">\r\n                      <Sparkles className=\"w-6 h-6 text-blue-600\" /> Immediate Rapid-Response Action Steps\r\n                    </h3>\r\n                    <div className=\"space-y-4\">\r\n                      {analysisResult.aiSteps.split(/\\|\\|\\|/).filter((s: string) => s.trim()).slice(0, 5).map((step: string, idx: number) => {\r\n                        const parts = step.trim().split('\\n').filter(p => p.trim());\r\n                        const title = parts[0].replace(/^(\\d+\\.\\s*|🚨\\s*|📞\\s*|🧾\\s*|🛑\\s*|🧑‍⚖️\\s*|⚠️\\s*|\\*\\*)+|(\\*\\*)+$/g, '').trim();\r\n                        const subItems = parts.slice(1);\r\n                        return (\r\n                          <div key={idx} className=\"flex gap-4\">\r\n                             <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.bg} text-white text-xs font-black shadow-sm mt-0.5`}>{idx + 1}</div>\r\n                             <div className=\"flex-1\">\r\n                               <p className=\"text-[15px] text-slate-800 font-bold\">{title}</p>\r\n                               {subItems.length > 0 && (\r\n                                 <ul className=\"space-y-1 mt-1.5 pl-0.5\">\r\n                                   {subItems.map((item, i) => {\r\n                                     const cleanItem = item.replace(/^[-*•]\\s*/, '').trim();\r\n                                     if (!cleanItem) return null;\r\n                                     return (\r\n                                       <li key={i} className=\"text-[13px] text-slate-600 font-medium leading-relaxed flex items-start gap-2\">\r\n                                         <span className=\"text-slate-300 mt-[1px] font-bold\">•</span>\r\n                                         <span>{cleanItem}</span>\r\n                                       </li>\r\n                                     );\r\n                                   })}\r\n                                 </ul>\r\n                               )}\r\n                             </div>\r\n                          </div>\r\n                        );\r\n                      })}\r\n                    </div>\r\n                  </div>\r\n                )}\r\n\r\n                {/* Evidence Table */}\r\n                {analysisResult.signals?.length > 0 && (\r\n                  <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-8 col-span-1 md:col-span-2\">\r\n                    <EvidenceTable signals={analysisResult.signals} category={analysisResult.category} />\r\n                  </div>\r\n                )}\r\n\r\n                {/* URL Scanner Results */}\r\n                {analysisResult.urlMetadata && (\r\n                  <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm p-8 col-span-1 md:col-span-2\">\r\n                    <h3 className=\"text-sm font-bold text-slate-800 mb-6 flex items-center gap-2\">\r\n                      <Globe className=\"w-5 h-5 text-blue-500\" /> Deep Scanner Report\r\n                    </h3>\r\n                    <div className=\"grid grid-cols-2 lg:grid-cols-4 gap-4\">\r\n                       {analysisResult.urlMetadata.isShortlink && (\r\n                        <div className=\"col-span-2 lg:col-span-4 p-5 bg-orange-50 border border-orange-200 rounded-[1.25rem]\">\r\n                           <p className=\"text-xs font-bold text-orange-800 mb-2 flex items-center gap-2\"><LinkIcon className=\"w-4 h-4\" /> URL Shortener Unmasked:</p>\r\n                           <p className=\"text-sm font-mono text-orange-600 bg-white/60 px-4 py-2 rounded-xl border border-orange-100/50 break-all\">\r\n                             {analysisResult.urlMetadata.resolvedUrl}\r\n                           </p>\r\n                        </div>\r\n                      )}\r\n                    </div>\r\n                  </div>\r\n                )}\r\n\r\n              </div>\r\n\r\n              {/* Emergency Action Centre */}\r\n              {analysisResult.smartActions && (\r\n                <div className=\"pt-2\">\r\n                  <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1\">Emergency Action Centre</p>\r\n                  <SmartActionPanel actions={analysisResult.smartActions} />\r\n                </div>\r\n              )}\r\n\r\n              <div className=\"pt-6\">\r\n                <FraudTimeline />\r\n              </div>\r\n            </motion.div>\r\n          )}\r\n\r\n        </AnimatePresence>\r\n      </div>\r\n\r\n    </div>\r\n  );\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\LiveTicker.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\MapWrapper.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\NavBar.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\RiskBreakdown.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\RiskGauge.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\SmartActionPanel.tsx",
+    "messages": [
+      {
+        "ruleId": "@typescript-eslint/no-unused-expressions",
+        "severity": 1,
+        "message": "Expected an assignment or function call and instead saw an expression.",
+        "line": 114,
+        "column": 7,
+        "nodeType": "ExpressionStatement",
+        "messageId": "unusedExpression",
+        "endLine": 114,
+        "endColumn": 50
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 1,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\n\nimport { useState } from 'react';\nimport { motion, AnimatePresence } from 'framer-motion';\nimport {\n  ExternalLink, Phone, Mail, Globe,\n  ShieldAlert, MapPin, Smartphone, ChevronDown, ChevronUp,\n  CheckSquare, Square, Clock, Building2, AlertTriangle, Copy, Check\n} from 'lucide-react';\n\n// ─── Types ────────────────────────────────────────────────────────────────────\n\ntype GovPortalLink = {\n  label: string;\n  description: string;\n  url: string;\n  tag: string;\n  icon: string;\n  color: string;\n};\n\ntype LocalPolice = {\n  city: string;\n  state: string;\n  unit: string;\n  phones: string[];\n  email: string | null;\n  website: string;\n  address: string;\n  isDetected: boolean;\n};\n\ntype PlatformSupport = {\n  name: string;\n  logo: string;\n  phone: string;\n  supportUrl: string;\n  escalationUrl: string;\n  inAppPath: string;\n};\n\ntype Urgency = {\n  level: 'critical' | 'high';\n  message: string;\n  subtext: string;\n  callNow: string;\n};\n\nexport type SmartActions = {\n  govPortal: GovPortalLink[];\n  localPolice: LocalPolice;\n  platformSupport: PlatformSupport[];\n  evidenceChecklist: string[];\n  urgency: Urgency | null;\n};\n\n// ─── Color map ────────────────────────────────────────────────────────────────\n\nconst TAG_COLORS: Record<string, string> = {\n  red:    'bg-red-50 border-red-200 text-red-700',\n  pink:   'bg-pink-50 border-pink-200 text-pink-700',\n  purple: 'bg-purple-50 border-purple-200 text-purple-700',\n  blue:   'bg-blue-50 border-blue-200 text-blue-700',\n  slate:  'bg-slate-50 border-slate-200 text-slate-700',\n};\n\nconst TAG_BADGE: Record<string, string> = {\n  red:    'bg-red-100 text-red-700',\n  pink:   'bg-pink-100 text-pink-700',\n  purple: 'bg-purple-100 text-purple-700',\n  blue:   'bg-blue-100 text-blue-700',\n  slate:  'bg-slate-100 text-slate-600',\n};\n\n// ─── Sub-components ───────────────────────────────────────────────────────────\n\nfunction CopyButton({ text }: { text: string }) {\n  const [copied, setCopied] = useState(false);\n  const handleCopy = () => {\n    navigator.clipboard.writeText(text);\n    setCopied(true);\n    setTimeout(() => setCopied(false), 2000);\n  };\n  return (\n    <button onClick={handleCopy} className=\"ml-2 text-slate-400 hover:text-slate-700 transition-colors\" title=\"Copy\">\n      {copied ? <Check className=\"w-3.5 h-3.5 text-emerald-500\" /> : <Copy className=\"w-3.5 h-3.5\" />}\n    </button>\n  );\n}\n\nfunction SectionHeader({ icon, title, subtitle }: { icon: React.ReactNode; title: string; subtitle?: string }) {\n  return (\n    <div className=\"flex items-start gap-3 mb-5\">\n      <div className=\"w-9 h-9 rounded-xl bg-slate-100 flex items-center justify-center shrink-0\">\n        {icon}\n      </div>\n      <div>\n        <h4 className=\"text-sm font-black text-slate-800 tracking-tight\">{title}</h4>\n        {subtitle && <p className=\"text-[11px] text-slate-500 mt-0.5\">{subtitle}</p>}\n      </div>\n    </div>\n  );\n}\n\n// ─── Main Component ───────────────────────────────────────────────────────────\n\nexport default function SmartActionPanel({ actions }: { actions: SmartActions }) {\n  const [checkedItems, setCheckedItems] = useState<Set<number>>(new Set());\n  const [evidenceOpen, setEvidenceOpen] = useState(false);\n\n  const toggleCheck = (i: number) => {\n    setCheckedItems(prev => {\n      const next = new Set(prev);\n      next.has(i) ? next.delete(i) : next.add(i);\n      return next;\n    });\n  };\n\n  return (\n    <motion.div\n      initial={{ opacity: 0, y: 16 }}\n      animate={{ opacity: 1, y: 0 }}\n      transition={{ delay: 0.15 }}\n      className=\"space-y-5\"\n    >\n\n      {/* ══ URGENCY BANNER ══════════════════════════════════════════════════ */}\n      {actions.urgency && (\n        <div className={`rounded-[1.5rem] border p-6 flex items-start gap-4 ${\n          actions.urgency.level === 'critical'\n            ? 'bg-red-50 border-red-200'\n            : 'bg-amber-50 border-amber-200'\n        }`}>\n          <div className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${\n            actions.urgency.level === 'critical' ? 'bg-red-100' : 'bg-amber-100'\n          }`}>\n            <Clock className={`w-5 h-5 ${actions.urgency.level === 'critical' ? 'text-red-600' : 'text-amber-600'}`} />\n          </div>\n          <div className=\"flex-1\">\n            <p className={`text-sm font-black ${actions.urgency.level === 'critical' ? 'text-red-800' : 'text-amber-800'}`}>\n              ⏰ {actions.urgency.message}\n            </p>\n            <p className={`text-xs mt-1 ${actions.urgency.level === 'critical' ? 'text-red-600' : 'text-amber-600'}`}>\n              {actions.urgency.subtext}\n            </p>\n          </div>\n          <a\n            href={`tel:${actions.urgency.callNow}`}\n            className={`shrink-0 flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-black text-white ${\n              actions.urgency.level === 'critical' ? 'bg-red-600 hover:bg-red-700' : 'bg-amber-600 hover:bg-amber-700'\n            } transition-colors`}\n          >\n            <Phone className=\"w-3.5 h-3.5\" />\n            Call {actions.urgency.callNow}\n          </a>\n        </div>\n      )}\n\n      {/* ══ GOV PORTAL LINKS ══════════════════════════════════════════════ */}\n      {actions.govPortal.length > 0 && (\n        <div className=\"bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm\">\n          <SectionHeader\n            icon={<ShieldAlert className=\"w-4.5 h-4.5 text-blue-600\" />}\n            title=\"Official Complaint Portal — cybercrime.gov.in\"\n            subtitle=\"Ministry of Home Affairs, Govt. of India. File your complaint directly on the correct page.\"\n          />\n          <div className=\"space-y-3\">\n            {actions.govPortal.map((link, i) => (\n              <a\n                key={i}\n                href={link.url}\n                target=\"_blank\"\n                rel=\"noopener noreferrer\"\n                className={`group flex items-center gap-4 p-4 rounded-[1.25rem] border transition-all hover:shadow-sm ${TAG_COLORS[link.color] || TAG_COLORS.blue}`}\n              >\n                <div className=\"flex-1 min-w-0\">\n                  <div className=\"flex items-center gap-2 mb-1\">\n                    <span className={`text-[9px] font-black uppercase tracking-widest px-2 py-0.5 rounded-full ${TAG_BADGE[link.color] || TAG_BADGE.blue}`}>\n                      {link.tag}\n                    </span>\n                  </div>\n                  <p className=\"text-sm font-bold text-slate-800\">{link.label}</p>\n                  <p className=\"text-[11px] text-slate-500 mt-0.5 leading-relaxed\">{link.description}</p>\n                </div>\n                <ExternalLink className=\"w-4 h-4 shrink-0 text-slate-400 group-hover:text-slate-700 transition-colors\" />\n              </a>\n            ))}\n          </div>\n        </div>\n      )}\n\n      {/* ══ LOCAL CYBER POLICE ════════════════════════════════════════════ */}\n      <div className=\"bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm\">\n        <SectionHeader\n          icon={<Building2 className=\"w-4.5 h-4.5 text-emerald-600\" />}\n          title={actions.localPolice.isDetected\n            ? `Local Cyber Crime HQ — ${actions.localPolice.city}`\n            : 'National Cyber Crime Helpline'}\n          subtitle={actions.localPolice.isDetected\n            ? `Detected your location: ${actions.localPolice.city}, ${actions.localPolice.state}`\n            : 'Your city was not detected. Using national helpline.'}\n        />\n\n        <div className=\"bg-slate-50 rounded-[1.25rem] border border-slate-100 p-5 space-y-3\">\n          <div>\n            <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1\">Unit</p>\n            <p className=\"text-sm font-bold text-slate-800\">{actions.localPolice.unit}</p>\n          </div>\n\n          <div>\n            <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-2\">Phone Numbers</p>\n            <div className=\"flex flex-col gap-1.5\">\n              {actions.localPolice.phones.map((phone, i) => (\n                <div key={i} className=\"flex items-center gap-2\">\n                  <a\n                    href={`tel:${phone.replace(/[^0-9+]/g, '')}`}\n                    className=\"flex items-center gap-2 bg-white border border-slate-200 px-3 py-1.5 rounded-lg hover:bg-emerald-50 hover:border-emerald-200 transition-colors\"\n                  >\n                    <Phone className=\"w-3.5 h-3.5 text-emerald-600\" />\n                    <span className=\"text-sm font-bold text-slate-800\">{phone}</span>\n                  </a>\n                  <CopyButton text={phone} />\n                </div>\n              ))}\n            </div>\n          </div>\n\n          {actions.localPolice.email && (\n            <div>\n              <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1.5\">Email</p>\n              <div className=\"flex items-center gap-2\">\n                <a\n                  href={`mailto:${actions.localPolice.email}`}\n                  className=\"flex items-center gap-2 text-sm text-blue-600 font-bold hover:underline\"\n                >\n                  <Mail className=\"w-3.5 h-3.5\" />\n                  {actions.localPolice.email}\n                </a>\n                <CopyButton text={actions.localPolice.email} />\n              </div>\n            </div>\n          )}\n\n          <div>\n            <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1\">Address</p>\n            <div className=\"flex items-start gap-2\">\n              <MapPin className=\"w-3.5 h-3.5 text-slate-400 mt-0.5 shrink-0\" />\n              <p className=\"text-xs text-slate-600 leading-relaxed\">{actions.localPolice.address}</p>\n            </div>\n          </div>\n\n          <a\n            href={actions.localPolice.website}\n            target=\"_blank\"\n            rel=\"noopener noreferrer\"\n            className=\"flex items-center gap-2 text-xs text-blue-600 font-bold hover:underline\"\n          >\n            <Globe className=\"w-3.5 h-3.5\" />\n            {actions.localPolice.website.replace('https://', '')}\n          </a>\n        </div>\n      </div>\n\n      {/* ══ PLATFORM / APP SUPPORT ════════════════════════════════════════ */}\n      {actions.platformSupport.length > 0 && (\n        <div className=\"bg-white rounded-[2rem] border border-slate-200 p-8 shadow-sm\">\n          <SectionHeader\n            icon={<Smartphone className=\"w-4.5 h-4.5 text-violet-600\" />}\n            title=\"In-App Fraud Support\"\n            subtitle=\"These platforms were detected in the scam. Contact them to dispute and flag the transaction.\"\n          />\n          <div className=\"space-y-4\">\n            {actions.platformSupport.map((platform, i) => (\n              <div key={i} className=\"bg-slate-50 border border-slate-100 rounded-[1.25rem] p-5\">\n                <div className=\"flex items-center gap-2 mb-3\">\n                  <span className=\"text-xl\">{platform.logo}</span>\n                  <p className=\"text-sm font-black text-slate-800\">{platform.name}</p>\n                </div>\n\n                <div className=\"space-y-2.5\">\n                  {/* In-App Instructions */}\n                  <div className=\"bg-white rounded-xl border border-slate-200 px-4 py-3\">\n                    <p className=\"text-[10px] font-black uppercase tracking-widest text-slate-400 mb-1.5\">In-App Path</p>\n                    <p className=\"text-xs text-slate-700 leading-relaxed font-medium\">{platform.inAppPath}</p>\n                  </div>\n\n                  {/* Action Buttons */}\n                  <div className=\"flex flex-wrap gap-2\">\n                    <a\n                      href={`tel:${platform.phone.replace(/[^0-9]/g, '')}`}\n                      className=\"flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors\"\n                    >\n                      <Phone className=\"w-3.5 h-3.5\" />\n                      Call {platform.phone}\n                    </a>\n                    <a\n                      href={platform.supportUrl}\n                      target=\"_blank\"\n                      rel=\"noopener noreferrer\"\n                      className=\"flex items-center gap-1.5 bg-white border border-slate-200 hover:bg-slate-50 text-slate-700 text-xs font-bold px-3 py-2 rounded-lg transition-colors\"\n                    >\n                      <Globe className=\"w-3.5 h-3.5\" />\n                      Support Portal\n                    </a>\n                    <a\n                      href={platform.escalationUrl}\n                      target=\"_blank\"\n                      rel=\"noopener noreferrer\"\n                      className=\"flex items-center gap-1.5 bg-white border border-amber-200 hover:bg-amber-50 text-amber-700 text-xs font-bold px-3 py-2 rounded-lg transition-colors\"\n                    >\n                      <AlertTriangle className=\"w-3.5 h-3.5\" />\n                      Escalate Grievance\n                    </a>\n                  </div>\n                </div>\n              </div>\n            ))}\n          </div>\n        </div>\n      )}\n\n      {/* ══ EVIDENCE CHECKLIST ════════════════════════════════════════════ */}\n      <div className=\"bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden\">\n        <button\n          onClick={() => setEvidenceOpen(!evidenceOpen)}\n          className=\"w-full flex items-center justify-between p-8 text-left hover:bg-slate-50 transition-colors\"\n        >\n          <SectionHeader\n            icon={<CheckSquare className=\"w-4.5 h-4.5 text-amber-600\" />}\n            title=\"Evidence Checklist\"\n            subtitle=\"Collect these before filing. Tap to expand.\"\n          />\n          {evidenceOpen ? (\n            <ChevronUp className=\"w-4 h-4 text-slate-400 shrink-0\" />\n          ) : (\n            <ChevronDown className=\"w-4 h-4 text-slate-400 shrink-0\" />\n          )}\n        </button>\n\n        <AnimatePresence>\n          {evidenceOpen && (\n            <motion.div\n              initial={{ height: 0, opacity: 0 }}\n              animate={{ height: 'auto', opacity: 1 }}\n              exit={{ height: 0, opacity: 0 }}\n              transition={{ duration: 0.2 }}\n              className=\"overflow-hidden\"\n            >\n              <div className=\"px-8 pb-8\">\n                <div className=\"space-y-2\">\n                  {actions.evidenceChecklist.map((item, i) => (\n                    <button\n                      key={i}\n                      onClick={() => toggleCheck(i)}\n                      className={`w-full flex items-start gap-3 p-3 rounded-xl text-left transition-all ${\n                        checkedItems.has(i)\n                          ? 'bg-emerald-50 border border-emerald-200'\n                          : 'bg-slate-50 border border-slate-100 hover:border-slate-200'\n                      }`}\n                    >\n                      <div className=\"mt-0.5 shrink-0\">\n                        {checkedItems.has(i)\n                          ? <CheckSquare className=\"w-4 h-4 text-emerald-600\" />\n                          : <Square className=\"w-4 h-4 text-slate-300\" />\n                        }\n                      </div>\n                      <p className={`text-xs leading-relaxed font-medium ${checkedItems.has(i) ? 'text-emerald-800 line-through' : 'text-slate-700'}`}>\n                        {item}\n                      </p>\n                    </button>\n                  ))}\n                </div>\n                <p className=\"text-[10px] text-slate-400 mt-4 text-center\">\n                  {checkedItems.size}/{actions.evidenceChecklist.length} items collected\n                </p>\n              </div>\n            </motion.div>\n          )}\n        </AnimatePresence>\n      </div>\n\n    </motion.div>\n  );\n}\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\ThreatMap.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\components\\ui\\slide-arrow-button.tsx",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\context\\LanguageContext.tsx",
+    "messages": [
+      {
+        "ruleId": "react-hooks/set-state-in-effect",
+        "severity": 2,
+        "message": "Error: Calling setState synchronously within an effect can trigger cascading renders\n\nEffects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:\n* Update external systems with the latest state from React.\n* Subscribe for updates from some external system, calling setState in a callback function when external state changes.\n\nCalling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).\n\nD:\\Projects\\scam-shield\\scam-shield-frontend\\src\\context\\LanguageContext.tsx:22:7\n  20 |     const savedLanguage = window.localStorage.getItem('scamshield-language') as Language | null;\n  21 |     if (savedLanguage && translations[savedLanguage]) {\n> 22 |       setLanguage(savedLanguage);\n     |       ^^^^^^^^^^^ Avoid calling setState() directly within an effect\n  23 |     }\n  24 |   }, []);\n  25 |",
+        "line": 22,
+        "column": 7,
+        "nodeType": null,
+        "endLine": 22,
+        "endColumn": 18
+      }
+    ],
+    "suppressedMessages": [],
+    "errorCount": 1,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "source": "'use client';\r\n\r\nimport React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';\r\nimport { translations } from '../i18n/translations';\r\n\r\nexport type Language = 'en' | 'hi' | 'bn' | 'ta' | 'te' | 'mr' | 'gu' | 'kn' | 'ml' | 'pa' | 'ur' | 'or';\r\n\r\ninterface LanguageContextType {\r\n  language: Language;\r\n  setLanguage: (lang: Language) => void;\r\n  t: (key: keyof typeof translations['en']) => string;\r\n}\r\n\r\nconst LanguageContext = createContext<LanguageContextType | undefined>(undefined);\r\n\r\nexport function LanguageProvider({ children }: { children: ReactNode }) {\r\n  const [language, setLanguage] = useState<Language>('en');\r\n\r\n  useEffect(() => {\r\n    const savedLanguage = window.localStorage.getItem('scamshield-language') as Language | null;\r\n    if (savedLanguage && translations[savedLanguage]) {\r\n      setLanguage(savedLanguage);\r\n    }\r\n  }, []);\r\n\r\n  useEffect(() => {\r\n    window.localStorage.setItem('scamshield-language', language);\r\n    document.documentElement.lang = language;\r\n  }, [language]);\r\n\r\n  const t = (key: keyof typeof translations['en']) => {\r\n    return translations[language][key] || translations['en'][key] || key;\r\n  };\r\n\r\n  return (\r\n    <LanguageContext.Provider value={{ language, setLanguage, t }}>\r\n      {children}\r\n    </LanguageContext.Provider>\r\n  );\r\n}\r\n\r\nexport function useLanguage() {\r\n  const context = useContext(LanguageContext);\r\n  if (context === undefined) {\r\n    throw new Error('useLanguage must be used within a LanguageProvider');\r\n  }\r\n  return context;\r\n}\r\n",
+    "usedDeprecatedRules": []
+  },
+  {
+    "filePath": "D:\\Projects\\scam-shield\\scam-shield-frontend\\src\\i18n\\translations.ts",
+    "messages": [],
+    "suppressedMessages": [],
+    "errorCount": 0,
+    "fatalErrorCount": 0,
+    "warningCount": 0,
+    "fixableErrorCount": 0,
+    "fixableWarningCount": 0,
+    "usedDeprecatedRules": []
+  }
+]
