@@ -11,6 +11,7 @@ import {
 import RiskBreakdown from './RiskBreakdown';
 import EvidenceTable from './EvidenceTable';
 import FraudTimeline from './FraudTimeline';
+import SmartActionPanel, { SmartActions } from './SmartActionPanel';
 import { useLanguage } from '@/context/LanguageContext';
 import SlideArrowButton from '@/components/ui/slide-arrow-button';
 
@@ -43,6 +44,7 @@ type AnalysisResult = {
   aiSteps?: string | null;
   transcribedText?: string;
   urlMetadata?: UrlMetadata;
+  smartActions?: SmartActions | null;
 } | null;
 
 const TEST_CHIPS = [
@@ -67,6 +69,15 @@ export default function InputForm() {
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
   const [showPrivacyPreview, setShowPrivacyPreview] = useState(false);
+  const [userCity, setUserCity] = useState<string | null>(null);
+
+  // Detect user city from IP on mount (client-side only, never stored)
+  useState(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => { if (data?.city) setUserCity(data.city); })
+      .catch(() => {});
+  });
 
   const speakResult = () => {
     if (!analysisResult) return;
@@ -101,18 +112,19 @@ export default function InputForm() {
     if (['image', 'audio'].includes(activeTab) && !selectedFile) return;
     setIsAnalyzing(true);
     setAnalysisResult(null);
+    const cityHeader: Record<string, string> = userCity ? { 'X-User-City': userCity } : {};
     try {
       let response;
       if (activeTab === 'image' && selectedFile) {
         const fd = new FormData(); fd.append('image', selectedFile);
-        response = await fetch('http://127.0.0.1:5000/api/analyze/image', { method: 'POST', body: fd });
+        response = await fetch('http://127.0.0.1:5000/api/analyze/image', { method: 'POST', body: fd, headers: cityHeader });
       } else if (activeTab === 'audio' && selectedFile) {
         const fd = new FormData(); fd.append('audio', selectedFile);
-        response = await fetch('http://127.0.0.1:5000/api/analyze/audio', { method: 'POST', body: fd });
+        response = await fetch('http://127.0.0.1:5000/api/analyze/audio', { method: 'POST', body: fd, headers: cityHeader });
       } else {
         response = await fetch('http://127.0.0.1:5000/api/analyze', {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'application/json', ...cityHeader },
           body: JSON.stringify({ type: activeTab, content: inputText }),
         });
       }
@@ -438,13 +450,30 @@ export default function InputForm() {
                       <Sparkles className="w-6 h-6 text-blue-600" /> Immediate Rapid-Response Action Steps
                     </h3>
                     <div className="space-y-4">
-                      {analysisResult.aiSteps.split('\n').map((step: string, idx: number) => {
-                        const trimmed = step.trim();
-                        if (!trimmed) return null;
+                      {analysisResult.aiSteps.split(/\|\|\|/).filter((s: string) => s.trim()).slice(0, 5).map((step: string, idx: number) => {
+                        const parts = step.trim().split('\n').filter(p => p.trim());
+                        const title = parts[0].replace(/^(\d+\.\s*|🚨\s*|📞\s*|🧾\s*|🛑\s*|🧑‍⚖️\s*|⚠️\s*|\*\*)+|(\*\*)+$/g, '').trim();
+                        const subItems = parts.slice(1);
                         return (
                           <div key={idx} className="flex gap-4">
-                             <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.bg} text-white text-xs font-black shadow-sm`}>{idx + 1}</div>
-                             <p className="text-sm text-slate-700 leading-relaxed font-medium pt-1.5">{trimmed.replace(/^\d+\.\s*/, '')}</p>
+                             <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.bg} text-white text-xs font-black shadow-sm mt-0.5`}>{idx + 1}</div>
+                             <div className="flex-1">
+                               <p className="text-[15px] text-slate-800 font-bold">{title}</p>
+                               {subItems.length > 0 && (
+                                 <ul className="space-y-1 mt-1.5 pl-0.5">
+                                   {subItems.map((item, i) => {
+                                     const cleanItem = item.replace(/^[-*•]\s*/, '').trim();
+                                     if (!cleanItem) return null;
+                                     return (
+                                       <li key={i} className="text-[13px] text-slate-600 font-medium leading-relaxed flex items-start gap-2">
+                                         <span className="text-slate-300 mt-[1px] font-bold">•</span>
+                                         <span>{cleanItem}</span>
+                                       </li>
+                                     );
+                                   })}
+                                 </ul>
+                               )}
+                             </div>
                           </div>
                         );
                       })}
@@ -479,6 +508,15 @@ export default function InputForm() {
                 )}
 
               </div>
+
+              {/* Emergency Action Centre */}
+              {analysisResult.smartActions && (
+                <div className="pt-2">
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1">Emergency Action Centre</p>
+                  <SmartActionPanel actions={analysisResult.smartActions} />
+                </div>
+              )}
+
               <div className="pt-6">
                 <FraudTimeline />
               </div>

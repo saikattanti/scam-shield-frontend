@@ -5,12 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { AlertOctagon, Loader2, Upload, CheckCircle2, X, Phone, Search, ShieldCheck } from 'lucide-react';
 import { useLanguage } from '@/context/LanguageContext';
 import SlideArrowButton from '@/components/ui/slide-arrow-button';
+import SmartActionPanel, { SmartActions } from './SmartActionPanel';
 
 interface RecoveryResult {
   scamType: string;
   riskLevel: string;
   detectedSignals: string[];
   recoverySteps: string;
+  smartActions?: SmartActions | null;
+  firDraft?: string;
   platform: string | null;
 }
 
@@ -26,6 +29,15 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
   const [file, setFile] = useState<File | null>(null);
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<RecoveryResult | null>(null);
+  const [userCity, setUserCity] = useState<string | null>(null);
+
+  // Detect user city from IP on mount (client-side only, never stored)
+  useState(() => {
+    fetch('https://ipapi.co/json/')
+      .then(r => r.json())
+      .then(data => { if (data?.city) setUserCity(data.city); })
+      .catch(() => {});
+  });
 
   const handleSubmit = async () => {
     if (!situation && !file) return;
@@ -39,8 +51,11 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
       if (amountLost) formData.append('amountLost', amountLost);
       if (file) formData.append('image', file);
 
+      const cityHeader: Record<string, string> = userCity ? { 'X-User-City': userCity } : {};
+
       const response = await fetch('http://localhost:5000/api/analyze/assist', {
         method: 'POST',
+        headers: cityHeader,
         body: formData,
       });
       const data = await response.json();
@@ -288,21 +303,62 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                  </div>
                  
                  <div className="space-y-4">
-                   {result.recoverySteps.split('\n').map((step, idx) => {
-                     const trimmed = step.trim();
-                     if (!trimmed) return null;
+                   {result.recoverySteps.split(/\|\|\|/).filter((s: string) => s.trim()).slice(0, 5).map((step: string, idx: number) => {
+                     const parts = step.trim().split('\n').filter((p: string) => p.trim());
+                     const title = parts[0].replace(/^(\d+\.\s*|🚨\s*|📞\s*|🧾\s*|🛑\s*|🧑‍⚖️\s*|⚠️\s*|\*\*)+|(\*\*)+$/g, '').trim();
+                     const subItems = parts.slice(1);
                      return (
                        <div key={idx} className="flex gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 items-start">
-                         <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">
+                         <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm mt-0.5">
                            {idx + 1}
                          </span>
-                         <p className="text-[15px] text-slate-800 leading-relaxed font-semibold pt-1">
-                           {trimmed.replace(/^\d+\.\s*/, '')}
-                         </p>
+                         <div className="flex-1">
+                           <p className="text-[15px] text-slate-900 font-bold">
+                             {title}
+                           </p>
+                           {subItems.length > 0 && (
+                             <ul className="space-y-1.5 mt-2 flex flex-col">
+                               {subItems.map((item, i) => {
+                                 const cleanItem = item.replace(/^[-*•]\s*/, '').trim();
+                                 if (!cleanItem) return null;
+                                 return (
+                                   <li key={i} className="text-[14px] text-slate-600 font-medium leading-relaxed flex items-start gap-2">
+                                     <span className="text-slate-300 mt-[2px] text-lg leading-none">•</span> 
+                                     <span>{cleanItem}</span>
+                                   </li>
+                                 );
+                               })}
+                             </ul>
+                           )}
+                         </div>
                        </div>
                      );
                    })}
                  </div>
+
+                 {result.smartActions && (
+                   <div className="mt-8 mb-2">
+                     <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1">Emergency Action Centre</p>
+                     <SmartActionPanel actions={result.smartActions} />
+                   </div>
+                 )}
+
+                 {result.firDraft && (
+                   <div className="mt-8 mb-2">
+                     <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1">Pre-filled Police Complaint (Copy Code)</p>
+                     <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 relative group">
+                       <button
+                         onClick={() => navigator.clipboard.writeText(result.firDraft || '')}
+                         className="absolute top-4 right-4 bg-white border border-slate-200 text-slate-500 hover:text-slate-800 text-xs font-bold px-3 py-1.5 rounded-lg shadow-sm opacity-0 group-hover:opacity-100 transition-opacity"
+                       >
+                         Copy to Clipboard
+                       </button>
+                       <pre className="text-[13px] text-slate-700 font-mono whitespace-pre-wrap leading-relaxed">
+                         {result.firDraft}
+                       </pre>
+                     </div>
+                   </div>
+                 )}
 
                  <div className="mt-8 p-6 bg-red-50 border border-red-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
                    <div>
