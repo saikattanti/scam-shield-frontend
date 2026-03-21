@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Clock, FileText, Copy, CheckCheck, Loader2, AlertOctagon, ChevronDown } from 'lucide-react';
+import SlideArrowButton from '@/components/ui/slide-arrow-button';
 
 const ACTION_OPTIONS = [
   { id: 'otp', label: 'Shared OTP', icon: '🔑' },
@@ -94,21 +95,12 @@ export default function FraudTimeline() {
     <div className="mt-8">
       {/* Trigger */}
       {!isOpen && !result && (
-        <button
+        <SlideArrowButton
           onClick={() => setIsOpen(true)}
-          className="w-full flex items-center gap-4 p-5 bg-white border border-slate-200 rounded-2xl shadow-sm hover:border-violet-300 hover:shadow-md transition-all group text-left"
-        >
-          <div className="flex-shrink-0 bg-violet-50 border border-violet-200 rounded-xl p-3 group-hover:bg-violet-100 transition-colors">
-            <Clock className="w-5 h-5 text-violet-600" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-slate-900">Build a Fraud Incident Timeline</p>
-            <p className="text-xs text-slate-500 mt-0.5">3 quick questions → legal-ready complaint you can copy-paste to cybercrime.gov.in</p>
-          </div>
-          <span className="ml-auto text-xs font-semibold text-violet-600 bg-violet-50 border border-violet-200 px-3 py-1.5 rounded-lg group-hover:bg-violet-100 flex-shrink-0">
-            Build Timeline →
-          </span>
-        </button>
+          text="Build Timeline"
+          primaryColor="#7c3aed"
+          className="w-full border-violet-200"
+        />
       )}
 
       <AnimatePresence>
@@ -166,18 +158,8 @@ export default function FraudTimeline() {
                     <p className="text-xs text-slate-400 mt-2">If unsure, enter an approximate time or skip to Step 3 and describe it</p>
 
                     <div className="flex gap-3 mt-4">
-                      <button
-                        onClick={() => setIsOpen(false)}
-                        className="flex-1 border border-slate-200 text-slate-500 py-2.5 rounded-xl text-sm hover:bg-slate-50 transition-colors"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        onClick={() => setStep(2)}
-                        className="flex-1 bg-violet-600 hover:bg-violet-700 text-white py-2.5 rounded-xl text-sm font-semibold transition-colors"
-                      >
-                        Next →
-                      </button>
+                      <SlideArrowButton onClick={() => setIsOpen(false)} text="Cancel" primaryColor="#64748b" className="flex-1 border-slate-200 scale-90" />
+                      <SlideArrowButton onClick={() => setStep(2)} text="Next" primaryColor="#7c3aed" className="flex-1 border-violet-200 scale-90" />
                     </div>
                   </motion.div>
                 )}
@@ -204,13 +186,8 @@ export default function FraudTimeline() {
                     </div>
 
                     <div className="flex gap-3 mt-4">
-                      <button onClick={() => setStep(1)} className="flex-1 border border-slate-200 text-slate-500 py-2.5 rounded-xl text-sm hover:bg-slate-50 transition-colors">← Back</button>
-                      <button
-                        onClick={() => setStep(3)}
-                        className="flex-1 bg-violet-600 hover:bg-violet-700 text-white py-2.5 rounded-xl text-sm font-semibold transition-colors"
-                      >
-                        Next →
-                      </button>
+                      <SlideArrowButton onClick={() => setStep(1)} text="Back" primaryColor="#64748b" className="flex-1 border-slate-200 scale-90" />
+                      <SlideArrowButton onClick={() => setStep(3)} text="Next" primaryColor="#7c3aed" className="flex-1 border-violet-200 scale-90" />
                     </div>
                   </motion.div>
                 )}
@@ -258,18 +235,14 @@ export default function FraudTimeline() {
                     </div>
 
                     <div className="flex gap-3 pt-1">
-                      <button onClick={() => setStep(2)} className="flex-1 border border-slate-200 text-slate-500 py-2.5 rounded-xl text-sm hover:bg-slate-50 transition-colors">← Back</button>
-                      <button
+                      <SlideArrowButton onClick={() => setStep(2)} text="Back" primaryColor="#64748b" className="flex-1 border-slate-200 scale-90" />
+                      <SlideArrowButton
                         onClick={handleGenerate}
                         disabled={!canGenerate || loading}
-                        className="flex-1 bg-violet-600 hover:bg-violet-700 disabled:bg-slate-200 disabled:text-slate-400 text-white py-2.5 px-4 rounded-xl text-sm font-semibold flex items-center justify-center gap-2 transition-all disabled:cursor-not-allowed"
-                      >
-                        {loading ? (
-                          <><Loader2 className="w-4 h-4 animate-spin" /> Generating…</>
-                        ) : (
-                          <><FileText className="w-4 h-4" /> Generate Legal Summary</>
-                        )}
-                      </button>
+                        text={loading ? 'Generating' : 'Generate Legal Summary'}
+                        primaryColor="#7c3aed"
+                        className="flex-1 border-violet-200 scale-90 disabled:opacity-60 disabled:cursor-not-allowed"
+                      />
                     </div>
                   </motion.div>
                 )}
@@ -318,32 +291,16 @@ export default function FraudTimeline() {
 
               {/* Actions */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <button
-                  onClick={handleCopy}
-                  className="flex-1 flex items-center justify-center gap-2 bg-violet-600 hover:bg-violet-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors"
-                >
-                  {copied ? (
-                    <><CheckCheck className="w-4 h-4" /> Copied!</>
-                  ) : (
-                    <><Copy className="w-4 h-4" /> Copy to Clipboard</>
-                  )}
-                </button>
-                <a
-                  href="https://cybercrime.gov.in"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors"
-                >
-                  🚨 File at cybercrime.gov.in
-                </a>
+                <SlideArrowButton onClick={handleCopy} text={copied ? 'Copied!' : 'Copy to Clipboard'} primaryColor="#7c3aed" className="flex-1 border-violet-200" />
+                <SlideArrowButton href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer" text="File at cybercrime.gov.in" primaryColor="#dc2626" className="flex-1 border-red-200" />
               </div>
 
-              <button
+              <SlideArrowButton
                 onClick={() => { setResult(null); setIsOpen(false); setStep(1); setWhen(''); setSelectedActions([]); setPlatform(''); setSituation(''); setAmountLost(''); }}
-                className="w-full border border-slate-200 text-slate-500 hover:bg-slate-50 py-2.5 rounded-xl text-sm transition-colors"
-              >
-                Start Over
-              </button>
+                text="Start Over"
+                primaryColor="#64748b"
+                className="w-full border-slate-200"
+              />
             </div>
           </motion.div>
         )}

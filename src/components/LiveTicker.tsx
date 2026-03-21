@@ -2,6 +2,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Activity, TrendingUp, Clock } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
 
 type TickerItem = {
     id: number;
@@ -12,6 +13,7 @@ type TickerItem = {
 };
 
 export default function LiveTicker() {
+    const { t } = useLanguage();
     const [items, setItems] = useState<TickerItem[]>([]);
     const [isConnected, setIsConnected] = useState(false);
 
@@ -93,61 +95,77 @@ export default function LiveTicker() {
     };
 
     return (
-        <div className="bg-white border border-slate-200 rounded-2xl shadow-sm p-6 overflow-hidden flex flex-col h-[500px]">
+        <div className="relative overflow-hidden rounded-3xl border border-slate-200/90 bg-white/95 p-6 shadow-[0_18px_40px_-28px_rgba(15,23,42,0.35)] backdrop-blur flex flex-col min-h-115">
+            <div className="pointer-events-none absolute -top-16 right-10 h-44 w-44 rounded-full bg-blue-100/60 blur-3xl" />
+            <div className="pointer-events-none absolute -bottom-16 left-10 h-44 w-44 rounded-full bg-emerald-100/60 blur-3xl" />
+
             {/* Header */}
-            <div className="flex items-center justify-between mb-4 pb-3 border-b border-slate-100">
+            <div className="relative z-10 mb-4 flex items-center justify-between border-b border-slate-100 pb-3">
                 <div className="flex items-center gap-2">
-                    <Activity className="w-5 h-5 text-slate-800" />
-                    <h3 className="font-semibold text-lg text-slate-900 tracking-tight">Live Activity</h3>
+                    <Activity className="w-5 h-5 text-blue-700" />
+                    <h3 className="font-semibold text-lg text-slate-900 tracking-tight">{t('live_title')}</h3>
                 </div>
-                <div className="flex items-center gap-2 bg-slate-50 px-3 py-1 rounded-full border border-slate-200">
+                <div className="flex items-center gap-2 rounded-full border border-slate-200 bg-white px-3 py-1">
                     <div className={`w-2 h-2 rounded-full ${isConnected ? 'bg-emerald-500 animate-pulse' : 'bg-red-500'}`}></div>
-                    <span className="text-xs font-semibold text-slate-600 uppercase tracking-wider">{isConnected ? 'Live' : 'Offline'}</span>
+                    <span className="text-xs font-semibold text-slate-600 uppercase tracking-wider">{isConnected ? t('live_live') : t('live_offline')}</span>
                 </div>
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-2 gap-3 mb-6">
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                    <TrendingUp className="w-4 h-4 text-slate-400 mb-2" />
-                    <p className="text-2xl font-bold text-slate-800">{items.length}</p>
-                    <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Analyses</p>
+            <div className="relative z-10 mb-6 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                <div className="rounded-2xl border border-blue-100 bg-linear-to-br from-blue-50/80 via-white to-blue-100/50 p-4">
+                    <TrendingUp className="mb-2 h-4 w-4 text-blue-600" />
+                    <p className="text-2xl font-bold text-slate-900">{items.length}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-500">{t('live_analyses')}</p>
                 </div>
-                <div className="bg-slate-50 rounded-xl p-4 border border-slate-100">
-                    <Clock className="w-4 h-4 text-slate-400 mb-2" />
-                    <p className="text-2xl font-bold text-slate-800">Real-time</p>
-                    <p className="text-xs text-slate-500 font-medium uppercase tracking-wider mt-1">Status</p>
+                <div className="rounded-2xl border border-emerald-100 bg-linear-to-br from-emerald-50/80 via-white to-emerald-100/50 p-4">
+                    <Clock className="mb-2 h-4 w-4 text-emerald-600" />
+                    <p className="text-2xl font-bold text-slate-900">{t('live_realtime')}</p>
+                    <p className="mt-1 text-xs font-semibold uppercase tracking-wider text-slate-500">{t('live_status')}</p>
                 </div>
             </div>
 
             {/* Feed */}
-            <div className="flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
-                <AnimatePresence mode="popLayout">
-                    {items.map((item) => (
-                        <motion.div
-                            key={item.id}
-                            initial={{ opacity: 0, scale: 0.98 }}
-                            animate={{ opacity: 1, scale: 1 }}
-                            exit={{ opacity: 0, scale: 0.98 }}
-                            className="bg-white border border-slate-200 rounded-xl p-4 shadow-sm hover:shadow-md transition-all"
-                        >
-                            <div className="flex items-start gap-3">
-                                <div className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${getRiskDot(item.risk)} animate-pulse`}></div>
-                                <div className="flex-1 min-w-0">
-                                    <p className="text-sm text-slate-800 font-medium leading-relaxed mb-3">{item.message}</p>
-                                    <div className="flex items-center gap-2 flex-wrap">
-                                        <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded border ${getRiskColor(item.risk)}`}>
-                                            {item.risk}
-                                        </span>
-                                        <span className="text-xs font-medium text-slate-400">
-                                            {formatTime(item.timestamp)}
-                                        </span>
+            <div className="relative z-10 flex-1 overflow-y-auto space-y-3 pr-2 scrollbar-thin scrollbar-thumb-slate-200 scrollbar-track-transparent">
+                {items.length === 0 ? (
+                    <div className="flex h-full min-h-55 flex-col items-center justify-center rounded-2xl border border-dashed border-slate-300/90 bg-white/70 px-6 text-center">
+                        <div className="mb-3 flex h-11 w-11 items-center justify-center rounded-2xl border border-slate-200 bg-slate-50">
+                            <Activity className="h-5 w-5 text-slate-500" />
+                        </div>
+                        <p className="text-sm font-semibold text-slate-700">Waiting for new scam events</p>
+                        <p className="mt-1 max-w-sm text-xs leading-relaxed text-slate-500">
+                            Live reports will appear here automatically when the backend stream starts receiving analyses.
+                        </p>
+                    </div>
+                ) : (
+                    <AnimatePresence mode="popLayout">
+                        {items.map((item) => (
+                            <motion.div
+                                key={item.id}
+                                initial={{ opacity: 0, scale: 0.98, y: 8 }}
+                                animate={{ opacity: 1, scale: 1, y: 0 }}
+                                exit={{ opacity: 0, scale: 0.98 }}
+                                transition={{ duration: 0.24, ease: 'easeOut' }}
+                                className="rounded-xl border border-slate-200 bg-white p-4 shadow-sm transition-all hover:shadow-md"
+                            >
+                                <div className="flex items-start gap-3">
+                                    <div className={`mt-1.5 h-2 w-2 shrink-0 rounded-full ${getRiskDot(item.risk)} animate-pulse`}></div>
+                                    <div className="min-w-0 flex-1">
+                                        <p className="mb-3 text-sm font-medium leading-relaxed text-slate-800">{item.message}</p>
+                                        <div className="flex flex-wrap items-center gap-2">
+                                            <span className={`rounded border px-2 py-1 text-[10px] font-bold uppercase tracking-wider ${getRiskColor(item.risk)}`}>
+                                                {item.risk}
+                                            </span>
+                                            <span className="text-xs font-medium text-slate-400">
+                                                {formatTime(item.timestamp)}
+                                            </span>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </AnimatePresence>
+                            </motion.div>
+                        ))}
+                    </AnimatePresence>
+                )}
             </div>
         </div>
     );

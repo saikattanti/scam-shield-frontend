@@ -1,35 +1,31 @@
+"use client";
+
 import React from 'react';
 import Link from 'next/link';
 import { Shield } from 'lucide-react';
-
-const footerLinks = [
-  {
-    title: 'Product',
-    links: [
-      { label: 'Home', href: '/' },
-      { label: 'Live Map', href: '#map' },
-      { label: 'Contact', href: '#contact' },
-    ],
-  },
-  {
-    title: 'Legal',
-    links: [
-      { label: 'Privacy Policy', href: '#' },
-      { label: 'Terms of Service', href: '#' },
-      { label: 'Refund Policy', href: '#' },
-    ],
-  },
-  {
-    title: 'Social',
-    links: [
-      { label: 'Twitter', href: '#' },
-      { label: 'LinkedIn', href: '#' },
-      { label: 'GitHub', href: '#' },
-    ],
-  },
-];
+import { useLanguage } from '@/context/LanguageContext';
 
 export default function Footer() {
+  const { t } = useLanguage();
+
+  const footerLinks = [
+    {
+      title: t('footer_product'),
+      links: [
+        { label: t('footer_home'), href: '/' },
+        { label: t('footer_about'), href: '/about' },
+        { label: t('footer_contact'), href: '/contact' },
+      ],
+    },
+    {
+      title: t('footer_legal'),
+      links: [
+        { label: t('footer_privacy'), href: '/privacy' },
+        { label: t('footer_terms'), href: '/terms' },
+      ],
+    },
+  ];
+
   return (
     <footer className="relative bg-white border-t border-slate-100 overflow-hidden" id="contact">
       {/* Main content */}
@@ -49,12 +45,12 @@ export default function Footer() {
 
             <div className="text-[13px] text-slate-400 leading-relaxed">
               <p>Copyright © {new Date().getFullYear()} Sentinel Labs</p>
-              <p className="mt-0.5">All rights reserved</p>
+              <p className="mt-0.5">{t('footer_rights')}</p>
             </div>
           </div>
 
           {/* Links columns */}
-          <div className="lg:col-span-3 grid grid-cols-2 sm:grid-cols-3 gap-8">
+          <div className="lg:col-span-3 grid grid-cols-2 gap-8">
             {footerLinks.map((group) => (
               <div key={group.title} className="flex flex-col gap-4">
                 <p className="text-[11px] font-semibold uppercase tracking-widest text-slate-400">

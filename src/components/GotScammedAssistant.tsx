@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AlertOctagon, Loader2, Upload, CheckCircle2, X, Phone, Search, ShieldCheck } from 'lucide-react';
+import { useLanguage } from '@/context/LanguageContext';
+import SlideArrowButton from '@/components/ui/slide-arrow-button';
 
 interface RecoveryResult {
   scamType: string;
@@ -17,6 +19,7 @@ interface Props {
 }
 
 export default function GotScammedAssistant({ defaultOpen = true }: Props) {
+  const { t } = useLanguage();
   const [situation, setSituation] = useState('');
   const [platform, setPlatform] = useState('');
   const [amountLost, setAmountLost] = useState('');
@@ -68,12 +71,12 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
             {/* Situation Description */}
             <div>
               <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
-                WHAT HAPPENED?
+                {t('form_label_what_happened')}
               </label>
               
               {/* Test Data Chips */}
               <div className="flex flex-wrap gap-2 mb-4">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest self-center mr-1">Demo Case:</span>
+                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest self-center mr-1">{t('form_demo_case')}:</span>
                 {[
                   { label: 'UPI/OLX Fraud', text: 'I sent ₹5,000 via GPay for a camera on OLX but the seller blocked me immediately.', platform: 'Google Pay', amount: '5000' },
                   { label: 'Bank OTP', text: 'Someone called from SBI and asked for my OTP to update KYC. I gave it and ₹12,000 was debited.', platform: 'SBI', amount: '12000' },
@@ -107,7 +110,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
                 <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
-                  PLATFORM USED
+                  {t('form_label_platform')}
                 </label>
                 <select
                   value={platform}
@@ -127,7 +130,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
               </div>
               <div>
                 <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
-                  AMOUNT LOST (₹)
+                  {t('form_label_amount')} (₹)
                 </label>
                 <input
                   type="number"
@@ -142,7 +145,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
             {/* Screenshot Upload */}
             <div>
               <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
-                UPLOAD EVIDENCE
+                {t('form_label_evidence')}
               </label>
               <div
                 onClick={() => document.getElementById('assist-file')?.click()}
@@ -156,7 +159,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                        <Upload className="w-5 h-5 text-slate-400" />
                     </div>
                     <span className="text-sm font-bold text-slate-500">
-                      Upload screenshot
+                      {t('form_upload_screenshot')}
                     </span>
                   </>
                 ) : (
@@ -171,7 +174,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                       onClick={e => { e.stopPropagation(); setFile(null); }}
                       className="text-xs font-bold text-red-500 bg-red-50 px-3 py-1 rounded-full flex gap-1 items-center"
                     >
-                      <X className="w-3 h-3" /> Remove Selection
+                      <X className="w-3 h-3" /> {t('form_remove_selection')}
                     </button>
                   </div>
                 )}
@@ -187,18 +190,14 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
             </div>
 
             {/* Submit */}
-            <div className="pt-2">
-              <button
+            <div className="flex justify-center pt-2">
+              <SlideArrowButton
                 onClick={handleSubmit}
                 disabled={loading || (!situation && !file)}
-                className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-red-50 hover:bg-red-100 border border-red-200 disabled:bg-slate-50 disabled:border-slate-100 disabled:text-slate-400 text-red-700 font-bold rounded-[1.25rem] text-sm md:text-base transition-colors"
-              >
-                {loading ? (
-                  <><Loader2 className="w-4 h-4 animate-spin disabled:text-slate-400 text-red-700" /> Generating Recovery Plan...</>
-                ) : (
-                  <><AlertOctagon className="w-5 h-5 disabled:text-slate-400 text-red-600 font-normal" /> Generate Intelligent Recovery Plan</>
-                )}
-              </button>
+                text={loading ? t('form_generating_recovery') : t('form_generate_recovery')}
+                primaryColor="#dc2626"
+                className="w-full max-w-85 border-red-200 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto sm:max-w-none"
+              />
             </div>
           </div>
         </div>
@@ -218,7 +217,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
               <div className="w-24 h-24 bg-red-50 rounded-[2rem] flex items-center justify-center mb-8">
                 <Search className="w-10 h-10 text-red-300" />
               </div>
-              <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">Need help right now?</h3>
+              <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">{t('form_need_help_now')}</h3>
               <p className="text-sm text-slate-500 max-w-[400px] mb-10 leading-relaxed">
                 Provide the details of your incident on the left. The Gemini AI engine will analyze exactly what type of scam it was, and instantly generate a 1-2-3 recovery protocol including official helpline numbers, app-specific blocking instructions, and legal reporting links.
               </p>
@@ -241,7 +240,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                   </div>
                 </div>
 
-                <h3 className="text-2xl font-black text-slate-800 mb-3">Synthesizing Recovery Plan</h3>
+                <h3 className="text-2xl font-black text-slate-800 mb-3">{t('form_analyzing_recovery')}</h3>
                 <p className="text-sm text-slate-500 mb-10 max-w-sm mx-auto">Gemini is pulling the exact reporting pipelines for your specific scam vector...</p>
               </div>
             </motion.div>
@@ -268,14 +267,14 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                    <div className="flex-1">
                      <div className="flex items-center justify-between w-full">
                         <h2 className="text-4xl font-black uppercase tracking-tighter shadow-sm mb-1 leading-none">
-                          Your Recovery Plan
+                          {t('form_recovery_plan')}
                         </h2>
                         <span className="bg-white/20 border border-white/30 text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full backdrop-blur-sm self-start mt-2">
                           Extracted by Gemini
                         </span>
                      </div>
                      <div className="flex items-center gap-2 text-white font-medium text-sm pt-2 tracking-wide">
-                        <span className="opacity-80">Scam Classification:</span> <span className="font-bold">{result.scamType?.replace(/_/g, ' ')}</span>
+                        <span className="opacity-80">{t('form_scam_classification')}:</span> <span className="font-bold">{result.scamType?.replace(/_/g, ' ')}</span>
                         {result.platform && <span className="opacity-80 ml-2">via</span>} 
                         {result.platform && <span className="font-bold">{result.platform}</span>}
                      </div>
@@ -285,7 +284,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
 
                <div className="p-8 pb-10 bg-white">
                  <div className="flex items-center justify-between mb-4 mt-2">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Step-by-Step Guidance</p>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">{t('form_step_guidance')}</p>
                  </div>
                  
                  <div className="space-y-4">
@@ -307,12 +306,10 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
 
                  <div className="mt-8 p-6 bg-red-50 border border-red-200 rounded-2xl flex flex-col sm:flex-row items-center justify-between gap-4 shadow-sm">
                    <div>
-                     <p className="text-red-900 font-bold text-lg mb-1">Official Escallation Timeline</p>
+                     <p className="text-red-900 font-bold text-lg mb-1">{t('form_official_timeline')}</p>
                      <p className="text-sm text-red-700 font-medium">Reporting to Cyber Crime within the "Golden Hour" maximizes fund recovery chances by freezing the fraudster's intermediate accounts.</p>
                    </div>
-                   <a href="tel:1930" className="bg-red-600 hover:bg-red-700 transition-colors text-white font-black px-6 py-3 rounded-xl whitespace-nowrap shadow-md flex items-center gap-2">
-                      <Phone className="w-4 h-4" /> Call 1930
-                   </a>
+                   <SlideArrowButton href="tel:1930" text="Call 1930" primaryColor="#dc2626" className="border-red-200" />
                  </div>
 
                </div>

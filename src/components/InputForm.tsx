@@ -12,6 +12,7 @@ import RiskBreakdown from './RiskBreakdown';
 import EvidenceTable from './EvidenceTable';
 import FraudTimeline from './FraudTimeline';
 import { useLanguage } from '@/context/LanguageContext';
+import SlideArrowButton from '@/components/ui/slide-arrow-button';
 
 type InputType = 'text' | 'url' | 'image' | 'audio';
 
@@ -134,10 +135,10 @@ export default function InputForm() {
   };
 
   const tabs = [
-    { id: 'text', label: 'Message', icon: MessageSquare },
-    { id: 'url', label: 'URL', icon: LinkIcon },
-    { id: 'image', label: 'Image', icon: ImageIcon },
-    { id: 'audio', label: 'Call', icon: Mic },
+    { id: 'text', label: t('tab_text'), icon: MessageSquare },
+    { id: 'url', label: t('tab_url'), icon: LinkIcon },
+    { id: 'image', label: t('tab_image'), icon: ImageIcon },
+    { id: 'audio', label: t('input_tab_call'), icon: Mic },
   ];
 
   const risk = analysisResult?.risk as keyof typeof RISK_COLORS | undefined;
@@ -184,7 +185,7 @@ export default function InputForm() {
                 {activeTab === 'text' && (
                   <textarea
                     className="w-full h-[180px] bg-slate-50 border border-slate-100 rounded-[1.5rem] p-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-sm leading-relaxed"
-                    placeholder="Provide a suspicious WhatsApp message, SMS, or email extract..."
+                    placeholder={t('input_text_placeholder')}
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
                   />
@@ -197,7 +198,7 @@ export default function InputForm() {
                       <input
                         type="text"
                         className="w-full h-16 bg-slate-50 border border-slate-100 rounded-[1.5rem] pl-14 pr-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all text-sm"
-                        placeholder="https://suspicious-link.com/"
+                        placeholder={t('input_url_placeholder')}
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
                       />
@@ -225,7 +226,7 @@ export default function InputForm() {
                           <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-2">
                             <ImageIcon className="w-5 h-5 text-slate-400" />
                           </div>
-                          <p className="text-sm font-bold text-slate-500">Drop screenshot here</p>
+                          <p className="text-sm font-bold text-slate-500">{t('upload_instruction')}</p>
                         </>
                       )}
                       <input id="file-upload" type="file" className="hidden" accept="image/*" onChange={handleFileChange} />
@@ -251,7 +252,7 @@ export default function InputForm() {
                           <div className="w-10 h-10 bg-white rounded-xl shadow-sm border border-slate-100 flex items-center justify-center mb-2">
                             <Mic className="w-5 h-5 text-slate-400" />
                           </div>
-                          <p className="text-sm font-bold text-slate-500">Upload Call Audio</p>
+                          <p className="text-sm font-bold text-slate-500">{t('input_tab_call')}</p>
                         </>
                       )}
                       <input id="audio-upload" type="file" className="hidden" accept="audio/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) setSelectedFile(f); }} />
@@ -276,17 +277,15 @@ export default function InputForm() {
             </div>
 
             {/* Ghost Light-Grey Action Button */}
-            <button
-              onClick={handleAnalyze}
-              disabled={isAnalyzing || (['text', 'url'].includes(activeTab) ? !inputText.trim() : !selectedFile)}
-              className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-slate-50 hover:bg-slate-100 border border-slate-200 disabled:bg-slate-50/50 text-slate-700 font-bold rounded-[1.25rem] text-sm md:text-base transition-colors"
-            >
-              {isAnalyzing ? (
-                <><Loader2 className="w-4 h-4 animate-spin text-slate-400" /> Analyzing...</>
-              ) : (
-                <><ShieldCheck className="w-5 h-5 text-slate-400 font-normal" /> Run Safety Check <ArrowRight className="w-4 h-4 ml-1 opacity-50 font-normal" /></>
-              )}
-            </button>
+            <div className="flex justify-center pt-1">
+              <SlideArrowButton
+                onClick={handleAnalyze}
+                disabled={isAnalyzing || (['text', 'url'].includes(activeTab) ? !inputText.trim() : !selectedFile)}
+                text={isAnalyzing ? t('input_analyzing') : t('input_run_check')}
+                primaryColor="#334155"
+                className="w-full max-w-80 border-slate-200 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto sm:max-w-none"
+              />
+            </div>
 
             {/* Privacy Section */}
             <div className="flex flex-col items-center gap-2 pt-2">
@@ -328,9 +327,9 @@ export default function InputForm() {
               <div className="w-24 h-24 bg-slate-50 rounded-[2rem] flex items-center justify-center mb-8">
                 <Search className="w-10 h-10 text-slate-300" />
               </div>
-              <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">Awaiting payload</h3>
+              <h3 className="text-3xl font-black text-slate-800 mb-3 tracking-tight">{t('input_payload_waiting')}</h3>
               <p className="text-sm text-slate-500 max-w-[400px] mb-12 leading-relaxed">
-                Provide an input on the left. The deep analysis engine will dissect signals, verify URLs, and generate an evidence-backed security report here instantly.
+                {t('input_payload_hint')}
               </p>
               
               {/* Very minimal cards as specified in the mockup */}
@@ -415,7 +414,7 @@ export default function InputForm() {
                   <div className="flex items-center justify-between mb-4 mt-2">
                      <p className="text-[10px] font-black uppercase tracking-widest text-slate-400">Primary Directive</p>
                      <button onClick={speakResult} className="text-[11px] font-bold text-white bg-red-500 hover:bg-red-600 px-4 py-1.5 rounded-full flex gap-1.5 items-center transition-colors shadow-sm">
-                        <Volume2 className="w-3.5 h-3.5" /> Listen AI
+                      <Volume2 className="w-3.5 h-3.5" /> {t('input_listen_ai')}
                      </button>
                   </div>
                   <div className={`p-6 rounded-[1.25rem] border ${colors.border} ${colors.light}`}>
