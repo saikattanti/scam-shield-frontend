@@ -27,7 +27,7 @@ export default function ThreatMap() {
     // Fetch live threats
     const loadThreats = async () => {
       try {
-        const response = await fetch('http://127.0.0.1:5000/api/map/threats');
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/map/threats`);
         const result = await response.json();
         if (result.success) {
             setThreats(result.data);

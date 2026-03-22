@@ -11,8 +11,12 @@ import {
   Loader2,
   AlertOctagon,
   ChevronDown,
+  Calendar,
+  ArrowRight,
+  Shield,
+  RotateCcw,
 } from "lucide-react";
-import SlideArrowButton from "@/components/ui/slide-arrow-button";
+import UnifiedButton from "@/components/ui/unified-button";
 
 const ACTION_OPTIONS = [
   { id: "otp", label: "Shared OTP", icon: "🔑" },
@@ -66,7 +70,7 @@ export default function FraudTimeline() {
     setResult(null);
 
     try {
-      const response = await fetch("http://localhost:5000/api/timeline", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/timeline`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -111,11 +115,12 @@ export default function FraudTimeline() {
     <div className="mt-8">
       {/* Trigger */}
       {!isOpen && !result && (
-        <SlideArrowButton
+        <UnifiedButton
           onClick={() => setIsOpen(true)}
           text="Build Timeline"
-          primaryColor="#7c3aed"
-          className="w-full border-violet-200"
+          variant="secondary"
+          className="w-full"
+          icon={<Calendar className="w-4 h-4" />}
         />
       )}
 
@@ -199,17 +204,18 @@ export default function FraudTimeline() {
                     </p>
 
                     <div className="flex gap-3 mt-4">
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={() => setIsOpen(false)}
                         text="Cancel"
-                        primaryColor="#64748b"
-                        className="flex-1 border-slate-200 scale-90"
+                        variant="outline"
+                        className="flex-1"
                       />
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={() => setStep(2)}
                         text="Next"
-                        primaryColor="#7c3aed"
-                        className="flex-1 border-violet-200 scale-90"
+                        variant="primary"
+                        className="flex-1"
+                        icon={<ArrowRight className="w-4 h-4" />}
                       />
                     </div>
                   </motion.div>
@@ -247,17 +253,18 @@ export default function FraudTimeline() {
                     </div>
 
                     <div className="flex gap-3 mt-4">
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={() => setStep(1)}
                         text="Back"
-                        primaryColor="#64748b"
-                        className="flex-1 border-slate-200 scale-90"
+                        variant="outline"
+                        className="flex-1"
                       />
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={() => setStep(3)}
                         text="Next"
-                        primaryColor="#7c3aed"
-                        className="flex-1 border-violet-200 scale-90"
+                        variant="primary"
+                        className="flex-1"
+                        icon={<ArrowRight className="w-4 h-4" />}
                       />
                     </div>
                   </motion.div>
@@ -330,18 +337,19 @@ export default function FraudTimeline() {
                     </div>
 
                     <div className="flex gap-3 pt-1">
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={() => setStep(2)}
                         text="Back"
-                        primaryColor="#64748b"
-                        className="flex-1 border-slate-200 scale-90"
+                        variant="outline"
+                        className="flex-1"
                       />
-                      <SlideArrowButton
+                      <UnifiedButton
                         onClick={handleGenerate}
                         disabled={!canGenerate || loading}
                         text={loading ? "Generating" : "Generate Legal Summary"}
-                        primaryColor="#7c3aed"
-                        className="flex-1 border-violet-200 scale-90 disabled:opacity-60 disabled:cursor-not-allowed"
+                        variant="primary"
+                        className="flex-1"
+                        icon={<FileText className="w-4 h-4" />}
                       />
                     </div>
                   </motion.div>
@@ -399,23 +407,25 @@ export default function FraudTimeline() {
 
               {/* Actions */}
               <div className="flex flex-col sm:flex-row gap-3">
-                <SlideArrowButton
+                <UnifiedButton
                   onClick={handleCopy}
                   text={copied ? "Copied!" : "Copy to Clipboard"}
-                  primaryColor="#7c3aed"
-                  className="flex-1 border-violet-200"
+                  variant="primary"
+                  className="flex-1"
+                  icon={copied ? <CheckCheck className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
                 />
-                <SlideArrowButton
+                <UnifiedButton
                   href="https://cybercrime.gov.in"
                   target="_blank"
                   rel="noopener noreferrer"
                   text="File at cybercrime.gov.in"
-                  primaryColor="#dc2626"
-                  className="flex-1 border-red-200"
+                  variant="danger"
+                  className="flex-1"
+                  icon={<Shield className="w-4 h-4" />}
                 />
               </div>
 
-              <SlideArrowButton
+              <UnifiedButton
                 onClick={() => {
                   setResult(null);
                   setIsOpen(false);
@@ -427,8 +437,9 @@ export default function FraudTimeline() {
                   setAmountLost("");
                 }}
                 text="Start Over"
-                primaryColor="#64748b"
-                className="w-full border-slate-200"
+                variant="outline"
+                className="w-full"
+                icon={<RotateCcw className="w-4 h-4" />}
               />
             </div>
           </motion.div>

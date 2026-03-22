@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import Orb from "@/components/Orb";
+import SplitText from "@/components/SplitText";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -110,31 +111,32 @@ export default function Home() {
   };
 
   const stats = [
-    { value: "98.7%", label: t("home_stats_accuracy") },
-    { value: "12", label: t("home_stats_languages") },
-    { value: "<2s", label: t("home_stats_speed") },
-    { value: "5", label: t("home_stats_risk") },
+    { value: "98.7%", label: t("home_stats_accuracy"), desc: "Our AI model accurately detects scams across all content types with industry-leading precision." },
+    // { value: "12", label: t("home_stats_languages"), desc: "Full support for major Indian languages including Hindi, Bengali, Tamil, Telugu, and more." },
+    { value: "<2s", label: t("home_stats_speed"), desc: "Get instant scam verdicts powered by real-time AI analysis and threat intelligence." },
+    { value: "5", label: t("home_stats_risk"), desc: "Multi-dimensional risk scoring across urgency, spoofing, payment, links, and social engineering." },
   ];
 
   return (
-    <main className="min-h-screen bg-white text-slate-900">
+    <main className="min-h-screen bg-white text-slate-900 relative">
+      {/* Global Orb Background */}
+      <div
+        className="absolute left-1/2 top-[52vh] z-0 h-[min(85vw,850px)] w-[min(85vw,850px)] -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-50"
+        style={{
+          maskImage: "radial-gradient(circle at center, black 60%, transparent 85%)",
+        }}
+      >
+        <Orb
+          hoverIntensity={0.5}
+          rotateOnHover={true}
+          hue={210}
+          forceHoverState={false}
+          backgroundColor="#FFFFFF"
+        />
+      </div>
+
       {/* ── Hero ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-32 pb-20">
-        <div
-          className="absolute left-1/2 top-[54%] z-0 h-[min(92vw,1080px)] w-[min(92vw,1080px)] -translate-x-1/2 -translate-y-1/2 overflow-hidden rounded-full pointer-events-none mix-blend-multiply opacity-60"
-          style={{
-            maskImage:
-              "radial-gradient(circle at center, black 62%, transparent 86%)",
-          }}
-        >
-          <Orb
-            hoverIntensity={1.5}
-            rotateOnHover={true}
-            hue={0}
-            forceHoverState={false}
-            backgroundColor="#FFFFFF"
-          />
-        </div>
+      <section className="relative min-h-[90vh] flex flex-col items-center justify-center px-4 py-32 z-10">
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
@@ -146,12 +148,25 @@ export default function Home() {
           </div>
 
           {/* Headline */}
-          <div>
-            <h1 className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-tight">
-              {t("home_headline_1")}
-              <br />
-              <span className="text-blue-600">{t("home_headline_2")}</span>
-            </h1>
+          <div className="flex flex-col items-center">
+            <SplitText
+              text={t("home_headline_1")}
+              className="text-5xl md:text-7xl font-bold tracking-tight text-slate-900 leading-tight"
+              delay={30}
+              duration={0.8}
+              ease="back.out(1.7)"
+              tag="h1"
+            />
+            <SplitText
+              text={t("home_headline_2")}
+              className="text-5xl md:text-7xl font-bold tracking-tight text-blue-600 leading-tight"
+              delay={30}
+              duration={0.8}
+              ease="back.out(1.7)"
+              tag="h1"
+              from={{ opacity: 0, y: 40 }}
+              to={{ opacity: 1, y: 0, delay: 0.15 }}
+            />
             <p className="mt-6 text-lg md:text-xl text-slate-500 max-w-2xl mx-auto leading-relaxed font-normal">
               {t("home_subtitle")}
             </p>
@@ -182,14 +197,14 @@ export default function Home() {
       </section>
 
       {/* ── Stats strip ── */}
-      <section className="border-y border-slate-100 bg-transparent py-10">
-        <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+      <section className="bg-transparent py-12 px-4 relative z-10 border-t border-slate-100/50">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-center gap-12 lg:gap-24 text-center">
           {stats.map((s) => (
-            <div key={s.label}>
-              <p className="text-3xl md:text-4xl font-bold text-slate-900">
+            <div key={s.label} className="group min-w-[120px]">
+              <p className="text-3xl md:text-5xl font-black tracking-tight text-slate-900 transition-transform group-hover:scale-105 duration-300">
                 {s.value}
               </p>
-              <p className="text-sm text-slate-500 font-medium mt-1">
+              <p className="text-xs font-bold text-blue-600 uppercase tracking-[0.2em] mt-3">
                 {s.label}
               </p>
             </div>

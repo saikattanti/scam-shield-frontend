@@ -8,7 +8,7 @@ export default function HelpPage() {
   const { t } = useLanguage();
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-slate-50">
+    <main className="relative min-h-screen overflow-x-clip bg-slate-50">
       {/* Background system: calmer emergency-support palette */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_14%_14%,rgba(239,68,68,0.12),transparent_33%),radial-gradient(circle_at_86%_18%,rgba(251,146,60,0.10),transparent_30%),radial-gradient(circle_at_48%_90%,rgba(30,41,59,0.08),transparent_45%)]" />
@@ -20,7 +20,7 @@ export default function HelpPage() {
       </div>
 
       {/* Main content - full width */}
-      <div className="relative max-w-350 mx-auto px-2 pt-28 pb-16 md:pt-32">
+      <div className="relative max-w-350 mx-auto px-2 pt-28 pb-16 md:pt-24">
         {/* Page Title Row */}
         <div className="mb-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
           <div>

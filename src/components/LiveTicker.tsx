@@ -23,7 +23,7 @@ export default function LiveTicker() {
     const connect = () => {
       try {
         eventSource = new EventSource(
-          "http://localhost:5000/api/ticker/stream",
+          `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/ticker/stream`,
         );
 
         eventSource.onopen = () => {

@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Shield } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import StaggeredMenu from "./StaggeredMenu";
+import UnifiedButton from "@/components/ui/unified-button";
+import { ArrowRight } from "lucide-react";
 
 export default function NavBar() {
   const { t } = useLanguage();
@@ -43,7 +45,7 @@ export default function NavBar() {
         items={menuItems}
         socialItems={socialItems}
         displaySocials
-        displayItemNumbering={true}
+        displayItemNumbering={false}
         menuButtonColor="#ffffff"
         openMenuButtonColor="#ffffff"
         changeMenuColorOnOpen={true}
@@ -60,59 +62,41 @@ export default function NavBar() {
             </span>
           </Link>
         }
-        centerActions={
-          <>
-            <Link
+        centerActions={null}
+        headerActions={
+          <div className="hidden md:flex items-center gap-2">
+            <UnifiedButton
               href="/check"
-              className={navButtonClass + " scale-90 whitespace-nowrap"}
-              style={
-                { "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties
-              }
-            >
-              <span className="mx-[10px] break-keep">
-                {t("nav_check") || "Check Scam"}
-              </span>
-            </Link>
-            <Link
+              text={t("nav_check") || "Check Scam"}
+              variant="shimmer"
+              className="scale-90 shadow-lg"
+              icon={<ArrowRight className="w-3.5 h-3.5" />}
+            />
+            <UnifiedButton
               href="/help"
-              className={navButtonClass + " scale-90 whitespace-nowrap"}
-              style={
-                { "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties
-              }
-            >
-              <span className="mx-[10px] break-keep">
-                {t("nav_scammed") || "Got Scammed?"}
-              </span>
-            </Link>
-          </>
+              text={t("nav_scammed") || "Got Scammed?"}
+              variant="glass"
+              className="scale-90"
+              icon={<ArrowRight className="w-3.5 h-3.5" />}
+            />
+          </div>
         }
-        headerActions={<div className="hidden md:flex items-center gap-2" />}
       >
         {/* Mobile Content inside StaggeredMenu Panel */}
         <div className="md:hidden flex flex-col gap-6 mt-4">
           <div className="flex flex-col gap-3">
-            <Link
+            <UnifiedButton
               href="/check"
-              className={navButtonClass + " w-full"}
-              style={
-                { "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties
-              }
-            >
-              <span className="mx-[10px]">
-                {t("nav_check") || "Check Scam"}
-              </span>
-            </Link>
-            <Link
+              text={t("nav_check") || "Check Scam"}
+              variant="shimmer"
+              className="w-full"
+            />
+            <UnifiedButton
               href="/help"
-              className={navButtonClass + " w-full"}
-              style={
-                { "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties
-              }
-            >
-              <span className="mx-[10px]">
-                {t("nav_scammed") || "Got Scammed?"}
-              </span>
-            </Link>
+              text={t("nav_scammed") || "Got Scammed?"}
+              variant="glass"
+              className="w-full text-slate-900"
+            />
           </div>
         </div>
       </StaggeredMenu>

@@ -62,7 +62,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
       if (amountLost) formData.append("amountLost", amountLost);
       if (file) formData.append("image", file);
 
-      const response = await fetch("http://localhost:5000/api/analyze/assist", {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze/assist`, {
         method: "POST",
         headers: userCity ? { "X-User-City": userCity } : {},
         body: formData,
@@ -88,27 +88,27 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
     >
       {/* ════ LEFT PANEL: THE INPUT WORKSPACE ════ */}
       <div
-        className={`w-full lg:w-[420px] shrink-0 ${result ? "sticky top-24" : ""}`}
+        className={`w-full lg:w-[420px] shrink-0 h-fit ${result ? "lg:sticky lg:top-28" : ""}`}
       >
         {/* Soft UI Input Card */}
         <div
-          className={`bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden p-6 pb-8 ${result ? "" : "h-full"}`}
+          className={`bg-white rounded-[2rem] border border-slate-200 shadow-sm p-6 pb-8 ${result ? "" : "h-full"}`}
         >
-          <div className="space-y-7 relative z-10">
+          <div className="space-y-5 relative z-10">
             {/* Situation Description */}
             <div>
-              <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
+              <label className="block text-[12px] font-bold text-slate-700 tracking-wide mb-1.5">
                 {t("form_label_what_happened")}
               </label>
 
               {/* Test Data Chips */}
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-widest self-center mr-1">
-                  {t("form_demo_case")}:
+              <div className="flex flex-wrap items-center gap-1.5 mb-3">
+                <span className="text-[9px] font-black text-slate-400 uppercase tracking-widest mr-0.5">
+                  DEMOS:
                 </span>
                 {[
                   {
-                    label: "UPI/OLX Fraud",
+                    label: "UPI",
                     text: "I sent ₹5,000 via GPay for a camera on OLX but the seller blocked me immediately.",
                     platform: "Google Pay",
                     amount: "5000",
@@ -120,7 +120,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                     amount: "12000",
                   },
                   {
-                    label: "Remote Access",
+                    label: "Remote",
                     text: "I installed AnyDesk thinking it was for tech support, then my phone screen went black and I lost ₹2,000.",
                     platform: "PhonePe",
                     amount: "2000",
@@ -134,7 +134,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                       setAmountLost(chip.amount);
                       setResult(null);
                     }}
-                    className="text-[11px] font-bold bg-white hover:bg-slate-50 text-slate-700 py-1.5 px-3 rounded-md border border-slate-200 transition-colors"
+                    className="text-[10px] font-bold bg-white hover:bg-slate-50 text-slate-600 py-1 px-2 rounded-md border border-slate-200 transition-colors"
                   >
                     {chip.label}
                   </button>
@@ -144,16 +144,16 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
               <textarea
                 value={situation}
                 onChange={(e) => setSituation(e.target.value)}
-                rows={5}
-                placeholder="e.g. I received a call saying my SBI account is blocked and they asked for my OTP. I gave it and ₹25,000 was transferred..."
-                className="w-full bg-slate-50 border border-slate-100 rounded-[1.5rem] p-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-sm leading-relaxed"
+                rows={3}
+                placeholder="Describe your incident..."
+                className="w-full bg-slate-50 border border-slate-100 rounded-[1.25rem] p-3.5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-[13px] leading-relaxed"
               />
             </div>
 
             {/* Platform + Amount Row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
               <div>
-                <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
+                <label className="block text-[12px] font-bold text-slate-700 tracking-wide mb-1.5">
                   {t("form_label_platform")}
                 </label>
                 <select
@@ -173,7 +173,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                 </select>
               </div>
               <div>
-                <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
+                <label className="block text-[12px] font-bold text-slate-700 tracking-wide mb-1.5">
                   {t("form_label_amount")} (₹)
                 </label>
                 <input
@@ -188,12 +188,12 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
 
             {/* Screenshot Upload */}
             <div>
-              <label className="block text-[13px] font-bold text-slate-700 tracking-wide mb-2.5">
+              <label className="block text-[12px] font-bold text-slate-700 tracking-wide mb-1.5">
                 {t("form_label_evidence")}
               </label>
               <div
                 onClick={() => document.getElementById("assist-file")?.click()}
-                className={`w-full h-[140px] border-2 border-dashed rounded-[1.5rem] p-6 flex flex-col items-center justify-center cursor-pointer transition-all ${
+                className={`w-full h-[90px] border-2 border-dashed rounded-[1rem] p-3 flex flex-col items-center justify-center cursor-pointer transition-all ${
                   file
                     ? "border-slate-200 bg-white"
                     : "border-slate-200/50 hover:bg-slate-100/50 bg-slate-50"
@@ -371,23 +371,50 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                   </div>
 
                   <div className="space-y-4">
-                    {result.recoverySteps.split("\n").map((step, idx) => {
-                      const trimmed = step.trim();
-                      if (!trimmed) return null;
-                      return (
-                        <div
-                          key={idx}
-                          className="flex gap-4 p-5 bg-slate-50 rounded-2xl border border-slate-100 items-start"
-                        >
-                          <span className="flex-shrink-0 w-8 h-8 bg-red-600 text-white text-xs font-black rounded-full flex items-center justify-center shadow-sm">
-                            {idx + 1}
-                          </span>
-                          <p className="text-[15px] text-slate-800 leading-relaxed font-semibold pt-1">
-                            {trimmed.replace(/^\d+\.\s*/, "")}
-                          </p>
-                        </div>
-                      );
-                    })}
+                    {result.recoverySteps
+                      .split("|||")
+                      .filter((s) => s.trim())
+                      .map((stepContent, idx) => {
+                        const lines = stepContent
+                          .trim()
+                          .split("\n")
+                          .filter((l) => l.trim());
+                        const title = lines[0]
+                          .replace(/^\d+\.\s*/, "")
+                          .replace(/\*\*/g, "");
+                        const subPoints = lines.slice(1);
+
+                        return (
+                          <div
+                            key={idx}
+                            className="bg-slate-50 rounded-2xl border border-slate-100 p-6 flex gap-5 items-start"
+                          >
+                            <span className="flex-shrink-0 w-9 h-9 bg-red-600 text-white text-[13px] font-black rounded-full flex items-center justify-center shadow-sm">
+                              {idx + 1}
+                            </span>
+                            <div className="flex-1 min-w-0">
+                              <h4 className="text-[16px] text-slate-900 font-bold mb-3 tracking-tight leading-snug">
+                                {title}
+                              </h4>
+                              {subPoints.length > 0 && (
+                                <ul className="space-y-3">
+                                  {subPoints.map((point, pIdx) => (
+                                    <li
+                                      key={pIdx}
+                                      className="flex items-start gap-3 group"
+                                    >
+                                      <span className="mt-2 w-1.5 h-1.5 rounded-full bg-slate-300 group-hover:bg-red-400 transition-colors shrink-0" />
+                                      <p className="text-sm text-slate-600 leading-relaxed">
+                                        {point.replace(/^-\s*/, "")}
+                                      </p>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })}
                   </div>
 
                   {result.smartActions && (

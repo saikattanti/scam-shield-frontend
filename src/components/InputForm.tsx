@@ -33,7 +33,7 @@ import EvidenceTable from "./EvidenceTable";
 import FraudTimeline from "./FraudTimeline";
 import SmartActionPanel, { SmartActions } from "./SmartActionPanel";
 import { useLanguage } from "@/context/LanguageContext";
-import SlideArrowButton from "@/components/ui/slide-arrow-button";
+import UnifiedButton from "@/components/ui/unified-button";
 
 type InputType = "text" | "url" | "image" | "audio";
 
@@ -178,7 +178,7 @@ export default function InputForm() {
       if (activeTab === "image" && selectedFile) {
         const fd = new FormData();
         fd.append("image", selectedFile);
-        response = await fetch("http://127.0.0.1:5000/api/analyze/image", {
+        response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze/image`, {
           method: "POST",
           body: fd,
           headers: cityHeader,
@@ -186,13 +186,13 @@ export default function InputForm() {
       } else if (activeTab === "audio" && selectedFile) {
         const fd = new FormData();
         fd.append("audio", selectedFile);
-        response = await fetch("http://127.0.0.1:5000/api/analyze/audio", {
+        response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze/audio`, {
           method: "POST",
           body: fd,
           headers: cityHeader,
         });
       } else {
-        response = await fetch("http://127.0.0.1:5000/api/analyze", {
+        response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze`, {
           method: "POST",
           headers: { "Content-Type": "application/json", ...cityHeader },
           body: JSON.stringify({ type: activeTab, content: inputText }),
@@ -235,9 +235,11 @@ export default function InputForm() {
   return (
     <div className="flex flex-col lg:flex-row gap-6 items-start w-full">
       {/* ════ LEFT PANEL: THE INPUT WORKSPACE ════ */}
-      <div className="w-full lg:w-[420px] shrink-0 sticky top-24">
+      <div
+        className={`w-full lg:w-[420px] shrink-0 h-fit ${isAnalyzing || analysisResult ? "lg:sticky lg:top-28" : ""}`}
+      >
         {/* Soft UI Input Card */}
-        <div className="bg-white rounded-[2rem] border border-slate-200 shadow-sm overflow-hidden p-6 pb-8">
+        <div className="bg-white rounded-[2rem] border border-slate-200 shadow-sm p-6 pb-8">
           {/* Tile-based Tab Navigation */}
           <div className="flex gap-2 mb-6">
             {tabs.map((tab) => (
@@ -261,7 +263,7 @@ export default function InputForm() {
             ))}
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-4">
             {/* Dynamic Input Areas */}
             <AnimatePresence mode="popLayout">
               <motion.div
@@ -273,7 +275,7 @@ export default function InputForm() {
               >
                 {activeTab === "text" && (
                   <textarea
-                    className="w-full h-[180px] bg-slate-50 border border-slate-100 rounded-[1.5rem] p-5 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-sm leading-relaxed"
+                    className="w-full h-[100px] bg-slate-50 border border-slate-100 rounded-[1.25rem] p-4 text-slate-600 placeholder-slate-400 focus:outline-none focus:border-slate-200 focus:bg-white transition-all resize-none text-[13px] leading-relaxed"
                     placeholder={t("input_text_placeholder")}
                     value={inputText}
                     onChange={(e) => setInputText(e.target.value)}
@@ -301,7 +303,7 @@ export default function InputForm() {
                       onClick={() =>
                         document.getElementById("file-upload")?.click()
                       }
-                      className={`w-full h-[180px] border-2 border-dashed rounded-[1.5rem] flex flex-col items-center justify-center cursor-pointer transition-all ${
+                      className={`w-full h-[90px] border-2 border-dashed rounded-[1rem] flex flex-col items-center justify-center cursor-pointer transition-all ${
                         previewUrl
                           ? "border-slate-200 bg-white"
                           : "border-slate-200/50 bg-slate-50 hover:bg-slate-100/50"
@@ -345,7 +347,7 @@ export default function InputForm() {
                       onClick={() =>
                         document.getElementById("audio-upload")?.click()
                       }
-                      className={`w-full h-[180px] border-2 border-dashed rounded-[1.5rem] flex flex-col items-center justify-center cursor-pointer transition-all ${
+                      className={`w-full h-[90px] border-2 border-dashed rounded-[1rem] flex flex-col items-center justify-center cursor-pointer transition-all ${
                         selectedFile
                           ? "border-slate-200 bg-white"
                           : "border-slate-200/50 bg-slate-50 hover:bg-slate-100/50"
@@ -407,8 +409,8 @@ export default function InputForm() {
             </div>
 
             {/* Ghost Light-Grey Action Button */}
-            <div className="flex justify-center pt-1">
-              <SlideArrowButton
+            <div className="flex justify-center pt-1 w-full">
+              <UnifiedButton
                 onClick={handleAnalyze}
                 disabled={
                   isAnalyzing ||
@@ -417,8 +419,9 @@ export default function InputForm() {
                     : !selectedFile)
                 }
                 text={isAnalyzing ? t("input_analyzing") : t("input_run_check")}
-                primaryColor="#334155"
-                className="w-full max-w-80 border-slate-200 disabled:opacity-60 disabled:cursor-not-allowed sm:w-auto sm:max-w-none"
+                variant="primary"
+                className="w-full max-w-md"
+                icon={<ArrowRight className="w-4 h-4" />}
               />
             </div>
 

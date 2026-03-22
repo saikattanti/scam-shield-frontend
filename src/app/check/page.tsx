@@ -8,7 +8,7 @@ export default function CheckPage() {
   const { t } = useLanguage();
 
   return (
-    <main className="relative min-h-screen overflow-hidden bg-slate-50">
+    <main className="relative min-h-screen overflow-x-clip bg-slate-50">
       {/* Background system: calm gradients + subtle security-style pattern */}
       <div className="pointer-events-none absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_10%_12%,rgba(37,99,235,0.11),transparent_34%),radial-gradient(circle_at_84%_16%,rgba(14,165,233,0.10),transparent_30%),radial-gradient(circle_at_50%_90%,rgba(15,23,42,0.08),transparent_44%)]" />
@@ -20,9 +20,9 @@ export default function CheckPage() {
       </div>
 
       {/* Main content - full width */}
-      <div className="relative max-w-350 mx-auto px-2 pt-28 pb-16 md:pt-32">
+      <div className="relative max-w-350 mx-auto px-2 pt-24 pb-10 md:pt-24">
         {/* Page Title Row */}
-        <div className="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+        <div className="mb-12 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div>
             <p className="text-[10px] font-black uppercase tracking-widest text-blue-600 mb-2">
               AI-Powered Scam Detection
