@@ -723,14 +723,140 @@ export default function InputForm() {
                       Report
                     </h3>
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+                      {/* Shortlink Unmasking */}
                       {analysisResult.urlMetadata.isShortlink && (
-                        <div className="col-span-2 lg:col-span-4 p-5 bg-orange-50 border border-orange-200 rounded-[1.25rem]">
-                          <p className="text-xs font-bold text-orange-800 mb-2 flex items-center gap-2">
+                        <div className="col-span-2 lg:col-span-4 p-5 bg-slate-50 border border-slate-200 rounded-[1.25rem]">
+                          <p className="text-xs font-bold text-slate-500 mb-2 flex items-center gap-2">
                             <LinkIcon className="w-4 h-4" /> URL Shortener
                             Unmasked:
                           </p>
-                          <p className="text-sm font-mono text-orange-600 bg-white/60 px-4 py-2 rounded-xl border border-orange-100/50 break-all">
-                            {analysisResult.urlMetadata.resolvedUrl}
+                          <p className="text-sm font-mono text-slate-800 bg-white px-4 py-2 rounded-xl border border-slate-100 break-all">
+                            {analysisResult.urlMetadata.resolvedUrl ||
+                              "Failed to resolve"}
+                          </p>
+                        </div>
+                      )}
+
+                      {/* Domain Age (WHOIS) */}
+                      {analysisResult.urlMetadata.ageInDays !== undefined &&
+                        analysisResult.urlMetadata.ageInDays !== null && (
+                          <div
+                            className={`p-4 border rounded-[1.25rem] flex flex-col gap-2 ${
+                              analysisResult.urlMetadata.ageInDays < 30
+                                ? "bg-red-50 border-red-200"
+                                : analysisResult.urlMetadata.ageInDays < 180
+                                  ? "bg-orange-50 border-orange-200"
+                                  : "bg-emerald-50 border-emerald-200"
+                            }`}
+                          >
+                            <div className="flex items-center gap-2 text-xs font-bold text-slate-600">
+                              <Calendar className="w-4 h-4" /> Domain Age
+                            </div>
+                            <p
+                              className={`text-xl font-black ${
+                                analysisResult.urlMetadata.ageInDays < 30
+                                  ? "text-red-600"
+                                  : analysisResult.urlMetadata.ageInDays < 180
+                                    ? "text-orange-600"
+                                    : "text-emerald-600"
+                              }`}
+                            >
+                              {analysisResult.urlMetadata.ageInDays} days
+                            </p>
+                            <p className="text-[10px] font-semibold text-slate-500">
+                              WHOIS Registry
+                            </p>
+                          </div>
+                        )}
+
+                      {/* DNS Resolution */}
+                      <div
+                        className={`p-4 border rounded-[1.25rem] flex flex-col gap-2 ${
+                          analysisResult.urlMetadata.dnsResolved
+                            ? "bg-emerald-50 border-emerald-200"
+                            : "bg-red-50 border-red-200"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2 text-xs font-bold text-slate-600">
+                          <Globe className="w-4 h-4" /> DNS Records
+                        </div>
+                        <p
+                          className={`text-xl font-black ${
+                            analysisResult.urlMetadata.dnsResolved
+                              ? "text-emerald-600"
+                              : "text-red-600"
+                          }`}
+                        >
+                          {analysisResult.urlMetadata.dnsResolved
+                            ? "Resolved"
+                            : "Offline"}
+                        </p>
+                        <p className="text-[10px] font-semibold text-slate-500">
+                          A/AAAA Lookup
+                        </p>
+                      </div>
+
+                      {/* TLS Security */}
+                      <div
+                        className={`p-4 border rounded-[1.25rem] flex flex-col gap-2 ${
+                          analysisResult.urlMetadata.protocol === "https:"
+                            ? "bg-emerald-50 border-emerald-200"
+                            : "bg-red-50 border-red-200"
+                        }`}
+                      >
+                        <div className="flex items-center gap-2 text-xs font-bold text-slate-600">
+                          <Shield className="w-4 h-4" /> Transport
+                        </div>
+                        <p
+                          className={`text-xl font-black ${
+                            analysisResult.urlMetadata.protocol === "https:"
+                              ? "text-emerald-600"
+                              : "text-red-600"
+                          }`}
+                        >
+                          {analysisResult.urlMetadata.protocol === "https:"
+                            ? "Secure TLS"
+                            : "Insecure HTTP"}
+                        </p>
+                        <p className="text-[10px] font-semibold text-slate-500">
+                          Encryption
+                        </p>
+                      </div>
+
+                      {/* Sandboxing */}
+                      {analysisResult.urlMetadata.title && (
+                        <div
+                          className={`p-4 border rounded-[1.25rem] flex flex-col gap-2 col-span-2 lg:col-span-1 ${
+                            analysisResult.urlMetadata.hasPasswordForm
+                              ? "bg-red-50 border-red-200"
+                              : "bg-slate-50 border-slate-200"
+                          }`}
+                        >
+                          <div className="flex items-center gap-2 text-xs font-bold text-slate-600">
+                            <Lock className="w-4 h-4" /> Sandboxing
+                          </div>
+                          <p
+                            className={`text-[12px] font-black leading-tight ${
+                              analysisResult.urlMetadata.hasPasswordForm
+                                ? "text-red-600"
+                                : "text-slate-800"
+                            }`}
+                          >
+                            {analysisResult.urlMetadata.title.substring(0, 30)}
+                            {analysisResult.urlMetadata.title.length > 30
+                              ? "..."
+                              : ""}
+                          </p>
+                          <p
+                            className={`text-[10px] font-bold ${
+                              analysisResult.urlMetadata.hasPasswordForm
+                                ? "text-red-500"
+                                : "text-slate-500"
+                            }`}
+                          >
+                            {analysisResult.urlMetadata.hasPasswordForm
+                              ? "⚠️ Hidden Login Form Detected"
+                              : "No credential forms found"}
                           </p>
                         </div>
                       )}
