@@ -29,6 +29,7 @@ export interface StaggeredMenuProps {
   onMenuClose?: () => void;
   children?: React.ReactNode;
   headerActions?: React.ReactNode;
+  centerActions?: React.ReactNode;
 }
 
 export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
@@ -49,7 +50,8 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
   onMenuOpen,
   onMenuClose,
   children,
-  headerActions
+  headerActions,
+  centerActions
 }: StaggeredMenuProps) => {
   const [open, setOpen] = useState(false);
   const openRef = useRef(false);
@@ -420,10 +422,16 @@ export const StaggeredMenu: React.FC<StaggeredMenuProps> = ({
           aria-label="Main navigation header"
         >
           <div className="bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-sm w-full pointer-events-auto transition-[background] duration-300">
-            <div className="max-w-screen-2xl mx-auto px-6 py-4 w-full flex items-center justify-between gap-4">
+            <div className="max-w-screen-2xl mx-auto px-6 py-4 w-full flex items-center justify-between gap-4 relative">
               <div className="flex items-center select-none z-50 transition-colors" aria-label="Logo">
                 {logoUrl}
               </div>
+
+              {centerActions && (
+                <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 items-center justify-center gap-2 z-50">
+                  {centerActions}
+                </div>
+              )}
 
               <div className="flex items-center justify-end gap-2 z-50">
                 {headerActions}

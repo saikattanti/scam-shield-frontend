@@ -53,8 +53,8 @@ export default function NavBar() {
             </span>
           </Link>
         }
-        headerActions={
-          <div className="hidden md:flex items-center gap-2">
+        centerActions={
+          <>
             <Link
               href="/check"
               className={navButtonClass + " scale-90 whitespace-nowrap"}
@@ -69,8 +69,11 @@ export default function NavBar() {
             >
               <span className="mx-[10px] break-keep">{t("nav_scammed") || "Got Scammed?"}</span>
             </Link>
-
-            <div className="ml-2 pl-3 border-l border-slate-200/50 flex items-center relative">
+          </>
+        }
+        headerActions={
+          <div className="hidden md:flex items-center gap-2">
+            <div className="mr-2 pr-3 border-r border-slate-200/50 flex items-center relative">
               <Globe className="w-3.5 h-3.5 text-slate-400 absolute left-6 pointer-events-none" />
               <select
                 value={language}
