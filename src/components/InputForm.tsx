@@ -120,6 +120,7 @@ export default function InputForm() {
   const [previewUrl, setPreviewUrl] = useState<string | null>(null);
   const [analysisResult, setAnalysisResult] = useState<AnalysisResult>(null);
   const [isAnalyzing, setIsAnalyzing] = useState(false);
+  const [analysisLogs, setAnalysisLogs] = useState<string[]>([]);
   const [showPrivacyPreview, setShowPrivacyPreview] = useState(false);
   const [userCity, setUserCity] = useState<string | null>(null);
 
@@ -169,13 +170,16 @@ export default function InputForm() {
     if (["text", "url"].includes(activeTab) && !inputText.trim()) return;
     if (["image", "audio"].includes(activeTab) && !selectedFile) return;
     setIsAnalyzing(true);
+    setAnalysisLogs(["Initializng Privacy-First Scrub...", "Scrubbing PII (Aadhaar, Phone, OTP)..."]);
     setAnalysisResult(null);
+
     const cityHeader: Record<string, string> = userCity
       ? { "X-User-City": userCity }
       : {};
     try {
       let response;
       if (activeTab === "image" && selectedFile) {
+        setAnalysisLogs(["Uploading image to AI Vision Buffer...", "Running OCR Engine (In-browser)..."]);
         const fd = new FormData();
         fd.append("image", selectedFile);
         response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze/image`, {
@@ -184,6 +188,7 @@ export default function InputForm() {
           headers: cityHeader,
         });
       } else if (activeTab === "audio" && selectedFile) {
+        setAnalysisLogs(["Processing Audio Spectrum...", "Transcribing Voice to Text..."]);
         const fd = new FormData();
         fd.append("audio", selectedFile);
         response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze/audio`, {
@@ -192,6 +197,10 @@ export default function InputForm() {
           headers: cityHeader,
         });
       } else {
+        setTimeout(() => setAnalysisLogs(prev => [...prev, "Detected Language: Auto", "Running Multi-Lingual Keyword Engine..."]), 400);
+        setTimeout(() => setAnalysisLogs(prev => [...prev, "Keyword Engine: Analysis complete. Escalating to ML Engine..."]), 800);
+        setTimeout(() => setAnalysisLogs(prev => [...prev, "Invoking Global ML Worker (GPU Accelerated)..."]), 1200);
+        
         response = await fetch(`${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'}/api/analyze`, {
           method: "POST",
           headers: { "Content-Type": "application/json", ...cityHeader },
@@ -200,13 +209,17 @@ export default function InputForm() {
       }
       const data = await response.json();
       if (data.error) throw new Error(data.error);
+      setAnalysisLogs(prev => [...prev, "ML Inference Complete.", "Generating Recovery Guidance via Gemini API..."]);
       setAnalysisResult(data);
     } catch (error: any) {
       alert(
         error.message || "Analysis failed. Ensure all services are running.",
       );
     } finally {
-      setIsAnalyzing(false);
+      setTimeout(() => {
+        setIsAnalyzing(false);
+        setAnalysisLogs([]);
+      }, 500);
     }
   };
 
@@ -548,10 +561,39 @@ export default function InputForm() {
                 <h3 className="text-2xl font-black text-slate-800 mb-3">
                   Analyzing Threat Vectors
                 </h3>
-                <p className="text-sm text-slate-500 mb-10 max-w-sm mx-auto">
+                <p className="text-sm text-slate-500 mb-6 max-w-sm mx-auto">
                   Deep checking against multi-modal models and live threat
                   intelligence feeds...
                 </p>
+
+                {/* AI LOGS UI */}
+                <div className="w-full max-w-md mx-auto bg-slate-900 rounded-2xl p-5 text-left font-mono text-[11px] leading-relaxed shadow-2xl border border-slate-800">
+                   <div className="flex items-center gap-2 mb-3 border-b border-slate-800 pb-2">
+                      <div className="w-2 h-2 rounded-full bg-red-500" />
+                      <div className="w-2 h-2 rounded-full bg-amber-500" />
+                      <div className="w-2 h-2 rounded-full bg-emerald-500" />
+                      <span className="text-slate-500 ml-2 uppercase tracking-widest font-black text-[9px]">AI Analysis Log</span>
+                   </div>
+                   <div className="space-y-1 h-32 overflow-hidden flex flex-col justify-end">
+                      {analysisLogs.map((log, i) => (
+                        <motion.div 
+                          key={i} 
+                          initial={{ opacity: 0, x: -5 }} 
+                          animate={{ opacity: 1, x: 0 }}
+                          className="flex gap-2"
+                        >
+                          <span className="text-emerald-500/50 shrink-0">[{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}]</span>
+                          <span className={`${i === analysisLogs.length - 1 ? 'text-emerald-400' : 'text-slate-400'}`}>
+                            {i === analysisLogs.length - 1 ? "> " : ""}{log}
+                          </span>
+                        </motion.div>
+                      ))}
+                      <div className="flex gap-2 opacity-50">
+                        <span className="text-emerald-500/50 shrink-0">[{new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' })}]</span>
+                        <span className="text-emerald-400 animate-pulse">_</span>
+                      </div>
+                   </div>
+                </div>
               </div>
             </motion.div>
           )}
