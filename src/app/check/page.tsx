@@ -20,7 +20,7 @@ export default function CheckPage() {
       </div>
 
       {/* Main content - full width */}
-      <div className="relative max-w-350 mx-auto px-2 pt-6 pb-16">
+      <div className="relative max-w-350 mx-auto px-2 pt-28 pb-16 md:pt-32">
         {/* Page Title Row */}
         <div className="mb-10 flex flex-col lg:flex-row lg:items-end justify-between gap-8">
           <div>
