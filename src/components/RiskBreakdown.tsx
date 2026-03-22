@@ -61,7 +61,13 @@ function computeDimensions(signals: string[], score: number, category: string): 
   socialScore = Math.min(socialScore, maxAllowed);
 
   // Aggressively squash for perfectly safe 0-score inputs
-  if (score < 5) {
+  if (score === 0) {
+    urgencyScore = 0;
+    spoofScore = 0;
+    financeScore = 0;
+    linkScore = 0;
+    socialScore = 0;
+  } else if (score < 5) {
     urgencyScore = Math.min(urgencyScore, 8);
     spoofScore = Math.min(spoofScore, 5);
     financeScore = Math.min(financeScore, 6);
