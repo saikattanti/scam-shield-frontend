@@ -26,7 +26,9 @@ export default function NavBar() {
               <div className="bg-slate-900 p-1.5 rounded-lg group-hover:bg-slate-800 transition-colors">
                 <Shield className="w-4 h-4 text-white" />
               </div>
-              <span className="text-lg font-bold tracking-tight text-slate-900">ScamShield<span className="text-blue-600">.</span></span>
+              <span className="text-lg font-bold tracking-tight text-slate-900">
+                ScamShield<span className="text-blue-600">.</span>
+              </span>
             </Link>
           </div>
 
@@ -35,14 +37,18 @@ export default function NavBar() {
             <Link
               href="/check"
               className={navButtonClass}
-              style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+              style={
+                { "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties
+              }
             >
               <span className="mx-[10px]">{t("nav_check")}</span>
             </Link>
             <Link
               href="/help"
               className={navButtonClass}
-              style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+              style={
+                { "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties
+              }
             >
               <span className="mx-[10px]">{t("nav_scammed")}</span>
             </Link>
@@ -76,7 +82,11 @@ export default function NavBar() {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-full text-slate-600 hover:bg-white/50 transition-colors"
             >
-              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+              {isOpen ? (
+                <X className="h-5 w-5" />
+              ) : (
+                <Menu className="h-5 w-5" />
+              )}
             </button>
           </div>
         </div>
@@ -90,7 +100,9 @@ export default function NavBar() {
               <Link
                 href="/check"
                 className={`${navButtonClass} flex-1`}
-                style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+                style={
+                  { "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties
+                }
                 onClick={() => setIsOpen(false)}
               >
                 <span className="mx-[10px]">{t("nav_check")}</span>
@@ -98,7 +110,9 @@ export default function NavBar() {
               <Link
                 href="/help"
                 className={`${navButtonClass} flex-1`}
-                style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+                style={
+                  { "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties
+                }
                 onClick={() => setIsOpen(false)}
               >
                 <span className="mx-[10px]">{t("nav_scammed")}</span>
@@ -106,9 +120,12 @@ export default function NavBar() {
             </div>
             <div className="pt-4 border-t border-slate-200/50 relative">
               <Globe className="w-4 h-4 text-slate-400 absolute left-3 top-7 pointer-events-none" />
-              <select 
+              <select
                 value={language}
-                onChange={(e) => { handleLanguageChange(e); setIsOpen(false); }}
+                onChange={(e) => {
+                  handleLanguageChange(e);
+                  setIsOpen(false);
+                }}
                 className="w-full pl-10 py-3 bg-slate-50 border border-slate-200 text-slate-700 font-bold rounded-xl appearance-none cursor-pointer text-sm"
               >
                 <option value="en">English (EN)</option>

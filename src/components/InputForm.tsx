@@ -1,5 +1,5 @@
 /* eslint-disable */
-'use client';
+"use client";
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -125,9 +125,11 @@ export default function InputForm() {
 
   // Detect user city from IP on mount (client-side only, never stored)
   useState(() => {
-    fetch('https://ipapi.co/json/')
-      .then(r => r.json())
-      .then(data => { if (data?.city) setUserCity(data.city); })
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.city) setUserCity(data.city);
+      })
       .catch(() => {});
   });
 
@@ -168,7 +170,9 @@ export default function InputForm() {
     if (["image", "audio"].includes(activeTab) && !selectedFile) return;
     setIsAnalyzing(true);
     setAnalysisResult(null);
-    const cityHeader: Record<string, string> = userCity ? { 'X-User-City': userCity } : {};
+    const cityHeader: Record<string, string> = userCity
+      ? { "X-User-City": userCity }
+      : {};
     try {
       let response;
       if (activeTab === "image" && selectedFile) {
@@ -642,33 +646,58 @@ export default function InputForm() {
                       Rapid-Response Action Steps
                     </h3>
                     <div className="space-y-4">
-                      {analysisResult.aiSteps.split(/\|\|\|/).filter((s: string) => s.trim()).slice(0, 5).map((step: string, idx: number) => {
-                        const parts = step.trim().split('\n').filter(p => p.trim());
-                        const title = parts[0].replace(/^(\d+\.\s*|🚨\s*|📞\s*|🧾\s*|🛑\s*|🧑‍⚖️\s*|⚠️\s*|\*\*)+|(\*\*)+$/g, '').trim();
-                        const subItems = parts.slice(1);
-                        return (
-                          <div key={idx} className="flex gap-4">
-                             <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.bg} text-white text-xs font-black shadow-sm mt-0.5`}>{idx + 1}</div>
-                             <div className="flex-1">
-                               <p className="text-[15px] text-slate-800 font-bold">{title}</p>
-                               {subItems.length > 0 && (
-                                 <ul className="space-y-1 mt-1.5 pl-0.5">
-                                   {subItems.map((item, i) => {
-                                     const cleanItem = item.replace(/^[-*•]\s*/, '').trim();
-                                     if (!cleanItem) return null;
-                                     return (
-                                       <li key={i} className="text-[13px] text-slate-600 font-medium leading-relaxed flex items-start gap-2">
-                                         <span className="text-slate-300 mt-[1px] font-bold">•</span>
-                                         <span>{cleanItem}</span>
-                                       </li>
-                                     );
-                                   })}
-                                 </ul>
-                               )}
-                             </div>
-                          </div>
-                        );
-                      })}
+                      {analysisResult.aiSteps
+                        .split(/\|\|\|/)
+                        .filter((s: string) => s.trim())
+                        .slice(0, 5)
+                        .map((step: string, idx: number) => {
+                          const parts = step
+                            .trim()
+                            .split("\n")
+                            .filter((p) => p.trim());
+                          const title = parts[0]
+                            .replace(
+                              /^(\d+\.\s*|🚨\s*|📞\s*|🧾\s*|🛑\s*|🧑‍⚖️\s*|⚠️\s*|\*\*)+|(\*\*)+$/g,
+                              "",
+                            )
+                            .trim();
+                          const subItems = parts.slice(1);
+                          return (
+                            <div key={idx} className="flex gap-4">
+                              <div
+                                className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 ${colors.bg} text-white text-xs font-black shadow-sm mt-0.5`}
+                              >
+                                {idx + 1}
+                              </div>
+                              <div className="flex-1">
+                                <p className="text-[15px] text-slate-800 font-bold">
+                                  {title}
+                                </p>
+                                {subItems.length > 0 && (
+                                  <ul className="space-y-1 mt-1.5 pl-0.5">
+                                    {subItems.map((item, i) => {
+                                      const cleanItem = item
+                                        .replace(/^[-*•]\s*/, "")
+                                        .trim();
+                                      if (!cleanItem) return null;
+                                      return (
+                                        <li
+                                          key={i}
+                                          className="text-[13px] text-slate-600 font-medium leading-relaxed flex items-start gap-2"
+                                        >
+                                          <span className="text-slate-300 mt-[1px] font-bold">
+                                            •
+                                          </span>
+                                          <span>{cleanItem}</span>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                )}
+                              </div>
+                            </div>
+                          );
+                        })}
                     </div>
                   </div>
                 )}
@@ -710,7 +739,9 @@ export default function InputForm() {
               {/* Emergency Action Centre */}
               {analysisResult.smartActions && (
                 <div className="pt-2">
-                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1">Emergency Action Centre</p>
+                  <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4 pl-1">
+                    Emergency Action Centre
+                  </p>
                   <SmartActionPanel actions={analysisResult.smartActions} />
                 </div>
               )}

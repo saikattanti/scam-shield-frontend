@@ -42,9 +42,11 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
 
   // Detect user city from IP on mount (client-side only, never stored)
   useState(() => {
-    fetch('https://ipapi.co/json/')
-      .then(r => r.json())
-      .then(data => { if (data?.city) setUserCity(data.city); })
+    fetch("https://ipapi.co/json/")
+      .then((r) => r.json())
+      .then((data) => {
+        if (data?.city) setUserCity(data.city);
+      })
       .catch(() => {});
   });
 
@@ -62,7 +64,7 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
 
       const response = await fetch("http://localhost:5000/api/analyze/assist", {
         method: "POST",
-  headers: userCity ? { "X-User-City": userCity } : {},
+        headers: userCity ? { "X-User-City": userCity } : {},
         body: formData,
       });
       const data = await response.json();
@@ -424,9 +426,9 @@ export default function GotScammedAssistant({ defaultOpen = true }: Props) {
                         {t("form_official_timeline")}
                       </p>
                       <p className="text-sm text-red-700 font-medium">
-                        Reporting to Cyber Crime within the &quot;Golden Hour&quot;
-                        maximizes fund recovery chances by freezing the
-                        fraudster&apos;s intermediate accounts.
+                        Reporting to Cyber Crime within the &quot;Golden
+                        Hour&quot; maximizes fund recovery chances by freezing
+                        the fraudster&apos;s intermediate accounts.
                       </p>
                     </div>
                     <SlideArrowButton

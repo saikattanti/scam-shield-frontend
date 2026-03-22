@@ -120,8 +120,14 @@ export default function Home() {
     <main className="min-h-screen bg-white text-slate-900">
       {/* ── Hero ── */}
       <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-32 pb-20">
-
-        <div className="absolute inset-0 z-0 mix-blend-multiply pointer-events-none scale-[1.6] opacity-70" style={{ maskImage: 'radial-gradient(circle at center, black 45%, transparent 95%)', top: '8%' }}>
+        <div
+          className="absolute inset-0 z-0 mix-blend-multiply pointer-events-none scale-[1.6] opacity-70"
+          style={{
+            maskImage:
+              "radial-gradient(circle at center, black 45%, transparent 95%)",
+            top: "8%",
+          }}
+        >
           <Orb
             hoverIntensity={1.5}
             rotateOnHover={true}
