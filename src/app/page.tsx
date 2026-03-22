@@ -195,8 +195,8 @@ export default function Home() {
       {/* ── How it works ── */}
       <section className="relative py-24 px-4 overflow-hidden">
         <div className="pointer-events-none absolute inset-0 opacity-70">
-          <div className="absolute -top-20 left-1/3 h-64 w-64 rounded-full bg-blue-100/70 blur-3xl" />
-          <div className="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-orange-100/70 blur-3xl" />
+          <div className="absolute -top-20 left-1/3 h-64 w-64 rounded-full bg-blue-100/70 blur-3xl transform-gpu" />
+          <div className="absolute -bottom-24 right-1/4 h-72 w-72 rounded-full bg-orange-100/70 blur-3xl transform-gpu" />
         </div>
 
         <div className="relative mx-auto max-w-6xl">
