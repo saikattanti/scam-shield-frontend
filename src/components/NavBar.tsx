@@ -4,11 +4,13 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { Shield, Menu, X, Globe } from "lucide-react";
 import { Language, useLanguage } from "@/context/LanguageContext";
-import SlideArrowButton from "@/components/ui/slide-arrow-button";
 
 export default function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+
+  const navButtonClass =
+    "relative z-0 inline-flex items-center justify-center overflow-hidden rounded-[25px] border px-[15px] py-[5px] text-[17px] font-semibold text-[var(--btn-color)] transition-colors duration-300 delay-100 ease-out before:absolute before:inset-0 before:-left-[5em] before:z-[-1] before:m-auto before:block before:h-[20em] before:w-[20em] before:rounded-full before:content-[''] before:transition-[box-shadow] before:duration-500 before:ease-out hover:text-white hover:before:shadow-[inset_0_0_0_10em_var(--btn-color)]";
 
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(e.target.value as Language);
@@ -28,10 +30,22 @@ export default function NavBar() {
             </Link>
           </div>
 
-          {/* Desktop Right Actions */}
-          <div className="hidden md:flex items-center gap-3">
-            <SlideArrowButton href="/check" text={t('nav_check')} primaryColor="#0f172a" className="scale-90" />
-            <SlideArrowButton href="/help" text={t('nav_scammed')} primaryColor="#dc2626" className="scale-90" />
+          {/* Desktop Right Actions (language at far right) */}
+          <div className="hidden md:flex items-center justify-end gap-2">
+            <Link
+              href="/check"
+              className={navButtonClass}
+              style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px]">{t("nav_check")}</span>
+            </Link>
+            <Link
+              href="/help"
+              className={navButtonClass}
+              style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px]">{t("nav_scammed")}</span>
+            </Link>
 
             <div className="ml-2 pl-3 border-l border-slate-200/50 flex items-center relative">
               <Globe className="w-3.5 h-3.5 text-slate-400 absolute left-6 pointer-events-none" />
@@ -70,11 +84,25 @@ export default function NavBar() {
 
       {/* Mobile Nav - also pill style */}
       {isOpen && (
-        <div className="absolute top-20 left-0 right-0 md:hidden bg-white/90 backdrop-blur-2xl border border-white/50 rounded-3xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-200 pointer-events-auto">
-          <div className="p-6 space-y-4">
-            <div className="flex flex-col gap-3">
-              <SlideArrowButton href="/check" text={t('nav_check')} primaryColor="#0f172a" className="w-full" onClick={() => setIsOpen(false)} />
-              <SlideArrowButton href="/help" text={t('nav_scammed')} primaryColor="#dc2626" className="w-full" onClick={() => setIsOpen(false)} />
+        <div className="md:hidden border-t border-slate-100 bg-white">
+          <div className="px-4 pt-2 pb-4 space-y-1 shadow-lg">
+            <div className="flex gap-2 mt-3 pt-3 border-t border-slate-100">
+              <Link
+                href="/check"
+                className={`${navButtonClass} flex-1`}
+                style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="mx-[10px]">{t("nav_check")}</span>
+              </Link>
+              <Link
+                href="/help"
+                className={`${navButtonClass} flex-1`}
+                style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+                onClick={() => setIsOpen(false)}
+              >
+                <span className="mx-[10px]">{t("nav_scammed")}</span>
+              </Link>
             </div>
             <div className="pt-4 border-t border-slate-200/50 relative">
               <Globe className="w-4 h-4 text-slate-400 absolute left-3 top-7 pointer-events-none" />
