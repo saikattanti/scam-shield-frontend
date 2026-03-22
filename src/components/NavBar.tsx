@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { Shield, Globe } from "lucide-react";
+import { Shield, Globe, Menu, X } from "lucide-react";
 import { Language, useLanguage } from "@/context/LanguageContext";
 import StaggeredMenu from "./StaggeredMenu";
-import SlideArrowButton from "@/components/ui/slide-arrow-button";
 
 export default function NavBar() {
   const { language, setLanguage, t } = useLanguage();
@@ -13,6 +12,9 @@ export default function NavBar() {
   const handleLanguageChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setLanguage(e.target.value as Language);
   };
+
+  const navButtonClass =
+    "relative z-0 inline-flex items-center justify-center overflow-hidden rounded-[25px] border px-[15px] py-[5px] text-[17px] font-semibold text-[var(--btn-color)] transition-colors duration-300 delay-100 ease-out before:absolute before:inset-0 before:-left-[5em] before:z-[-1] before:m-auto before:block before:h-[20em] before:w-[20em] before:rounded-full before:content-[''] before:transition-[box-shadow] before:duration-500 before:ease-out hover:text-white hover:before:shadow-[inset_0_0_0_10em_var(--btn-color)]";
 
   const menuItems = [
     { label: t("nav_home") || 'Home', ariaLabel: 'Go to home page', link: '/' },
@@ -46,15 +48,27 @@ export default function NavBar() {
             <div className="bg-slate-900 p-1.5 rounded-lg group-hover:bg-slate-800 transition-colors">
               <Shield className="w-4 h-4 text-white" />
             </div>
-            <span className="text-lg font-bold tracking-tight text-slate-900 transition-colors">
+            <span className="text-lg font-bold tracking-tight text-slate-900 transition-colors break-keep whitespace-nowrap">
               ScamShield<span className="text-blue-600">.</span>
             </span>
           </Link>
         }
         headerActions={
-          <div className="hidden md:flex items-center gap-3">
-            <SlideArrowButton href="/check" text={t('nav_check') || "Check Scam"} primaryColor="#0f172a" className="scale-90" />
-            <SlideArrowButton href="/help" text={t('nav_scammed') || "Got Scammed?"} primaryColor="#dc2626" className="scale-90" />
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              href="/check"
+              className={navButtonClass + " scale-90 whitespace-nowrap"}
+              style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px] break-keep">{t("nav_check") || "Check Scam"}</span>
+            </Link>
+            <Link
+              href="/help"
+              className={navButtonClass + " scale-90 whitespace-nowrap"}
+              style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px] break-keep">{t("nav_scammed") || "Got Scammed?"}</span>
+            </Link>
 
             <div className="ml-2 pl-3 border-l border-slate-200/50 flex items-center relative">
               <Globe className="w-3.5 h-3.5 text-slate-400 absolute left-6 pointer-events-none" />
@@ -83,8 +97,20 @@ export default function NavBar() {
         {/* Mobile Content inside StaggeredMenu Panel */}
         <div className="md:hidden flex flex-col gap-6 mt-4">
           <div className="flex flex-col gap-3">
-            <SlideArrowButton href="/check" text={t('nav_check') || "Check Scam"} primaryColor="#0f172a" className="w-full" />
-            <SlideArrowButton href="/help" text={t('nav_scammed') || "Got Scammed?"} primaryColor="#dc2626" className="w-full" />
+            <Link
+              href="/check"
+              className={navButtonClass + " w-full"}
+              style={{ "--btn-color": "rgb(15, 23, 42)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px]">{t("nav_check") || "Check Scam"}</span>
+            </Link>
+            <Link
+              href="/help"
+              className={navButtonClass + " w-full"}
+              style={{ "--btn-color": "rgb(220, 38, 38)" } as React.CSSProperties}
+            >
+              <span className="mx-[10px]">{t("nav_scammed") || "Got Scammed?"}</span>
+            </Link>
           </div>
 
           <div className="flex flex-col gap-2">
