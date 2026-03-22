@@ -18,6 +18,7 @@ import {
   Search,
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import Orb from "@/components/Orb";
 
 export default function Home() {
   const { t } = useLanguage();
@@ -118,8 +119,17 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-slate-900">
       {/* ── Hero ── */}
-      <section className="relative min-h-[92vh] flex flex-col items-center justify-center px-4 overflow-hidden">
-        <AuroraBackground />
+      <section className="relative min-h-screen flex flex-col items-center justify-center px-4 overflow-hidden pt-32 pb-20">
+
+        <div className="absolute inset-0 z-0 mix-blend-multiply pointer-events-none scale-[1.6] opacity-70" style={{ maskImage: 'radial-gradient(circle at center, black 45%, transparent 95%)', top: '8%' }}>
+          <Orb
+            hoverIntensity={1.5}
+            rotateOnHover={true}
+            hue={0}
+            forceHoverState={false}
+            backgroundColor="#FFFFFF"
+          />
+        </div>
 
         <div className="relative z-10 max-w-4xl mx-auto text-center space-y-8">
           {/* Badge */}
@@ -167,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* ── Stats strip ── */}
-      <section className="border-y border-slate-100 bg-slate-50/70 py-10">
+      <section className="border-y border-slate-100 bg-transparent py-10">
         <div className="max-w-4xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {stats.map((s) => (
             <div key={s.label}>
@@ -202,7 +212,7 @@ export default function Home() {
           </div>
 
           <div className="grid gap-6 md:grid-cols-2 md:gap-8">
-            <div className="group relative rounded-4xl border border-blue-100/80 bg-white p-8 shadow-[0_16px_40px_-24px_rgba(37,99,235,0.45)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(37,99,235,0.55)] md:p-9">
+            <div className="group relative rounded-4xl border border-blue-100/80 bg-white/70 backdrop-blur-sm p-8 shadow-[0_16px_40px_-24px_rgba(37,99,235,0.45)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(37,99,235,0.55)] md:p-9">
               <div className="absolute right-6 top-6 rounded-full border border-blue-100 bg-blue-50 px-3 py-1 text-[11px] font-bold tracking-wider text-blue-700">
                 01
               </div>
@@ -224,7 +234,7 @@ export default function Home() {
               </Link>
             </div>
 
-            <div className="group relative rounded-4xl border border-red-100/80 bg-white p-8 shadow-[0_16px_40px_-24px_rgba(220,38,38,0.4)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(220,38,38,0.55)] md:mt-10 md:p-9">
+            <div className="group relative rounded-4xl border border-red-100/80 bg-white/70 backdrop-blur-sm p-8 shadow-[0_16px_40px_-24px_rgba(220,38,38,0.4)] transition duration-300 hover:-translate-y-1 hover:shadow-[0_24px_50px_-24px_rgba(220,38,38,0.55)] md:p-9">
               <div className="absolute right-6 top-6 rounded-full border border-red-100 bg-red-50 px-3 py-1 text-[11px] font-bold tracking-wider text-red-700">
                 02
               </div>
